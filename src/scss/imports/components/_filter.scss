@@ -1,0 +1,59 @@
+.filter {
+
+  &__filter {
+    margin-bottom: 22px;
+  }
+
+  &__checks {
+    max-height: 190px;
+  }
+
+  &__exclude-btn {
+    display: none;
+  }
+
+  &__cols, &__fields {
+    display: flex;
+  }
+
+  &__col, &__field {
+    flex: 0 0 calc(50% - 10px);
+    margin-right: 20px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__range {
+    margin-bottom: 22px;
+  }
+
+  &__fields + &__fields {
+    margin-top: 22px;
+  }
+
+  &__dist-btn {
+    color: $color-brand-3;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: color $transition-default;
+
+    & .icon {
+      font-size: 16px;
+      fill: $color-brand-3;
+      transform: rotate(0)!important;
+      margin-right: 11px;
+
+      transition: fill $transition-default;
+    }
+
+    &:hover {
+      color: $color-brand-2;
+
+      & .icon {
+        fill: $color-brand-2;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+include ../mixins/modal
+
++modal({
+    id: 'viewing-record',
+    cover: true,
+    classList: 'modal_task flat-viewing'
+  })
+    h2.modal__title Запись на просмотр
+    form.form(action="")
+      include viewing-record
+      .modal-form__submit
+        button.button.button_view_default Отправить заявку
+
+
++modal({
+    id: 'client-fix',
+    cover: true,
+    classList: 'modal_task flat-fixing'
+  })
+    h2.modal__title Фиксация клиента
+    form.form(action="")
+      include flat-form
+      .modal-form__submit
+        button.button.button_view_default Отправить заявку

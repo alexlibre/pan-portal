@@ -1,0 +1,16 @@
+.form-drop {
+  height: 50px;
+  background-color: #fff;
+  flex: 0 1 calc(100% / 6);
+  margin-right: 12px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &_2x {
+    flex: 1 1 calc(100% / 3 + 12px);
+  }
+}

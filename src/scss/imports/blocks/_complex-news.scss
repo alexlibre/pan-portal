@@ -1,0 +1,98 @@
+.section__news {
+  margin-top: 60px;
+  @include break-max($breakpoint-md) {
+    margin-top: 46px;
+  }
+  @include break-max($breakpoint-sm) {
+    margin-top: 42px;
+  }
+}
+
+.complex__news {
+  margin-top: 35px;
+  @include grid();
+  justify-content: space-between;
+
+  @include break-max($breakpoint-md) {
+    margin-top: 26px;
+  }
+
+  @include break-max($breakpoint-sm) {
+    margin-top: 40px;
+  }
+
+  &-item {
+    @include grid-col();
+    @include grid-size(6);
+    border-radius: 4px;
+    background: $color-brand-opaque-8;
+    padding: 60px 40px 30px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background $transition-default;
+
+    &:hover {
+      background-color: $color-brand-opaque-15;
+    }
+
+    @include break-max($breakpoint-md) {
+      @include grid-size(6, $grid-gutter-md);
+      padding: 50px 40px 30px 40px;
+    }
+
+    @include break-max($breakpoint-sm) {
+      @include grid-size(6, $grid-gutter-sm);
+      padding: 50px 36px 50px 36px;
+    }
+
+    @include break-max($breakpoint-xs) {
+      @include grid-size(12, $grid-gutter-xs);
+      margin-bottom: $grid-gutter-xs;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+  }
+  &-date {
+      line-height: 18px;
+      color: $color-brand-3;
+      margin-bottom: 16px;
+  }
+  &-title {
+      line-height: 28px;
+      font-size: 25px;
+      margin-bottom: 16px; 
+      font-weight: bold;
+      & a {
+        color: $color-brand-1;
+        text-decoration: none;
+      }
+  }
+  &-desc {
+      line-height: 21px;
+      padding-right: 80px;
+      margin-bottom: 20px;
+
+      @include break-max($breakpoint-md) {
+        padding-right: 0;
+      }
+  }
+  &-badges {
+      @include unlist();
+      display: flex;
+  }
+  &-badge {
+      margin-right: 15px;
+      border: 1px solid $color-brand-opaque-30;
+      border-radius: 3px;
+      padding: 6px 12px;
+      color: $color-brand-3;
+      &:last-of-type {
+          margin-right: 0;
+      }
+  }
+}

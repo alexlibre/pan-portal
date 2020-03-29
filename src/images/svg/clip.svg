@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="1600" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="LK_orders-detailed" transform="translate(-1119.000000, -558.000000)" stroke="#8F95AC">
+            <g id="Group-26" transform="translate(1099.000000, 543.000000)">
+                <g id="Group-5" transform="translate(20.000000, 15.000000)">
+                    <path d="M9.7336,13.4093 L7.8956,15.2483 C6.2046,16.9393 3.4616,16.9393 1.7686,15.2483 C0.0776,13.5553 0.0776,10.8123 1.7686,9.1213 L3.6066,7.2833 M7.2836,3.6063 L9.1216,1.7683 C10.8126,0.0773 13.5556,0.0773 15.2486,1.7683 C16.9396,3.4613 16.9396,6.2043 15.2486,7.8953 L13.4096,9.7333" id="Stroke-1"></path>
+                    <line x1="6.0578" y1="10.9591" x2="10.9588" y2="6.0581" id="Stroke-3"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

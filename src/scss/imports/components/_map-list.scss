@@ -1,0 +1,28 @@
+.map-list {
+  height: 100%;
+  // overflow: hidden;
+  padding-bottom: 48px;
+  padding-right: $grid-gutter / 2;
+
+  @include break-max($break-lg) {
+    padding-right: $grid-gutter-md / 2;
+  }
+
+  @include break-max($break-md) {
+    padding-right: $grid-gutter-sm / 2;
+  }
+
+  &__list {
+    // overflow-y: auto;
+    height: auto;
+  }
+
+  &__item {
+    margin-bottom: 27px;
+    border-bottom: 1px solid $color-brand-opaque-10;
+  }
+}
+
+.map-list-title {
+  margin: 24px 0;
+}

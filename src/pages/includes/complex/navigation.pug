@@ -1,0 +1,26 @@
+.navigation__block
+  .wrapper
+    .navigation__block-inner
+      ul.complex__navigation
+        li
+          a.complex__navigation-item(href="#anchor-flats")= 'Планировки и цены'
+        li    
+          a.complex__navigation-item(href="#anchor-about")= 'Описание'
+        li    
+          a.complex__navigation-item(href="#anchor-infrastructure")= 'Инфраструктура'
+        li    
+          a.complex__navigation-item(href="#anchor-calc")= 'Ипотека'
+        li.is-hidden-sm 
+          a.complex__navigation-item(href="#anchor-news")= 'Новости'
+        li.is-hidden-sm
+          a.complex__navigation-item(href="#anchor-others")= 'Другие ЖК застройщика'
+        li.complex__navigation-more.is-hidden-desktop
+            +form-drop({
+              name: 'Еще',
+              classList: 'personal__nav-button'
+            })
+              ul.complex__navigation-list
+                li
+                  a.complex__navigation-item(href="#anchor-news")= 'Новости'
+                li
+                  a.complex__navigation-item(href="#anchor-others")= 'Другие ЖК застройщика'

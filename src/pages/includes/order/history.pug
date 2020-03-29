@@ -1,0 +1,100 @@
+include ../mixins/history_step
+
+- 
+  var order = {
+    advanced: true
+  };
+
+  var steps = [
+    {
+      id: 146,
+      inProcess: false,
+      name: 'Поставлена бронь',
+      date: '12 марта 2019',
+      comments: new Array(5)
+    },
+    {
+      id: 147,
+      inProcess: false,
+      name: 'Запись на бронь',
+      date: '12 марта 2019',
+      comments: new Array(5)
+    },
+    {
+      id: 148,
+      inProcess: false,
+      name: 'Договор подписан',
+      date: '12 марта 2019',
+      comments: new Array(5)
+    },
+    {
+      id: 149,
+      inProcess: false,
+      name: 'Акт отправлен',
+      date: '12 марта 2019',
+      comments: new Array(5)
+    },
+    {
+      id: 148,
+      inProcess: true,
+      name: 'Акт подписан',
+      date: '12 марта 2019',
+      comments: new Array(5)
+    },
+    {
+      id: 149,
+      inProcess: false,
+      name: 'Проавансирована',
+      date: '12 марта 2019',
+      comments: new Array(5)
+    },
+  ];
+
+  var comments = [
+    {
+      id: 1012,
+      date: '12 марта 2019',
+      author: 'Андрей Басов',
+      text: 'Если вы остановили свой выбор в поисках квартиры, загородного дома, земельного участка для постоянного проживания или загородного отдыха со всеми удобствами и близостью развитой инфраструктуры, сделать выгодные вложения в Санкт-Петербурге и Ленинградской области, обратитесь за помощью в Центральное отделение. Здесь вам помогут подобрать подходящий объект недвижимости, так как агентство имеет большую базу домов, участков, квартир, сдающихся или продающихся в Ленинградской области.',
+      image: require('../images/jpg/manager.jpg')
+    },
+    {
+      id: 1013,
+      date: '12 марта 2019',
+      author: 'Андрей Басов',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt mollitia voluptates nam amet dolore deleniti laudantium perferendis molestias eum similique natus, in dolorum tenetur quisquam non laborum qui! Ipsa, cupiditate!',
+      image: require('../images/jpg/manager.jpg')
+    },
+    {
+      id: 1014,
+      date: '12 марта 2019',
+      author: 'Андрей Басов',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt mollitia voluptates nam amet dolore deleniti laudantium perferendis molestias eum similique natus, in dolorum tenetur quisquam non laborum qui! Ipsa, cupiditate!',
+      image: require('../images/jpg/manager.jpg')
+    },
+  ];
+
+section.section.order-history
+  .wrapper
+    .order-history__body
+      h3.h3.order-history__title
+        | История сделки
+
+      - var active_step_i = steps.findIndex(el => el.inProcess);
+      if order.advanced
+        include history-advanced-pc
+        include history-advanced-mobile
+
+      else
+        .order-history__steps
+          - var gradient_percents = active_step_i * 100 / (steps.length - 1);
+          .order-history__steps-line(style={ background: `linear-gradient(to right, #FF2D23 ${gradient_percents}%, #8F95AC ${gradient_percents}%)`})
+          each step, i in steps
+            +history_step({
+              step: step,
+              advanced: order.advanced,
+              steps_length: steps.length, 
+              i 
+            })
+  
+  include comments

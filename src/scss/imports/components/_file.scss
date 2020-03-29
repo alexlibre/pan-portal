@@ -1,0 +1,63 @@
+.file {
+
+  &__title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    margin-right: 8px;
+    flex-shrink: 0;
+
+    & .icon {
+      font-size: 32px;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    margin-top: 6px;
+  }
+
+  &__controls {
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-brand-3;
+    transition: color $transition-default;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+
+  &__delete {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: $color-brand-opaque-10;
+    transition: background-color $transition-default;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 24px;
+
+    & .icon {
+      font-size: 14px;
+      stroke: $color-brand-3;
+    }
+
+    &:hover {
+      background-color: $color-brand-opaque-20;
+    }
+  }
+}

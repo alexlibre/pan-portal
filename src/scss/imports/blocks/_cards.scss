@@ -1,0 +1,87 @@
+.cards {
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+    &__header {
+      align-items: center;
+      margin-bottom: 36px;
+    }
+
+  &__controls {
+    @include grid-size(5);
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include break-max($break-lg) {
+      @include grid-size(6, $grid-gutter-md);
+    }
+    @include break-max($break-md) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+  }
+
+  &__sort {
+    max-width: 290px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    @include grid-size(4);
+    margin-bottom: #{$grid-gutter};
+
+    @include break-max($break-lg) {
+      @include grid-size(4, $grid-gutter-md);
+      margin-bottom: #{$grid-gutter-md};
+    }
+
+    @include break-max(1400px) {
+      @include grid-size(12, $grid-gutter-md);
+      margin-bottom: #{$grid-gutter-sm};
+    }
+
+    @include break-max($break-sm) {
+      @include grid-size(12, $grid-gutter-sm);
+      margin-bottom: #{$grid-gutter-sm};
+    }
+  }
+
+  &__pagination {
+    @include grid-size(12);
+    padding-top: 90px;
+  }
+
+  &__map-cards {
+    // width: calc(100% / 12 * 3);
+    width: 376px;
+    background-color: $color-white;
+    align-self: stretch;
+    box-shadow: 10px 0 10px $color-brand-opaque-10;
+    margin-right: 0;
+    position: relative;
+    z-index: 1;
+    max-height: 900px;
+    padding-right: $grid-gutter / 2;
+    overflow: hidden;
+
+    @include break-max($break-lg) {
+      padding-right: $grid-gutter-md / 2;
+    }
+
+    @include break-max($break-md) {
+      padding-right: $grid-gutter-sm / 2;
+    }
+
+    &-list {
+      overflow-y: auto;
+    }
+  }
+
+  // &__map {
+  //   margin-left: 0;
+  //   @include grid-size(8);
+  //   align-self: stretch;
+  // }
+}

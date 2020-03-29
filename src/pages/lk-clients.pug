@@ -1,0 +1,480 @@
+extends includes/layout-lk
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/form-drop
+include includes/mixins/modal
+include includes/mixins/checkbox
+include includes/mixins/select
+include includes/mixins/textarea
+include includes/mixins/info
+include includes/mixins/clients_status
+include includes/mixins/clients_row
+//- include includes/blocks/clients_filter
+
+
+block title
+  | Список клиентов
+block content
+  -
+    var clients = [
+      {
+        id: 101,
+        client: {
+          id: 305,
+          name: 'Каренина Анна А.',
+          phone: '+7 (812) 657-38-45',
+          email: 'anna@gmail.com'
+        },
+        agent: {
+          id: 203,
+          name: 'Пономарев В.'
+        },
+        booking: '3',
+        status: '0',
+        calling: 'Запланирован звонок 21.02 в 11.30'
+      },
+      {
+        id: 103,
+        client: {
+          id: 309,
+          name: 'Васильев Антон В.',
+          phone: '+7 (345) 234-56-33',
+          email: 'vasiltwev@gmail.com'
+        },
+        agent: {
+          id: 205,
+          name: 'Орлова К.'
+        },
+        booking: '4',
+        status: '1'
+      },
+      {
+        id: 107,
+        client: {
+          id: 312,
+          name: 'Комаров Владимир В.',
+          phone: '+7 (921) 458-31-10',
+          email: 'komariknasharike@gmail.com'
+        },
+        agent: {
+          id: 205,
+          name: 'Орлова К.'
+        },
+        booking: '7',
+        status: '2'
+      },
+      {
+        id: 121,
+        client: {
+          id: 324,
+          name: 'Васильев Антон В.',
+          phone: '+7 (345) 234-56-33',
+          email: 'vasiltwev@gmail.com'
+        },
+        agent: {
+          id: 205,
+          name: 'Орлова К.'
+        },
+        booking: '2',
+        status: '3',
+        meeting: 'Встреча 21.02 в 11.30'
+      },
+
+    ];
+
+  -
+    var agents = {}
+    var statuses = {}
+
+  each client in clients
+    if !agents[client.agent.id]
+      - agents[client.agent.id] = client.agent.name
+
+  section.section.section_view_white.clients
+    .wrapper
+      .personal_content
+        .personal__clients
+          .clients__header
+            .clients__title
+              .h1 Клиенты
+            .clients__switcher
+              .clients__switcher-btn.active
+                | Cписок клиентов
+              .clients__switcher-btn
+                | Информация
+            a.button.button_view_default.clients__add-new(href="lk-clients-new.html") Добавить клиента
+          //- .clients__filter
+          //-   .clients__filter-grid
+          //-     .clients__filter-col.clients__filter-col_2x
+          //-       +input({
+          //-         type: 'search',
+          //-         placeholder: 'Поиск по клиенту, агенту, ЖК, застройщику',
+          //-         id: 'clients-search',
+          //-         classList: 'clients__search-input',
+          //-         autocomplete: 'off'
+          //-       })
+          //-         +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+          //-     .clients__filter-col
+          //-       +form-drop({
+          //-         name: 'Дата добавления'
+          //-       })
+          //-     .clients__filter-col
+          //-       +form-drop({
+          //-         name: 'Агент'
+          //-       })
+          //-     .clients__filter-col
+          //-       +form-drop({
+          //-         name: 'Статус'
+          //-       })
+          //-     .clients__filter-col
+          //-       +checkbox({
+          //-         id: 'clients-fav',
+          //-         label: 'Только избранные',
+          //-         })
+          //-     .clients__filter-col
+          //-       +button({
+          //-         classList: 'button_type_clear'
+          //-       })
+          //-         +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+          //-         span Очистить фильтр
+          include includes/blocks/clients_filter
+
+          .clients__content
+            table.table.clients__table(id="clients-table").display
+              thead
+                tr
+                  th
+                  th Клиент
+                  th Телефон
+                  th E-mail
+                  th.nowrap Агент
+                  th
+                    .sorting-th
+                      | Брони
+                      .sorting-arrows
+                  th
+                    .sorting-th
+                      | Статус
+                      .sorting-arrows
+                  th
+                    .sorting-th
+                      | Задачи
+                      .sorting-arrows
+                  th
+              tbody
+                each client in clients
+                  +clients_row(client)
+                //- tr
+                //-   td
+                //-   td
+                //-     .clients__table-client
+                //-       button.button.clients__fav-btn(data-client-fav="client-1")
+                //-         +svg_icon(require('../images/svg/star.svg').default).icon.icon_star
+                //-       a.clients__table-link.clients__table-client Каренина Анна А.
+                //-   td
+                //-     a.clients__phone +7 (812) 657-38-45
+                //-   td anna@gmail.com
+                //-   td.nowrap Пономарев В.
+                //-   td 2
+                //-   td
+                //-     .label-item.label_red В работе
+                //-   td.dt_mod_no-p_h
+                //-     .button.button_type_task-assigned
+                //-       .icon-block
+                //-         +svg_icon(require('../images/svg/alert-bell.svg').default).icon.icon_alert-bell
+                //-       div Запланирован звонок 21.02 в 11.30
+                //-         .clients__info
+                //-           div.info
+                //-             +svg_icon(require("../images/svg/info.svg").default).icon.icon_info
+                //-             .info__popup
+                //-               .clients__info-content
+                //-                 .clients__info-block
+                //-                   .clients__info-label Запланирован звонок
+                //-                   .clients__info-val 21 февраля 2020
+                //-                 .clients__info-block
+                //-                   .clients__info-label Время
+                //-                   .clients__info-val 11:30
+                //-                 .clients__info-block
+                //-                   .clients__info-label Напоминание
+                //-                   .clients__info-val за 2 часа
+                //-                 .clients__info-block
+                //-                   .clients__info-label Комментарий
+                //-                   .clients__info-val Тема звонка выяснить ход сделки
+                //-                 .clients__info-block
+                //-                   +button({
+                //-                     classList: 'button_type_edit-small js-modal-btn',
+                //-                     dataId: 'task-edit'
+                //-                   })
+                //-                     +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                //-                     span Редактировать
+                //-     button.button.button_type_task.js-modal-btn(data-id="task")
+                //-       +svg_icon(require('../images/svg/plus.svg').default).icon.icon_plus
+                //-       span Добавить дело
+                //-   td
+                //-     +form-drop({
+                //-       btnClassList: 'button_type_round',
+                //-       datatableIcon: true
+                //-     })
+                //-       .dt__more
+                //-         hr
+                //-         .dt__more-control.js-client-edit(data-client-id="client-1")
+                //-           +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                //-           span Редактировать
+                //-         .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-1" data-id="delete-client")
+                //-           +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                //-           span Удалить
+                //- tr
+                //-   td
+                //-   td
+                //-     .clients__table-client
+                //-       button.button.clients__fav-btn(data-client-fav="client-2")
+                //-         +svg_icon(require('../images/svg/star.svg').default).icon.icon_star
+                //-       a.clients__table-link.clients__table-client Васильев Антон В.
+                //-   td
+                //-     a.clients__phone +7 (812) 657-38-45
+                //-     a.clients__phone +7 (345) 234-56-33
+                //-   td vasiltwev@gmail.com
+                //-   td.nowrap Орлова К.
+                //-   td 3
+                //-   td
+                //-     .label-item.label_violet В архиве
+                //-   td.dt_mod_no-p_h
+                //-     button.button.button_type_task.js-modal-btn(data-id="task")
+                //-       +svg_icon(require('../images/svg/plus.svg').default).icon.icon_plus
+                //-       span Добавить дело
+                //-   td
+                //-     +form-drop({
+                //-       btnClassList: 'button_type_round',
+                //-       datatableIcon: true
+                //-     })
+                //-       .dt__more
+                //-         hr
+                //-         .dt__more-control.js-client-edit(data-client-id="client-2")
+                //-           +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                //-           span Редактировать
+                //-         .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-2" data-id="delete-client")
+                //-           +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                //-           span Удалить
+                //- tr
+                //-   td
+                //-   td
+                //-     .clients__table-client
+                //-       button.button.clients__fav-btn(data-client-fav="client-3")
+                //-         +svg_icon(require('../images/svg/star.svg').default).icon.icon_star
+                //-       a.clients__table-link Комаров Владимир В.
+                //-   td
+                //-     a.clients__phone +7 (812) 657-38-45
+                //-   td anna@gmail.com
+                //-   td Пономарев В.
+                //-   td 7
+                //-   td
+                //-     .label-item.label_yellow Отложенный
+                //-   td.dt_mod_no-p_h
+                //-     .button.button_type_task-assigned.is-active
+                //-       span.icon-block
+                //-         +svg_icon(require('../images/svg/alert-bell.svg').default).icon.icon_alert-bell
+                //-       div Встреча 21.02 в 11.30
+                //-         .clients__info
+                //-           +info({})
+                //-             .clients__info-content
+                //-               .clients__info-block
+                //-                 .clients__info-label Запланирована встреча
+                //-                 .clients__info-val 21 февраля 2020
+                //-               .clients__info-block
+                //-                 .clients__info-label Время
+                //-                 .clients__info-val 11:30
+                //-               .clients__info-block
+                //-                 .clients__info-label Напоминание
+                //-                 .clients__info-val за 2 часа
+                //-               .clients__info-block
+                //-                 +button({
+                //-                   classList: 'button_type_edit-small js-modal-btn',
+                //-                   dataId: 'task-edit'
+                //-                   })
+                //-                     +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                //-                     span Редактировать
+
+
+                //-   td
+                //-     +form-drop({
+                //-       btnClassList: 'button_type_round',
+                //-       datatableIcon: true
+                //-     })
+                //-       .dt__more
+                //-         hr
+                //-         .dt__more-control.js-client-edit(data-client-id="client-3")
+                //-           +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                //-           span Редактировать
+                //-         .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-3" data-id="delete-client")
+                //-           +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                //-           span Удалить
+                //- tr
+                //-   td
+                //-   td
+                //-     .clients__table-client
+                //-       button.button.clients__fav-btn(data-client-fav="client-4")
+                //-         +svg_icon(require('../images/svg/star.svg').default).icon.icon_star
+                //-       a.clients__table-link.clients__table-client Каренина Анна А.
+                //-   td
+                //-     a.clients__phone +7 (812) 657-38-45
+                //-   td anna_karenina@gmail.com
+                //-   td Орлова К.
+                //-   td 3
+                //-   td
+                //-     .label-item.label_green Ждёт оформления
+                //-   td.dt_mod_no-p_h
+                //-     button.button.button_type_task.js-modal-btn(data-id="task")
+                //-       +svg_icon(require('../images/svg/plus.svg').default).icon.icon_plus
+                //-       span Добавить дело
+                //-   td
+                //-     +form-drop({
+                //-       btnClassList: 'button_type_round',
+                //-       datatableIcon: true
+                //-     })
+                //-       .dt__more
+                //-         hr
+                //-         .dt__more-control.js-client-edit(data-client-id="client-4")
+                //-           +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                //-           span Редактировать
+                //-         .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                //-           +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                //-           span Удалить
+    +modal({
+      id: 'delete-client',
+      cover: true,
+      classList: 'modal_task'
+    })
+      h2.modal__title Вы уверены, что хотите удалить клиента Капустина А. А.
+      form.form(action="")
+        .modal-form__submit
+          button.button.button_view_outline Вернуться
+          button.button.button_view_default.js-del-confirm Удалить
+
+
+    +modal({
+      id: 'task',
+      cover: true,
+      classList: 'modal_task'
+    })
+      h2.modal__title Создать задачу
+      form.modal-form(action="")
+        .modal-form__row
+          .modal-form__item
+            .select.select_type_form
+              +select({
+                id: 'modal-task',
+                label: 'Задача',
+                options: [
+                  {inner:'Запланирован звонок'},
+                  {inner:'Назначена встреча'},
+                ]
+              })
+        .modal-form__row
+          .modal-form__item
+            +input({
+              id: 'modal-task-date',
+              label: 'Дата',
+              classList: 'input_width_available input_type_form',
+              controlClassList: 'js-datepicker'
+            })
+          .modal-form__item
+            +input({
+              id: 'modal-task-time',
+              label: 'Время',
+              classList: 'input_width_available input_type_form',
+              controlClassList: 'js-timepicker'
+            })
+        .modal-form__row
+          .modal-form__item
+            +textarea({
+              id: 'cl-comment',
+              label: 'Комментарий',
+              placeholder: 'Текст комментария',
+              classList: 'textarea_type_form textarea_width_available',
+              rows: 5
+            })
+        .modal-form__row
+          .modal-form__wrap
+            +checkbox({
+              id: 'notify-time',
+              label: 'Включить напоминание',
+            })
+            .select.select_type_form
+              +select({
+                id: 'modal-select-notify',
+                label: 'Выбрать время напоминания',
+                options: [
+                  {inner:'За час до события'},
+                  {inner:'За 3 часа до события'},
+                  {inner:'За день до события'},
+                ]
+              })
+        .modal-form__submit
+          button.button.button_view_default Создать задачу
+    +modal({
+      id: 'task-edit',
+      cover: true,
+      classList: 'modal_task'
+    })
+      h2.modal__title Редактировать задачу
+      form.modal-form(action="")
+        .modal-form__row
+          .modal-form__item
+            .select.select_type_form
+              +select({
+                id: 'modal-task-edit',
+                label: 'Задача',
+                options: [
+                  {inner:'Запланирован звонок'},
+                  {inner:'Назначена встреча'},
+                ]
+              })
+        .modal-form__row
+          .modal-form__item
+            +input({
+              id: 'modal-task-date-edit',
+              label: 'Дата',
+              classList: 'input_width_available input_type_form',
+              controlClassList: 'js-datepicker'
+            })
+          .modal-form__item
+            +input({
+              id: 'modal-task-time-edit',
+              label: 'Время',
+              classList: 'input_width_available input_type_form',
+              controlClassList: 'js-timepicker'
+            })
+        .modal-form__row
+          .modal-form__item
+            +textarea({
+              id: 'modal-task-comment-edit',
+              label: 'Комментарий',
+              placeholder: 'Текст комментария',
+              classList: 'textarea_type_form textarea_width_available',
+              rows: 5
+            })
+        .modal-form__row
+          .modal-form__wrap
+            +checkbox({
+              id: 'notify-time-edit',
+              label: 'Включить напоминание',
+            })
+            .select.select_type_form
+              +select({
+                id: 'modal-select-notify-edit',
+                label: 'Выбрать время напоминания',
+                options: [
+                  {inner:'За час до события'},
+                  {inner:'За 3 часа до события'},
+                  {inner:'За день до события'},
+                ]
+              })
+        .modal-form__submit
+          button.button.button_view_default Сохранить изменения
+          button.button.button_view_outline Удалить задачу
+
+
+
+
+
+  .kt-datatable(id="local_data")

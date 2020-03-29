@@ -1,0 +1,105 @@
+.info {
+  $c: &;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  position: relative;
+  background-color: $color-brand-opaque-10;
+  transition: background-color $transition-default;
+  border-radius: 26px;
+
+  &:hover {
+    background-color: $color-brand-opaque-30;
+
+    & #{$c}__popup {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: initial;
+    }
+  }
+
+  & .icon {
+    font-size: 14px;
+    fill: $color-brand-3;
+  }
+
+  &_align {
+
+    &_right {
+
+      #{$c}__popup {
+        right: auto;
+        left: 100%;
+        margin-right: auto;
+        margin-left: 24px;
+
+        &:after {
+          left: auto;
+          right: calc(100% - 10px);
+          border-bottom: 14px solid $color-white;
+          border-left: 14px solid transparent;
+          border-right: 14px solid transparent;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-right: 24px;
+    padding: 16px;
+    width: 250px;
+    background-color: $color-white;
+    box-shadow: $shadow;
+    transform: translateX(16px);
+    opacity: 0;
+    transition: transform $transition-default .15s, opacity $transition-default .15s;
+    pointer-events: none;
+    z-index: 50;
+
+    &:hover {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: initial;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: calc(100% + 60px);
+      height: calc(100% + 40px);
+      z-index: -1;
+    }
+    &:after {
+      transform: rotate(-45deg);
+      content: '';
+      display: block;
+      position: absolute;
+      top: -2px;
+      left: calc(100% - 10px);
+      border-bottom: 14px solid $color-white;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+    }
+  }
+}
+
+.section_view_dark {
+  .info__popup {
+    background-color: $color-brand-2;
+    color: $color-white;
+    box-shadow: $shadow-dark;
+
+    &:after {
+      border-bottom-color: $color-brand-2;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.slider__input {
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  & .noUi-connect {
+    background: $color-brand-3;
+  }
+  & .noUi-handle {
+    width: 28px;
+    height: 28px;
+    right: -14px;
+    top: -14px;
+    background: $color-brand-3;
+    box-shadow: none;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    outline: none;
+    &:after {
+      content: none;
+    }
+    &:before {
+      content: none;
+    }
+  }
+  & .noUi-horizontal {
+    width: 28px;
+      height: 28px;
+      right: -14px;
+      top: -14px;
+      background: $color-brand-3;
+      box-shadow: none;
+    & .noUi-handle {
+      width: 28px;
+      height: 28px;
+      right: -14px;
+      top: -14px;
+      background: $color-brand-3;
+      box-shadow: none;
+    }
+
+  }
+}

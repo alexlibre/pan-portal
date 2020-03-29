@@ -1,0 +1,34 @@
+.orders__content
+  table.table.orders__table(id="applications-table" style="width: 100%")
+    thead
+      tr
+        th.control
+        th Клиент
+        th 
+          .sorting-th
+            span Объект
+            .sorting-arrows
+        th.nowrap 
+          .sorting-th
+            | Стоимость
+            .sorting-arrows
+        th.nowrap 
+          .sorting-th
+            | Дата бр.
+            .sorting-arrows
+        th  
+          .sorting-th
+            | Агент
+            .sorting-arrows
+        th.nowrap 
+          .sorting-th
+            | Форма оплаты
+            .sorting-arrows
+        th
+          .sorting-th
+            | Статус
+            .sorting-arrows
+        th
+    tbody
+      each application in applications
+        +application_row(application)

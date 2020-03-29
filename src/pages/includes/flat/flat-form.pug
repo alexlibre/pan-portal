@@ -1,0 +1,47 @@
+include ../mixins/input
+include ../mixins/select
+include ../mixins/checkbox
+include ../mixins/textarea
+
+.flat-form
+  .flat-form__row
+    .flat-form__col
+      +input({
+        id: 'modal-viewing-name',
+        label: 'Имя и фамилия',
+        classList: 'input_width_available input_type_form',
+      })
+    .flat-form__col
+      +input({
+        id: 'modal-viewing-phone',
+        label: 'Телефон',
+        classList: 'input_width_available input_type_form',
+      })
+  .flat-form__row
+    .flat-form__col
+      .select.select_type_form
+        +select({
+          id: 'modal-viewing-client',
+          label: 'Клиент',
+          options: [
+            {
+              inner: 'Подгурский Михаил',
+              classes: 'test'
+            }
+          ]
+        })
+  .flat-form__row
+    .flat-form__col
+      +textarea({
+        id: 'modal-viewing-commentary',
+        label: 'Комментарий',
+        classList: 'textarea_type_form'
+      })
+  .flat-form__row
+    .flat-form__col
+      +checkbox({
+        id: 'flat-viewing-agreement',
+        label: 'Cогласие на обработку персональных данных',
+        classList: 'checkbox_view_invert',
+        required: true,
+      })

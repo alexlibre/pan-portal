@@ -1,0 +1,5 @@
+mixin checkbox-radio-btn(data)
+  .checkbox.checkbox_type_btn(class= data.classList data-title= data.title class= data.disabled? 'checkbox_disabled': '')
+    .checkbox__box
+      input.checkbox__control(type="radio" name= data.name id= data.id checked= data.checked required= data.required class= data.controlClassList)
+      label.checkbox__label(for= data.id)= data.label

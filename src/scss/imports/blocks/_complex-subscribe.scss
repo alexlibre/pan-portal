@@ -1,0 +1,80 @@
+.complex__subscribe {
+  margin-top: 60px;
+  background: $color-brand-2;
+  border-radius: 4px;
+  padding: 30px 50px;
+
+  &-row {
+    @include grid();
+  }
+
+  @include break-max($breakpoint-md) {
+    padding: 30px 35px;
+  }
+
+  @include break-max($breakpoint-sm) {
+    padding: 30px 38px;
+    margin-top: 30px;
+  }
+
+  &-col {
+    @include grid-col();
+    @include grid-size(6);
+
+    @include break-max($breakpoint-md) {
+      @include grid-size(6, $grid-gutter-md);
+    }
+
+    &.subscribe__text {
+      @include break-max($breakpoint-sm) {
+        @include grid-size(5, $grid-gutter-sm);
+      }
+      @include break-max($breakpoint-xs) {
+        @include grid-size(12, $grid-gutter-xs);
+        margin-bottom: $grid-gutter-xs;
+      }
+    }
+
+    &.subscribe__form {
+      @include break-max($breakpoint-sm) {
+        @include grid-size(7, $grid-gutter-sm);
+      }
+      @include break-max($breakpoint-xs) {
+        @include grid-size(12, $grid-gutter-xs);
+      }
+    }
+
+    & .input_type_subscribe {
+      width: 100%;
+      min-width: 100%;
+    }
+    & .input__control {
+      border-radius: 4px;
+    }
+  }
+  &-text {
+    color: #fff;
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: bold;
+    padding-right: 100px;
+
+    @include break-max($breakpoint-md) {
+      font-size: 20px;
+      line-height: 24px;
+      padding-right: 80px;
+    }
+
+    @include break-max($breakpoint-sm) {
+      padding-right: 0;
+    }
+  }
+
+  &-check {
+    padding-left: 20px;
+
+    @include break-max($breakpoint-md) {
+      padding-left: 0;
+    }
+  }
+}

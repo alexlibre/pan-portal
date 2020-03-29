@@ -1,0 +1,126 @@
+.rangeable {
+  $c: &;
+
+
+  &-progress, &-track {
+    height: 1px;
+  }
+
+
+
+  &-track:hover, &-track:active {
+
+    & #{$c}-progress, & #{$c}-handle {
+      background-color: #666B81;
+    }
+  }
+
+  &-track {
+    background-color: $color-brand-o-30;
+    transition: background-color $transition-default;
+  }
+
+  &-progress {
+    background-color: $color-brand-3;
+    transition: background-color $transition-default;
+    right: 22px;
+    left: 22px;
+  }
+
+  &-handle {
+    height: 22px;
+    width: 22px;
+    border: 0;
+    background-color: $color-brand-3;
+    box-shadow: 0 0 0 3px $color-white;
+    transition: background-color $transition-default;
+  }
+
+  &-labels {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    color: $color-brand-3;
+    font-size: 14px;
+    margin-top: 14px;
+  }
+}
+.noUi-horizontal {
+  height: 22px;
+  background: transparent;
+  position: relative;
+  padding: 0 11px;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: 50%;
+    background: $color-brand-opaque-30;
+  }
+}
+
+.noUi-connect {
+  background: transparent;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: $color-brand-3;
+  }
+}
+.noUi-horizontal .noUi-handle {
+  outline: none;
+  height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    right: -11px;
+    top: 0px;
+    border: 0;
+    background-color: $color-brand-3;
+    box-shadow: 0 0 0 3px $color-white;
+    transition: background-color $transition-default;
+    cursor: pointer;
+
+    &:before, &:after {
+      display: none;
+    }
+}
+
+.noUi-target {
+  border: 0;
+  box-shadow: none;
+}
+
+.noUi-pips-horizontal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+}
+
+.noUi-marker {
+  display: none;
+}
+
+.noUi-value {
+  position: static;
+  transform: translate(0,0);
+  color: $color-brand-3;
+  font-size: 14px;
+}

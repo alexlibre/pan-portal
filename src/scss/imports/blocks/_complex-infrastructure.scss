@@ -1,0 +1,39 @@
+.infrastructure {
+  .block__title {
+    margin-bottom: 35px;
+  }
+
+  &__map {
+    height: 404px;
+    margin-bottom: 50px;
+  }
+
+  &__items {
+    @include unlist();
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex: 0 1 25%;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    white-space: nowrap;
+
+    @include break-max($breakpoint-md) {
+      flex: 0 1 30%;
+    }
+
+    .icon {
+      width: 28px;
+      height: 20px;
+      fill: none;
+      stroke: $color-brand-3;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+  }
+}

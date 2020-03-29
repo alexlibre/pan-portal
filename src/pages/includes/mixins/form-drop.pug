@@ -1,0 +1,13 @@
+mixin form-drop(data)
+  .form__item
+    .dropdown.js-dropdown.form__drop(data-type= data.type class= data.classList)
+      button.dropdown__btn.button.form__drop-btn(class= data.btnClassList)
+        span.form__drop-name= data.name
+        if data.datatableIcon
+          +svg_icon(require('../images/svg/elipsis.svg').default).icon.icon_elipsis
+        else
+          +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+      .dropdown__block
+        .dropdown__inner
+          .form__drop-content
+            block

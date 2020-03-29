@@ -1,0 +1,41 @@
+.label {
+  &-item {
+    display: inline-block;
+    padding: 5px 9px 6px;
+    border-radius: 4px;
+
+    @include break-max($breakpoint-md) {
+      white-space: normal;
+    }
+  }
+
+  &_orange {
+    color: $label-orange;
+    background-color: $label-orange-30;
+  }
+
+  &_purple {
+    color: $label-purple;
+    background-color: $label-purple-20;
+  }
+
+  &_green {
+    color: $label-green;
+    background-color: $label-green-20;
+  }
+
+  &_red {
+    color: $label-red;
+    background-color: $label-red-10;
+  }
+
+  &_yellow {
+    color: $label-yellow;
+    background-color: $label-yellow-20;
+  }
+
+  &_violet {
+    color: $label-violet;
+    background-color: $label-violet-20;
+  }
+}

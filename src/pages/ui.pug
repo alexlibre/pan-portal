@@ -1,0 +1,355 @@
+//- ui.pug
+extends includes/layout-ui
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/checkbox
+include includes/mixins/select
+include includes/mixins/switch
+include includes/mixins/input
+include includes/mixins/info
+
+
+block title
+  | UI
+block content
+  section.section.ui
+    .wrapper
+      .section__grid
+        .section__grid-col.ui__col-3.ui__label-title
+          h3 Типографика
+        .section__grid-col.ui__col-9.ui__label-title
+          h3 1280px+, 1600px+
+
+        .section__grid-col.ui__col-3.ui__label h1, .h1 <br><br>Formular Bold, 48 px (55 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h1 H1 — Заголовок 1 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h2, .h2 <br><br>Formular Bold, 35 px (40 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h2 H2 — Заголовок 2 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h3, .h3 <br><br>Formular Bold, 25 px (28 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h3 H3 — Заголовок 3 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h4, .h4 <br><br>Formular Bold, 16 px (20 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h4 H4 — Заголовок 4 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h5, .h5 <br><br>Formular Bold, 12 px (18 px line) <br>All caps, letter-spacing 0,3 px
+        .section__grid-col.ui__col-9
+          //- code
+          h5 H5 — Заголовок 5 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label p, .text <br><br>Formular Regular, 14 px (17 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          p Text — Параграф текста произвольной длины
+          //-
+        .section__grid-col.ui__col-3.ui__label a, .link <br><br>Formular Regular, 14 px (17 px line) <br>#FF2D23
+        .section__grid-col.ui__col-9
+          //- code
+          a(href="#").link Link — Ссылка
+          //-
+
+  section.section.ui
+    .wrapper
+      .section__grid
+        .section__grid-col.ui__col-3.ui__label-title
+          h3 Типографика
+        .section__grid-col.ui__col-9.ui__label-title
+          h3 768px+
+
+        .section__grid-col.ui__col-3.ui__label h1, .h1 <br><br>Formular Bold, 36 px (42 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h1.false H1 — Заголовок 1 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h2, .h2 <br><br>Formular Bold, 28 px (33 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h2.false H2 — Заголовок 2 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h3, .h3 <br><br>Formular Bold, 18 px (22 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h3.false H3 — Заголовок 3 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h4, .h4 <br><br>Formular Bold, 16 px (20 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          h4 H4 — Заголовок 4 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label h5, .h5 <br><br>Formular Bold, 12 px (18 px line) <br>All caps, letter-spacing 0,3 px
+        .section__grid-col.ui__col-9
+          //- code
+          h5 H5 — Заголовок 5 уровня
+          //-
+        .section__grid-col.ui__col-3.ui__label p, .text <br><br>Formular Regular, 14 px (17 px line)
+        .section__grid-col.ui__col-9
+          //- code
+          p Text — Параграф текста произвольной длины
+          //-
+        .section__grid-col.ui__col-3.ui__label a, .link <br><br>Formular Regular, 14 px (17 px line) <br>#FF2D23
+        .section__grid-col.ui__col-9
+          //- code
+          a(href="#").link Link — Ссылка
+          //-
+
+  section.section.ui
+    .wrapper
+      .section__grid
+        .section__grid-col.ui__col-3.ui__label-title
+          h3 Компоненты
+        .section__grid-col.ui__col-9.ui__label-title
+          h3 Светлый фон
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_outline
+        .section__grid-col.ui__col-9
+          //- code
+          button.button.button_view_outline Сохранить фильтр
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_type_settings
+        .section__grid-col.ui__col-9
+          //- code
+          +button({
+            classList: 'button_type_settings'
+          })
+            +svg_icon(require("../images/svg/settings.svg").default).icon.icon_settings
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_type_filtered
+        .section__grid-col.ui__col-9
+          //- code
+          +button({
+            classList: 'button_type_filtered'
+          })
+            span Очистить выбранные
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_default
+        .section__grid-col.ui__col-9
+          //- code
+          button.button.button_view_default Показать 33 ЖК
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_type_clear
+        .section__grid-col.ui__col-9
+          //- code
+          +button({
+            classList: 'button_type_clear'
+          })
+            +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+            span очистить фильтр
+
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_ghost
+        .section__grid-col.ui__col-9
+          //- code
+          +button({
+            classList: 'button_view_ghost'
+          })
+            +svg_icon(require("../images/svg/area-select.svg").default).icon.icon_area-select
+            span Выделить область
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_outline-with-icon
+        .section__grid-col.ui__col-9
+          //- code
+          +button({
+            classList: 'button_view_outline-with-icon'
+          })
+            +svg_icon(require("../images/svg/checkerboard.svg").default).icon.icon_checkerboard
+            span Шахматка
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_outline-strong
+        .section__grid-col.ui__col-9
+          //- code
+          button.button.button_view_outline-strong Обратный звонок
+          //-
+
+        .section__grid-col.ui__col-3.ui__label input[type="range"]
+        .section__grid-col.ui__col-9
+          //- code
+
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .checkbox
+        .section__grid-col.ui__col-9
+          //- code
+          +checkbox({
+            id: 'personal-1',
+            label: 'Cогласие на обработку персональных данных',
+            required: true,
+            checked: true,
+            })
+          //-
+
+        .section__grid-col.ui__col-3.ui__label select
+        .section__grid-col.ui__col-9
+          //- code
+          +select({
+            id: 'select1',
+            label: 'Сортировать',
+            options: [{inner:'По цене'}, {inner:'По количеству'}, {inner:'По удалённости'}],
+            classList: ' '
+          })
+          //-
+
+        .section__grid-col.ui__col-3.ui__label switch
+        .section__grid-col.ui__col-9
+          //- code
+          +switch({
+            id: 'client-work',
+            label: 'Работа с клиентом',
+            checked: true
+          })
+          //-
+
+        .section__grid-col.ui__col-3.ui__label switch (reorder: true)
+        .section__grid-col.ui__col-9
+          //- code
+          +switch({
+            id: 'filter-booked',
+            label: 'Показать забронированные',
+            checked: false,
+            reorder: true
+          })
+          //-
+
+        .section__grid-col.ui__col-3.ui__label info
+        .section__grid-col.ui__col-9
+          //- code
+          +info({})
+            p Начинайте вводить параметры фильтра и&nbsp;выбирайте из&nbsp;предложенного списка. Вы&nbsp;также можете любой запрос добавить в&nbsp;исключения
+
+          //-
+
+        .section__grid-col.ui__col-3.ui__label filtered
+        .section__grid-col.ui__col-9
+          //- code
+          .filtered
+            .filtered__inner
+              span.filtered__type Оплата:
+              span.filtered__value Ипотека
+              button.button.filtered__del
+                +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+
+          //-
+
+        .section__grid-col.ui__col-3.ui__label filtered (exclude)
+        .section__grid-col.ui__col-9
+          //- code
+          .filtered.filtered_view_exclude
+            .filtered__inner
+              span.filtered__type Метро:
+              span.filtered__value Девяткино
+              button.button.filtered__del
+                +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_link
+        .section__grid-col.ui__col-9
+          //- code
+          button.button.button_view_link Исключить
+          //-
+
+        .section__grid-col.ui__col-3.ui__label range
+        .section__grid-col.ui__col-9
+          //- code
+          input.rangeable(type="range" min="0" max="200" data-type="single")
+
+          //-
+
+        .section__grid-col.ui__col-3.ui__label range double
+        .section__grid-col.ui__col-9
+          //- code
+          input.rangeable(type="range" min="2500000" max="11350000" data-type="double")
+
+          //-
+
+  section.section.ui.ui_invert
+    .wrapper
+      .section__grid
+        .section__grid-col.ui__col-3.ui__label-title
+          h3 Компоненты
+        .section__grid-col.ui__col-9.ui__label-title
+          h3 Темный фон
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_outline-invert
+        .section__grid-col.ui__col-9
+          //- code
+          button.button.button_view_outline-invert Файлы
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .button.button_view_outline-with-icon-invert
+        .section__grid-col.ui__col-9
+          //- code
+          +button({
+            classList: 'button_view_outline-with-icon-invert'
+          })
+            +svg_icon(require("../images/svg/marker.svg").default).icon.icon_marker
+            span Показать на карте
+          //-
+        .section__grid-col.ui__col-3.ui__label .button.button_view_link-invert
+        .section__grid-col.ui__col-9
+          //- code
+          button.button.button_view_link-invert Рекламные материалы
+          //-
+
+        .section__grid-col.ui__col-3.ui__label .checkbox.checkbox_view_invert
+        .section__grid-col.ui__col-9
+          //- code
+          +checkbox({
+            id: 'personal-2',
+            label: 'Cогласие на обработку персональных данных',
+            classList: 'checkbox_view_invert',
+            required: true,
+            checked: true
+            })
+          //-
+
+
+        .section__grid-col.ui__col-3.ui__label switch
+        .section__grid-col.ui__col-9
+          //- code
+          +switch({
+            id: 'client-work2',
+            label: 'Работа с клиентом',
+            checked: true,
+            classList: 'switch_view_invert'
+          })
+          //-
+
+        .section__grid-col.ui__col-3.ui__label switch (reorder: true)
+        .section__grid-col.ui__col-9
+          //- code
+          +switch({
+            id: 'filter-booked2',
+            label: 'Показать забронированные',
+            checked: false,
+            reorder: true,
+            classList: 'switch_view_invert'
+          })
+          //-
+
+        .section__grid-col.ui__col-3.ui__label input[type-"search"]
+        .section__grid-col.ui__col-9
+          //- code
+          +input({
+            type: 'search',
+            id: 'header-search-id',
+            classList: 'input_type_search input_width_available',
+            placeholder: 'Поиск по ID'
+          })
+            +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+          //-
+

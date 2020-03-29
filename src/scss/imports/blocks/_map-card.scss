@@ -1,0 +1,203 @@
+.map-card {
+  position: relative;
+  z-index: 1;
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 228px;
+    z-index: 5;
+  }
+
+  &__pills {
+    z-index: 6;
+    @include unlist();
+    position: absolute;
+    top: 14px;
+    left: 17px;
+    right: 17px;
+    width: 100%;
+    display: flex;
+
+    @include break-max($break-md) {
+      top: 19px;
+      left: 19px;
+    }
+  }
+
+  &__fav {
+    z-index: 6;
+    position: absolute;
+    right: 17px;
+    bottom: -16px;
+    width: 52px;
+    height: 52px;
+    background-color: #fff;
+    box-shadow: $shadow;
+
+    & .icon {
+      fill: $color-brand-3;
+      fill-opacity: 0.5;
+      transition: all $transition-default;
+      font-size: 20px;
+    }
+
+    &:hover {
+      & .icon {
+        fill-opacity: 0.8;
+      }
+    }
+
+    &.is-fav {
+
+      & .icon {
+        fill: $color-red;
+        fill-opacity: 1;
+      }
+    }
+
+    @include break-max(1400px) {
+      top: 14px;
+      bottom: auto;
+      right: 16px;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    &_distribute {
+
+      &_between {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__content {
+    padding: 24px 0;
+  }
+
+  &__title {
+    margin-bottom: 2px;
+  }
+
+  &__company {
+    color: $color-brand-3;
+    margin-top: 14px;
+  }
+
+  &__price {
+    white-space: nowrap;
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__routes {
+    @include unlist();
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: $color-brand-3;
+    margin-top: 16px;
+  }
+
+  &__routes-item {
+    margin-right: 30px;
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__dates {
+    color: $color-red;
+    margin-top: 4px;
+  }
+
+  &__metro-color {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 6px;
+    margin-right: 10px;
+
+    &_1 {
+      background-color: $color-metro-1;
+    }
+
+    &_2 {
+      background-color: $color-metro-2;
+    }
+
+    &_3 {
+      background-color: $color-metro-3;
+    }
+
+    &_4 {
+      background-color: $color-metro-4;
+    }
+
+    &_5 {
+      background-color: $color-metro-5;
+    }
+  }
+
+  &__metro-station {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__route-type {
+
+    & .icon {
+      fill: $color-brand-3;
+    }
+
+    & .icon_auto {
+      font-size: 12px;
+      margin-right: 10px;
+    }
+
+    & .icon_pedestrian {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  }
+
+  &__options {
+    @include unlist();
+    display: flex;
+    margin: 25px 0;
+    flex-wrap: wrap;
+  }
+
+  &__option {
+    line-height: 30px;
+    background-color: $color-brand-opaque-10;
+    padding: 0 12px;
+    border-radius: 4px;
+    margin-right: 4px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color $transition-default;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $color-brand-opaque-20;
+    }
+  }
+}

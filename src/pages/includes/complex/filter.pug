@@ -1,0 +1,94 @@
+.complex__filter-wrapper
+  .complex__filter
+    .complex__filter-form
+      .form__row.complex__filter-row
+
+        +form-drop({
+          name: 'Корпуса'
+        })
+
+        +form-drop({
+          name: 'Срок сдачи'
+        })
+            
+        +form-drop({
+          name: 'Кол-во комнат'
+        })    
+              
+        +form-drop({
+          name: 'S общая'
+        })  
+              
+        +form-drop({
+          name: 'S кухни'
+        })   
+
+        +form-drop({
+          name: 'Цена'
+        })
+              
+        +form-drop({
+          name: 'Способы оплаты'
+        })
+              
+        +form-drop({
+          name: 'Этаж'
+        })    
+              
+        +form-drop({
+          name: 'Отделка'
+        })  
+              
+        +form-drop({
+          name: 'Санузел'
+        })    
+
+        +form-drop({
+          name: 'Апартаменты'
+        }) 
+
+        +form-drop({
+          name: 'Банки'
+        })
+
+        .complex__filter-switch
+          +switch({
+            id: 'filter-booked',
+            label: 'Показать забронированные',
+            checked: false,
+            reorder: true
+          })       
+    .complex__filter-actions
+      .complex-search__filter-controls
+        .complex-search__filter-clear
+          +button({
+            classList: 'button_type_clear'
+          })
+            +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+            span очистить фильтр
+        a.complex-search__filter-submit(href= "#anchor-flats")
+          +button({
+            classList: 'button_view_default'
+          })
+            span Показать 33 квартиры
+        .complex-search__filter-clear
+          +button({
+            classList: 'button_type_clear'
+          })
+            +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+            span очистить фильтр
+
+  .complex__manager
+    .complex__manager-avatar
+      .complex__manager-avatar_wrapper
+        img(src=require("../images/jpg/manager.jpg")) 
+    .complex__manager-content
+      .complex__manager-title Андрей Басов
+      .complex__manager-post Специалист отдела продаж
+      .complex__manager-contacts
+        ul.complex__manager-contacts_list
+          li.complex__manager-contacts_item +7 (905) 281 35 39
+          li.complex__manager-contacts_item basov@1-an.ru
+          li.complex__manager-contacts_item @Andrey_Basov
+      .complex__manager-action 
+        button.button.button_view_outline Обратный звонок  

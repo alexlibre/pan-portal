@@ -1,0 +1,204 @@
+//- header.pug
+include ../mixins/input
+include ../mixins/switch
+include ../mixins/dropdown
+include ../mixins/form-drop
+
+header.header
+  .header__top
+    .wrapper
+      .header__top-inner
+        a.header__logo(href="/")
+          +svg_icon(require("../images/svg/logo.svg").default).icon.icon_logo
+        ul.header__top-menu
+          li.header__top-menu-item
+            .dropdown.js-dropdown
+              button.dropdown__btn.button
+                span.header__top-menu-link Новостройки
+                  +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+              .dropdown__block
+                .dropdown__inner
+                  .header__top-menu-drop
+                    ul.header__top-drop-list
+                      li.header__top-drop-item
+                        a.header__top-drop-link(href="primary-spb.html") Новостройки СПб
+                      li.header__top-drop-item
+                        a.header__top-drop-link(href="#") Новостройки Москва
+          li.header__top-menu-item
+            a.header__top-menu-link(href="#") Коммерция
+          li.header__top-menu-item
+            .dropdown.js-dropdown
+              button.dropdown__btn.button
+                span.header__top-menu-link Переуступки
+                  +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+              .dropdown__block
+                .dropdown__inner
+                  .header__top-menu-drop
+                    ul.header__top-drop-list
+                      li.header__top-drop-item
+                        a.header__top-drop-link(href="#") Ссылка
+                      li.header__top-drop-item
+                        a.header__top-drop-link(href="#") Ссылка
+          li.header__top-menu-item.hide-mobile
+            a.header__top-menu-link(href="#") Trade-in
+          li.header__top-menu-item.hide-mobile
+            a.header__top-menu-link(href="#") Автопан
+          li.header__top-menu-item.hide-mobile
+            a.header__top-menu-link(href="#") Ипотека
+        include ../blocks/header-profile-drop
+
+        a.header__top-phone.hide-mobile(href="tel:88122439999") 8 812 243 99 99
+        button.button.button_type_burger.js-burger
+          +svg_icon(require("../images/svg/burger.svg").default).icon.icon_burger
+  .header__bottom
+    .wrapper
+      .header__bottom-inner
+        ul.header__bottom-menu
+          li.header__bottom-menu-item
+            a.header__bottom-menu-link.is-active(href="#")
+              +svg_icon(require("../images/svg/percent.svg").default).icon.icon_percent
+              | Мотивация
+          li.header__bottom-menu-item
+            a.header__bottom-menu-link(href="#") Мероприятия
+          li.header__bottom-menu-item
+            a.header__bottom-menu-link(href="#") Переговорные
+          li.header__bottom-menu-item
+            .dropdown.js-dropdown
+              button.dropdown__btn.button
+                span.header__bottom-menu-link.dropdown-view Информация
+                  +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+              .dropdown__block
+                .dropdown__inner
+                  .header__bottom-menu-drop
+                    ul.header__bottom-drop-list
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") Новости
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") События
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") Анонсы
+          li.header__bottom-menu-item
+            .dropdown.js-dropdown
+              button.dropdown__btn.button
+                span.header__bottom-menu-link.dropdown-view Сервисы
+                  +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+              .dropdown__block
+                .dropdown__inner
+                  .header__bottom-menu-drop
+                    ul.header__bottom-drop-list
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") ПАН Комфорт
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") Переговоркинг
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") Консьерж
+                      li.header__bottom-drop-item
+                        a.header__bottom-drop-link(href="#") Грузовичкоф
+          li.header__bottom-menu-item
+            a.header__bottom-menu-link(href="#") Контакты
+        .header__bottom-controls
+          +switch({
+            id: 'client-work',
+            label: 'Работа с клиентом',
+            checked: false,
+            classList: 'switch_view_invert header-bottom__client-switch',
+          })
+          .header__bottom-search-id
+            +input({
+              type: 'search',
+              id: 'header-search-id',
+              classList: 'input_type_search input_width_available',
+              placeholder: 'Поиск по ID'
+            })
+              +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+  .header__mobile-shadow
+  .header__mobile
+    .header__mobile-close
+      +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+    .header__mobile-inner
+      .header__mobile-search-id
+        +input({
+          type: 'search',
+          id: 'header-search-id',
+          classList: 'input_type_search input_width_available',
+          placeholder: 'Поиск по ID'
+        })
+          +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+      ul.header__mobile-menu
+        li.header__mobile-menu-item
+          a.header__mobile-menu-link(href="#") Trade-in
+        li.header__mobile-menu-item
+          a.header__mobile-menu-link(href="#") Автопан
+        li.header__mobile-menu-item
+          a.header__mobile-menu-link(href="#") Ипотека
+      ul.header__mobile-sub-menu
+        li.header__mobile-sub-menu-item
+          a.header__mobile-sub-menu-link.is-active(href="#")
+            +svg_icon(require("../images/svg/percent.svg").default).icon.icon_percent
+            | Мотивация
+        li.header__mobile-sub-menu-item
+          a.header__mobile-sub-menu-link(href="#") Мероприятия
+        li.header__mobile-sub-menu-item
+          a.header__mobile-sub-menu-link(href="#") Переговорные
+        li.header__mobile-sub-menu-item
+          .dropdown.js-dropdown
+            button.dropdown__btn.button
+              span.header__mobile-sub-menu-link.dropdown-view Информация
+                +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+            .dropdown__block
+              .dropdown__inner
+                .header__mobile-sub-menu-drop
+                  ul.header__mobile-sub-drop-list
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") Новости
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") События
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") Анонсы
+        li.header__mobile-sub-menu-item
+          .dropdown.js-dropdown
+            button.dropdown__btn.button
+              span.header__mobile-sub-menu-link.dropdown-view Сервисы
+                +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_chevron
+            .dropdown__block
+              .dropdown__inner
+                .header__mobile-sub-menu-drop
+                  ul.header__mobile-sub-drop-list
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") ПАН Комфорт
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") Переговоркинг
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") Консьерж
+                    li.header__mobile-sub-drop-item
+                      a.header__mobile-sub-drop-link(href="#") Грузовичкоф
+        li.header__mobile-sub-menu-item
+          a.header__mobile-sub-menu-link(href="#") Контакты
+      .header__mobile-section
+        +switch({
+          id: 'client-work-2',
+          label: 'Работа с клиентом',
+          checked: false,
+          classList: 'switch_view_invert header-bottom__client-switch',
+        })
+      .header__mobile-section
+        ul.mobile-panel
+          li.mobile-panel__item
+            a.mobile-panel__link(href="#")
+              +svg_icon(require("../images/svg/like.svg").default).icon.icon_like
+              span.mobile-panel__val.js-fav-val
+              span.mobile-panel__text Избранное
+          li.mobile-panel__item
+            a.mobile-panel__link(href="#")
+              +svg_icon(require("../images/svg/filter.svg").default).icon.icon_filter
+              span.mobile-panel__text Сохраненные фильтры
+          li.mobile-panel__item
+            a.mobile-panel__link(href="#")
+              +svg_icon(require("../images/svg/diff.svg").default).icon.icon_diff
+              span.mobile-panel__text Сравнения
+          li.mobile-panel__item
+            a.mobile-panel__link(href="#" title="Сравнение")
+              +svg_icon(require("../images/svg/notify.svg").default).icon.icon_notify
+              span.mobile-panel__text Мои уведомления
+      a.header__mobile-phone(href="tel:88122439999") 8 812 243 99 99
+

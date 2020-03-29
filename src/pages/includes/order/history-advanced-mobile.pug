@@ -1,0 +1,32 @@
+
+- var gradient_percents = (active_step_i > 2 )? 100 : active_step_i * 100 / 2;
+- var gradient_percents_second = (active_step_i < 3) ? 100 : 100 - (active_step_i - 3) * 100 / 2;
+.order-history_mobile
+  .order-history__steps
+    .order-history__steps-line.advanced(style={ background: `linear-gradient(to right, #FF2D23 ${gradient_percents}%, #8F95AC ${gradient_percents}%)`})
+
+    each step, i in steps.slice(0, 3)
+      +history_step({
+        step: step,
+        advanced: order.advanced,
+        steps_length: steps.length, 
+        i
+      })
+
+  .order-history__steps-line_bracket(class={ active: active_step_i >= 3})
+
+  .order-history__steps.second
+    .order-history__steps-line.advanced(style={ background: `linear-gradient(to right, #8F95AC ${gradient_percents_second}%, #FF2D23 ${gradient_percents_second}%)`})
+
+    if active_step_i >= 3
+      .order-history__advanced-hint
+        .order-history__advanced-hint__title
+          | Отправлена на авансирование
+        .order-history__advanced-hint__bracket
+    each step, i in steps.slice(3).reverse()
+      +history_step({
+        step: step,
+        advanced: order.advanced,
+        steps_length: steps.length, 
+        i: 5 - i
+      })

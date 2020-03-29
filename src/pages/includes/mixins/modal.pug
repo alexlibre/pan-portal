@@ -1,0 +1,21 @@
+include ./svg_icon
+mixin modal(data)
+  if !data.cover
+    .modal.js-modal(data-id= data.id class= data.classList)
+      .modal__shadow.js-modal-btn(data-id= data.id)
+      .modal__content
+        .modal__inner
+          .modal__close.js-modal-btn(data-id= data.id)
+            +svg_icon(require("../images/svg/x.svg").default).icon
+          if block
+            block
+
+  if data.cover
+    .modal.js-modal(data-id= data.id class= data.classList)
+      .modal__shadow
+      .modal__content
+        
+        .modal__inner
+          .modal__close-outer.js-modal-btn(data-id= data.id)
+          if block
+            block

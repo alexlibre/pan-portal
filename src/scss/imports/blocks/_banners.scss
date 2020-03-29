@@ -1,0 +1,106 @@
+.banners {
+  margin-top: auto;
+
+  &__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    @include grid-size(10);
+    @include grid-shift(1);
+
+    @include break-max($break-lg) {
+      @include grid-size(12);
+      @include grid-shift(0);
+    }
+
+    &-col {
+      flex-grow: 1;
+
+      & + & {
+        margin-left: 13px;
+      }
+    }
+  }
+
+  .banner-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: $color-white;
+    cursor: pointer;
+    overflow: hidden;
+
+    @include break-max($breakpoint-sm) {
+      align-items: flex-start;
+      flex-direction: column-reverse;
+    }
+
+    &__name {
+      font-size: 25px;
+      line-height: 28px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    &__icon {
+      transition: opacity $transition-default;
+      .icon {
+        width: 85px;
+        height: 85px;
+      }
+    }
+
+    &__external-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -50px;
+      opacity: 0;
+      z-index: -1;
+      margin: auto 0;
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+      background-color: rgba(black, 0.1);
+      transition: all $transition-default;
+
+      .icon {
+        fill: #fff;
+        stroke: none;
+      }
+    }
+
+    @include break-min($breakpoint-sm) {
+      &:hover {
+        .banner-card {
+          &__icon {
+            opacity: 0;
+          }
+
+          &__external-arrow {
+            right: 33px;
+            opacity: 1;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    @include break-max($breakpoint-sm) {
+      padding-bottom: 20px;
+
+      &__description {
+        padding-right: 20px;
+      }
+
+      &__icon {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

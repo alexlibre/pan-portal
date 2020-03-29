@@ -1,0 +1,10 @@
+mixin checkbox(data)
+  .checkbox(class= data.classList class= data.disabled? 'checkbox_disabled': '')
+    if data.label && data.reorder
+      label.checkbox__label(for= data.id)= data.label
+    .checkbox__box
+      input.checkbox__control(type="checkbox" id= data.id checked= data.checked name= data.name required= data.required class= data.controlClassList)
+      label.checkbox__input(for= data.id)
+      .checkbox__marker
+    if data.label && !data.reorder
+      label.checkbox__label(for= data.id)= data.label

@@ -1,0 +1,405 @@
+.card {
+  position: relative;
+  z-index: 1;
+  background-color: $color-white;
+  height: 700px;
+  text-decoration: none;
+  color: $color-brand-2;
+  display: block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    box-shadow: 0 2px 0 rgba(143, 149, 172, .4876);
+    transition: box-shadow .3s ease-in-out;
+    will-change: box-shadow;
+    background-color: $color-white;
+    z-index: -1;
+  }
+
+  &:hover {
+
+    &:after {
+      box-shadow: 0 2px 50px rgba(143, 149, 172, .4876);
+    }
+  }
+
+  @include break-max(1400px) {
+    height: 350px;
+  }
+
+  @include break-max($break-xs) {
+    height: 700px;
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 310px;
+    z-index: 5;
+
+    @include break-max($break-lg) {
+      height: 255px;
+    }
+
+    @include break-max(1400px) {
+      width: 520px;
+      height: 100%;
+    }
+
+
+
+    @include break-max($break-sm) {
+      width: 100%;
+      height: 310px;
+    }
+    @include break-max($break-md) {
+      @include grid-size(6, $grid-gutter-sm);
+      height: 100%;
+    }
+  }
+
+  &__pills {
+    z-index: 6;
+    @include unlist();
+    position: absolute;
+    top: 30px;
+    left: 32px;
+    right: 32px;
+    width: 100%;
+    display: flex;
+
+    @include break-max($break-md) {
+      top: 19px;
+      left: 19px;
+    }
+  }
+
+  &__pill {
+    background-color: $color-brand-3;
+    color: $color-white;
+    white-space: nowrap;
+    margin-right: 24px;
+    line-height: 30px;
+    padding: 0 12px;
+    border-radius: 4px;
+    transition: background-color $transition-default;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-brand-3-hover;
+    }
+  }
+
+  &__fav {
+    z-index: 6;
+    position: absolute;
+    right: 13px;
+    bottom: -16px;
+    width: 52px;
+    height: 52px;
+    background-color: #fff;
+
+    & .icon {
+      fill: $color-brand-3;
+      fill-opacity: 0.5;
+      transition: all $transition-default;
+      font-size: 20px;
+    }
+
+    &:hover {
+      & .icon {
+        fill-opacity: 0.8;
+      }
+    }
+
+    &.is-fav {
+
+      & .icon {
+        fill: $color-red;
+        fill-opacity: 1;
+      }
+    }
+
+    @include break-max(1400px) {
+      top: 14px;
+      bottom: auto;
+      right: 16px;
+    }
+
+    @include break-max($break-md) {
+      width: 38px;
+      height: 38px;
+      & .icon {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+
+    @include break-max(1400px) {
+      flex-direction: row;
+    }
+
+    @include break-max($break-xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    border-radius: 5px;
+    overflow: hidden;
+
+    & img {
+      min-width: 100%;
+      height: auto;
+      min-height: 100%;
+      // backface-visibility: hidden;
+
+      @include break-max($break-md) {
+        max-width: none;
+      }
+    }
+
+    @include break-max(1400px) {
+      width: 520px;
+      height: 100%;
+    }
+
+    @include break-max($break-md) {
+      @include grid-size(6, $grid-gutter-sm);
+      height: 100%;
+    }
+
+    @include break-max($break-xs) {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    &_distribute {
+
+      &_between {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__content {
+    padding: 40px 32px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include break-max(1400px) {
+      padding-top: 32px;
+    }
+  }
+
+  &__place {
+    max-width: 70%;
+  }
+
+  &__title {
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 700;
+  }
+
+  &__address {
+    line-height: 16px;
+    margin-top: 10px;
+  }
+
+  &__dates {
+    color: $color-red;
+    text-align: right;
+    line-height: 25px;
+  }
+
+  &__grid {
+    @include grid();
+    line-height: 25px;
+  }
+
+  &__company {
+    margin-top: 27px;
+    color: $color-brand-3;
+  }
+
+  &__variants {
+    margin-top: 10px;
+  }
+
+  &__left {
+    @include grid-col();
+    @include grid-size(8);
+
+    @include break-max($break-lg) {
+      @include grid-size(8, $grid-gutter-md);
+    }
+
+    @include break-max(1400px) {
+      @include grid-size(7, $grid-gutter-md);
+    }
+
+    @include break-max($break-md) {
+      @include grid-size(8, $grid-gutter-sm);
+    }
+  }
+
+  &__right {
+    @include grid-col();
+    @include grid-size(4);
+
+    @include break-max($break-lg) {
+      @include grid-size(4, $grid-gutter-md);
+    }
+
+    @include break-max(1400px) {
+      @include grid-size(5, $grid-gutter-md);
+    }
+
+    @include break-max($break-md) {
+      @include grid-size(4, $grid-gutter-sm);
+    }
+  }
+
+  &__left-inner {
+    @include grid();
+  }
+
+  &__left-part {
+    @include grid-col();
+    @include grid-size(6);
+
+    @include break-max($break-lg) {
+      @include grid-size(6, $grid-gutter-md);
+    }
+
+    @include break-max(1400px) {
+      @include grid-size(6, $grid-gutter-md);
+    }
+
+    @include break-max($break-md) {
+      @include grid-size(6, $grid-gutter-sm);
+    }
+
+    & span {
+      color: $color-brand-3;
+    }
+  }
+
+  &__routes {
+    @include unlist();
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+    color: $color-brand-3;
+  }
+
+  &__routes-item {
+    margin-right: 30px;
+    margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @include break-max($break-lg) {
+      margin-right: 0;
+    }
+  }
+
+  &__metro-color {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 6px;
+    margin-right: 10px;
+
+    &_1 {
+      background-color: $color-metro-1;
+    }
+
+    &_2 {
+      background-color: $color-metro-2;
+    }
+
+    &_3 {
+      background-color: $color-metro-3;
+    }
+
+    &_4 {
+      background-color: $color-metro-4;
+    }
+
+    &_5 {
+      background-color: $color-metro-5;
+    }
+  }
+
+  &__metro-station {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__route-type {
+
+    & .icon {
+      fill: $color-brand-3;
+    }
+
+    & .icon_auto {
+      font-size: 12px;
+      margin-right: 10px;
+    }
+
+    & .icon_pedestrian {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  }
+
+  &__options {
+    @include unlist();
+    display: flex;
+    margin-top: 27px;
+  }
+
+  &__option {
+    line-height: 30px;
+    background-color: $color-brand-opaque-10;
+    padding: 0 12px;
+    border-radius: 4px;
+    margin-right: 7px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color $transition-default;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $color-brand-opaque-20;
+    }
+  }
+}

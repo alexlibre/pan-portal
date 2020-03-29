@@ -1,0 +1,147 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @include break-max($break-md) {
+    flex-wrap: wrap;
+  }
+
+  &__control {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .icon {
+      stroke: $color-brand-3;
+      font-size: 12px;
+      transition: stroke $transition-default;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      z-index: -1;
+      border-radius: 4px;
+      background-color: $color-brand-opaque-10;
+      transition: background-color $transition-default;
+    }
+
+    &:hover {
+
+      & .icon {
+        stroke: $color-white;
+      }
+
+      &:after {
+        background-color: $color-brand-3;
+      }
+    }
+  }
+
+  &__prev {
+    margin-right: 10px;
+  }
+
+  &__next {
+    margin-left: 10px;
+  }
+
+  &__list {
+    @include unlist();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    color: $color-brand-1;
+    text-decoration: none;
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: color $transition-default;
+    position: relative;
+      z-index: 1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      z-index: -1;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: background-color $transition-default;
+    }
+
+    &.is-active {
+      color: $color-white;
+
+
+      &:after {
+        background-color: $color-red;
+      }
+    }
+
+    &:hover {
+      color: $color-white;
+
+      &:after {
+        background-color: $color-brand-3;
+      }
+    }
+  }
+
+  &__view-results {
+    right: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include break-max ($break-md) {
+      position: static;
+      flex: 1 0 100%;
+      margin-top: 21px;
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-label {
+      white-space: nowrap;
+      margin-left: 23px;
+    }
+
+    & .custom-select {
+      width: 72px;
+      min-width: 72px;
+
+      &__selected:after {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI3IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0zLjkgN0wwIC4yNWg3LjhMMy45IDd6IiBmaWxsPSIjRkYyRDIzIi8+PC9zdmc+);
+
+      }
+    }
+  }
+}

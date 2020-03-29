@@ -1,0 +1,31 @@
+.section__another {
+  margin-top: 80px;
+  padding: 60px 0 70px;
+
+  @include break-max($breakpoint-md) {
+    padding: 50px 0 70px;
+  }
+  @include break-max($breakpoint-md) {
+    padding: 40px 0 70px;
+  }
+
+  & .block__title-nav {
+    margin-left: 20px;
+  }
+
+  & .block__title-navs {
+    @include break-max($breakpoint-md) {
+      height: 45px;
+    }
+  }
+}
+
+.complex__blocks {
+  margin-top: 55px;
+  @include break-max($breakpoint-md) {
+    margin-top: 40px;
+  }
+  @include break-max($breakpoint-sm) {
+    margin-top: 35px;
+  }
+}

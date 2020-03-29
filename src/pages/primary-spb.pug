@@ -1,0 +1,40 @@
+//- index.pug
+extends includes/layout
+include includes/mixins/svg_icon
+include includes/mixins/select
+
+
+block title
+  | Index
+block content
+  section.section.section_view_white
+  include includes/blocks/index-search
+
+  section.section.section_view_gray.cards
+    .wrapper
+      .section__grid.cards__header
+        .section__grid-col.section__heading
+          h2.section__title Найдено 60799 квартир в 288 ЖК
+        .section__grid-col.cards__controls
+          .cards__sort
+            +select({
+              id: 'select1',
+              label: 'Сортировать',
+              options: [{inner:'По цене'}, {inner:'По количеству'}, {inner:'По удалённости'}],
+              classList: 'custom-select_width_available'
+            })
+          +button({
+            classList: 'button_view_outline-with-icon-invert js-show-map'
+          })
+            +svg_icon(require("../images/svg/marker.svg").default).icon.icon_marker
+            span Показать на карте
+          +button({
+            classList: 'button_view_outline-with-icon-invert js-show-list'
+          })
+            +svg_icon(require("../images/svg/list.svg").default).icon.icon_list
+            span Показать список
+    .section__cards
+      include includes/blocks/cards
+
+    .section__map
+      include includes/blocks/map

@@ -1,0 +1,46 @@
+include ../mixins/card
+include ../mixins/select
+include ../mixins/button
+include ../mixins/map-list
+
+.map
+  .map__list
+    .wrapper.wrapper_fluid
+        .cards__map-cards
+          +map-list({
+            list: [{
+              id: 1,
+              title: 'Северный вальс',
+              address: 'Всеволожск г., Дорога Жизни ш.',
+              price: 'от 3,5 млн. р.',
+              pills: ['Комиссия 2%'],
+              builder: 'Застройщик: Петрострой',
+              buildings: '6 корпусов',
+              dates: '3 кв. 2019 — 4 кв. 2020',
+              options: ['Аппартаменты', 'Переуступки застр.']
+            },
+            {
+              id: 2,
+              title: 'Северный вальс',
+              address: 'Всеволожск г., Дорога Жизни ш.',
+              price: 'от 3,5 млн. р.',
+              pills: ['Комиссия 2%'],
+              builder: 'Застройщик: Петрострой',
+              dates: '3 кв. 2019 — 4 кв. 2020',
+              buildings: '6 корпусов',
+              options: ['Аппартаменты', 'Переуступки застр.']
+            },
+            {
+              id: 3,
+              title: 'Jaanila Драйв',
+              address: 'Всеволожский р-н, Янино-1 д., Колтушское ш.',
+              price: 'от 3,5 млн. р.',
+              pills: ['Комиссия 2%'],
+              builder: 'Застройщик: Петрострой',
+              dates: '3 кв. 2019 — 4 кв. 2020',
+              buildings: '6 корпусов',
+              options: ['Аппартаменты', 'Переуступки застр.']
+            }]
+          })
+  .map__container
+    #myMap

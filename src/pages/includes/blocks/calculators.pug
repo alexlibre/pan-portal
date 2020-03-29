@@ -1,0 +1,113 @@
+include ../mixins/calculator
+
+-
+  var calcs = [
+    {
+      id: 'mortgage',
+      name: 'Калькулятор ипотеки',
+      label: 'Ваш ежемесячный платеж составит *',
+      inputs: [
+        {
+          name: 'price',
+          start: 1000000,
+          min:  1000000,
+          max: 10000000,
+          step: 50000,
+          postfix: ' р.',
+          isPrice: true,
+          label: 'Стоимость квартиры'
+        },
+        {
+          name: 'period',
+          start: 3,
+          min:  1,
+          max: 30,
+          step: 1,
+          postfix: '',
+          isPrice: false,
+          label: 'Срок кредита, лет'
+        },
+        {
+          name: 'prepay',
+          start: 300000,
+          min:  100000,
+          max: 5000000,
+          step: 50000,
+          postfix: ' р.',
+          isPrice: true,
+          label: 'Первоначальный взнос'
+        },
+        {
+          name: 'percent',
+          start: 10,
+          min:  5,
+          max: 40,
+          step: 0.1,
+          postfix: '',
+          isPrice: false,
+          label: 'Процентная ставка, %'
+        },
+      ]
+    },
+    {
+      id: 'installment',
+      name: 'Калькулятор рассрочки',
+      label: 'Итоговая стоимость квартиры со скидками',
+      inputs: [
+        {
+          name: 'prepay',
+          start: 300000,
+          min:  100000,
+          max: 5000000,
+          step: 50000,
+          postfix: ' р.',
+          isPrice: true,
+          label: 'Первоначальный взнос'
+        },
+        {
+          name: 'period',
+          start: 3,
+          min:  1,
+          max: 30,
+          step: 1,
+          postfix: '',
+          isPrice: false,
+          label: 'Скидка для сотрудников, %'
+        },
+        {
+          name: 'price',
+          start: 1000000,
+          min:  1000000,
+          max: 10000000,
+          step: 50000,
+          postfix: ' р.',
+          isPrice: true,
+          label: 'Скидка иногородним, рублей'
+        },
+        {
+          name: 'percent',
+          start: 10,
+          min:  5,
+          max: 40,
+          step: 0.1,
+          postfix: '',
+          isPrice: false,
+          label: 'Повторная покупка, руб. / м²'
+        },
+      ]
+    }
+  ];
+
+section.section.section_view_white
+  .wrapper
+    .wrapper__center
+      .calculators.light__calc
+        .calculators__nav
+          ul.calculators__navs
+            each calc, i in calcs
+              li.calculators__navs-item(class= { 'active': i == 0 } data-tab= calc.id)
+                | #{calc.name}
+        .calculators__container
+          each calc, i in calcs
+            .calculators__tab(class= { 'active': i == 0 } id=`calc-${calc.id}`)
+              +calculator(calc)

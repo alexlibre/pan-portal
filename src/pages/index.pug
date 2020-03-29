@@ -1,0 +1,29 @@
+//- index.pug
+extends includes/layout-no-footer
+include includes/mixins/switch
+include includes/mixins/svg_icon
+include includes/mixins/select
+
+
+block title
+  | Index
+block content
+
+  .home#theme-container.home_dark
+    +switch({
+      id: 'theme-switcher',
+      classList: 'wrapper theme-switcher',
+      label: 'На светлом',
+      checked: false,
+      name: 'home',
+      reorder: true
+    })
+    .home__planets_dark
+      +svg_icon(require('../images/svg/saturn_dark.svg').default).icon_saturn
+      +svg_icon(require('../images/svg/jupiter_dark.svg').default).icon_jupiter
+    .home__planets_light
+      +svg_icon(require('../images/svg/saturn_light.svg').default).icon_saturn
+      +svg_icon(require('../images/svg/jupiter_light.svg').default).icon_jupiter
+    
+    include includes/blocks/index-search
+    include includes/blocks/banners

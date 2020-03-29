@@ -1,0 +1,5 @@
+mixin info(data)
+  div.info(class= data.classList)
+    +svg_icon(require("../images/svg/info.svg").default).icon.icon_info
+    div.info__popup
+      block

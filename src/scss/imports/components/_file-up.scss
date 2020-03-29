@@ -1,0 +1,80 @@
+.file-up {
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    flex: 0 0 calc(50% - 15px);
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 40px;
+  }
+
+  &__icon {
+    font-size: 22px;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-overflow: ellipsis;
+
+    &:after {
+      // content: '';
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 20px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #fff;
+    }
+  }
+
+  &__controls {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__edit {
+    margin-left: 10px;
+    flex-shrink: 0;
+
+    & .icon {
+      font-size: 12px;
+    }
+  }
+
+  &__del{
+
+    & .icon {
+      font-size: 10px;
+      flex-shrink: 0;
+      stroke: $color-brand-3;
+    }
+  }
+
+  &__input {
+    flex: 0 0 calc(50% - 15px);
+    margin-left: 30px;
+    height: 40px;
+
+    & .input__control {
+      height: 100%;
+    }
+
+    & button {
+      height: 40px;
+      width: 40px;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,851 @@
+include ../mixins/flats_header
+section.section.section__complex-results
+  #anchor-flats
+  .wrapper
+    .complex__appartments-navigation
+      .complex__tabs
+        .complex__tabs-row(id="flatsSlider")
+          .complex__tabs-item(data-tab="0").active
+            .complex__tabs-value= "1 очередь – III кв. 2020"
+            .complex__tabs-desc= "Ключи — IV кв. 2030"
+          .complex__tabs-item(data-tab="1")
+            .complex__tabs-value= "1 очередь – III кв. 2020"
+            .complex__tabs-desc= "Ключи — IV кв. 2030"
+          .complex__tabs-item(data-tab="2")
+            .complex__tabs-value= "1 очередь – III кв. 2020"
+            .complex__tabs-desc= "Ключи — IV кв. 2030"
+          .complex__tabs-item(data-tab="3")
+            .complex__tabs-value= "1 очередь – III кв. 2024"
+            .complex__tabs-desc= "Ключи — IV кв. 2030"    
+          .complex__tabs-item(data-tab="4")
+            .complex__tabs-value= "1 очередь – III кв. 2023"
+            .complex__tabs-desc= "Ключи — IV кв. 2030"
+          .complex__tabs-item(data-tab="5")
+            .complex__tabs-value= "1 очередь – III кв. 2022"
+            .complex__tabs-desc= "Ключи — IV кв. 2030"       
+      .complex__move-nav
+        ul.tabs__navs(id="flatsSlider-nav")
+          li.tabs__navs-item.prev
+            +svg_icon(require("../images/svg/icon-left_arrow.svg").default).icon.icon-dark_stroke  
+          li.tabs__navs-item.next
+            +svg_icon(require("../images/svg/icon-right_arrow.svg").default).icon.icon-dark_stroke
+        .complex__views
+          ul.complex__view
+            li.complex__view-item.view__cards(data-view="cards")
+              +svg_icon(require("../images/svg/view_cards.svg").default).view__icon
+            li.complex__view-item.view__table(data-view="table").active
+              +svg_icon(require("../images/svg/view_rows.svg").default).view__icon
+section.section.grey
+  .wrapper
+    .complex__appartments.view-table
+      .complex__appartments-tab(id="complex-flats-0").active
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: 'Студия',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000',
+              info: 'Показать все студии',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7005
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7006
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7007
+              })
+          .complex__appartments-table
+            table.table.complex__table(style="width: 100%")
+              thead
+                tr
+                  th
+                  th ID
+                  th 
+                    .sorting-th
+                      | Корп.
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Эт.
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | № кв.
+                      .sorting-arrows
+                  th.nowrap  
+                    .sorting-th
+                      | S общ., м
+                      sup 2
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | S кух., м
+                      sup 2
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Отделка
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Цена 100%
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Цена базовая
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Статус
+                      .sorting-arrows
+              tbody
+                each el in [0,1,2,3,4]
+                  tr
+                    td
+                    td 232456
+                    td 2
+                    td 3
+                    td 3
+                    td 36,6
+                    td 4,5
+                    td Чистовая
+                    td.nowrap 21 600 000 р.
+                    td.nowrap 21 600 000 р.
+                    td.nowrap 
+                      .complex__table-status
+                        | Продажа
+                  tr
+                    td
+                    td 232456
+                    td 2
+                    td 3
+                    td 3
+                    td 36,6
+                    td 4,5
+                    td Чистовая
+                    td.nowrap 21 600 000 р.
+                    td.nowrap 21 600 000 р.
+                    td.nowrap 
+                      .complex__table-status
+                        | Бронь до 21.01
+                        .info
+                          button.button_view_round.alarm-button
+                            +svg_icon(require('../images/svg/alarm.svg').default).icon.icon_alarm
+                          .info__popup.complex__table-status_alarm
+                            | Вы можете получить уведомление о снятии брони на эту квартиру
+                            button.button_view_default
+                              | Уведомить
+            
+            if true
+              .complex__table-more
+                .complex__table-more_button
+                  | Показать еще
+                  +svg_icon(require('../images/svg/arrow_bottom.svg').default).icon.icon_arrow-bottom
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '1 к.кв.',
+              count: '1800 квартир',
+              square: 'S от 120 до 232 м²',
+              price: 'Цена от 15 000 000 р. до 29 500 000 р.',
+              priceMin: '15 000 000',
+              priceMax: '29 500 000',
+              info: 'Показать все 1к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7008
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7009
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7010
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '2 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000',
+              info: 'Показать все 2 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7011
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7012
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7013
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '7 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000',
+              info: 'Показать все 7 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7014
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7015
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7016
+              })
+
+      .complex__appartments-tab(id="complex-flats-1")
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: 'Студия',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000',
+              info: 'Показать все студии',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7005
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7006
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7007
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '1 к.кв.',
+              count: '1800 квартир',
+              square: 'S от 120 до 232 м²',
+              price: 'Цена от 15 000 000 р. до 29 500 000 р.',
+              priceMin: '15 000 000',
+              priceMax: '29 500 000',
+              info: 'Показать все 1к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7008
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7009
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7010
+              })
+
+      .complex__appartments-tab(id="complex-flats-2")
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: 'Студия',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000',
+              info: 'Показать все студии',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7005
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7006
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7007
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '1 к.кв.',
+              count: '1800 квартир',
+              square: 'S от 120 до 232 м²',
+              price: 'Цена от 15 000 000 р. до 29 500 000 р.',
+              priceMin: '15 000 000',
+              priceMax: '29 500 000'
+,              info: 'Показать все 1к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7008
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7009
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7010
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '2 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 2 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7011
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7012
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7013
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '7 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 7 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7014
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7015
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7016
+              })
+
+      .complex__appartments-tab(id="complex-flats-3")
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '1 к.кв.',
+              count: '1800 квартир',
+              square: 'S от 120 до 232 м²',
+              price: 'Цена от 15 000 000 р. до 29 500 000 р.',
+              priceMin: '15 000 000',
+              priceMax: '29 500 000'
+,              info: 'Показать все 1к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7008
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7009
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7010
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '2 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 2 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7011
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '7 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 7 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7014
+              })
+
+      .complex__appartments-tab(id="complex-flats-4")
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: 'Студия',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все студии',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7005
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7006
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7007
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '1 к.кв.',
+              count: '1800 квартир',
+              square: 'S от 120 до 232 м²',
+              price: 'Цена от 15 000 000 р. до 29 500 000 р.',
+              priceMin: '15 000 000',
+              priceMax: '29 500 000'
+,              info: 'Показать все 1к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7008
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7009
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7010
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '2 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 2 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7011
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7012
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7013
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '7 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 7 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7014
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7015
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7016
+              })
+
+      .complex__appartments-tab(id="complex-flats-5")
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: 'Студия',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все студии',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7005
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7006
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7007
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '1 к.кв.',
+              count: '1800 квартир',
+              square: 'S от 120 до 232 м²',
+              price: 'Цена от 15 000 000 р. до 29 500 000 р.',
+              priceMin: '15 000 000',
+              priceMax: '29 500 000'
+,              info: 'Показать все 1к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7008
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7009
+              })
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7010
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '2 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000'
+,              info: 'Показать все 2 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7011
+              })
+        .complex__appartments-row
+          .complex__appartments-header
+            +flats_header({
+              rooms: '7 к.кв.',
+              count: '800 квартир',
+              square: 'S от 24 до 32 м²',
+              price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+              priceMin: '1 000 000',
+              priceMax: '2 500 000',
+              info: 'Показать все 7 к.кв.',
+            })
+          .complex__appartments-results
+            .complex__appartments-cards 
+              +flats_card({
+                rooms: 'Студия',
+                count: '800 квартир',
+                square: 'S от 24 до 32 м²',
+                price: 'Цена от 1 000 000 р. до 2 500 000 р.',
+                info: 'Показать все студии',
+                id: 7014
+              })

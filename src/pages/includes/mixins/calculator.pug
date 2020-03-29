@@ -1,0 +1,26 @@
+mixin calculator(data)
+  .calculator
+    .calculator__grid
+      .calculator__form
+        if data
+          each item in data.inputs
+            .calculator__item.slider-input(
+                        data-start= item.start
+                        data-min= item.min
+                        data-max= item.max
+                        data-step= item.step
+                        data-postfix= item.postfix
+                        data-is-price= item.isPrice
+                      )
+              label(for= `${data.id}-${item.name}`)= item.label
+              .calculator__item-wrapper
+                input.slider-input__control(type="text" 
+                      class= { "price-input": item.isPrice }
+                      id= `${data.id}-${item.name}`
+                      name= item.name)
+              .slider__input
+      .calculator__result 
+        .calculator__result-info= data.label
+        .calculator__result-value 56 000 р.
+        .calculator__result-btn
+          button.button.button_view_default Заявка на расчет

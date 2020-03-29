@@ -1,0 +1,2262 @@
+include ../mixins/switch
+include ../mixins/button
+include ../mixins/form-drop
+include ../mixins/info
+include ../mixins/pagination
+include ../mixins/checkbox
+include ../mixins/checkbox-radio-btn
+include ../mixins/modal
+
+section.section.index-search.index-search_dark
+  .wrapper
+    .section__grid
+      .section__grid-col.index-search__header
+        h1.h2 Более 60&nbsp;790 квартир в&nbsp;288&nbsp;ЖК Санкт&#8209;Петербурга
+      .section__grid-col.index-search__filter.js-index-filter
+        form.form
+          .index-search__filter-body
+            //- .index-search__filter-top
+            //-   .form__row
+            //-     .form__item.form__item_2x.form__item_main
+            //-       .index-search__search
+            //-         +input({
+            //-           type: 'text',
+            //-           placeholder: 'Поиск по 1 234 вариантам жилья',
+            //-           id: 'index-search',
+            //-           classList: 'index-search__search-input',
+            //-           autocomplete: 'off'
+            //-         })
+            //-           +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+            //-           .index-search__tooltip
+            //-             button.button.button_view_outline-small Исключить
+            //-         +info()
+            //-           p Начинайте вводить параметры фильтра и&nbsp;выбирайте из&nbsp;предложенного списка. Вы&nbsp;также можете любой запрос добавить в&nbsp;исключения
+            .index-search__filter-top
+              .form__row
+                .form__item.form__item_2x.form__item_main
+                  .index-search__search
+                    +input({
+                      type: 'text',
+                      placeholder: 'Поиск по 1 234 вариантам жилья',
+                      id: 'index-search',
+                      classList: 'index-search__search-input',
+                      autocomplete: 'off'
+                    })
+                      +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+                      .index-search__tooltip
+                        button.button.button_view_outline-small Исключить
+                    +info({})
+                      p Начинайте вводить параметры фильтра и&nbsp;выбирайте из&nbsp;предложенного списка. Вы&nbsp;также можете любой запрос добавить в&nbsp;исключения
+
+
+                +form-drop({
+                  name: 'Название ЖК',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__filter
+                      +input({
+                        type: 'text',
+                        placeholder: 'Введите название ЖК',
+                        classList: 'input_type_default input_width_available js-filter-list-input'
+                      })
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-1',
+                            label: 'ЖК Северный вальс',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-2',
+                            label: 'ЖК Дом с фонтаном',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-3',
+                            label: 'ЖК Старт',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-4',
+                            label: 'ЖК Чистый ручей',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-5',
+                            label: 'ЖК Прибрежный',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-6',
+                            label: 'ЖК Мурино Парк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-7',
+                            label: 'ЖК Шоколад',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-8',
+                            label: 'ЖК Парковый',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-9',
+                            label: 'ЖК Ломоносов',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-10',
+                            label: 'ЖК Мой Мир',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-11',
+                            label: 'ЖК Браво',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-12',
+                            label: 'ЖК Ювента',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-13',
+                            label: 'ЖК Экспоград 3',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-14',
+                            label: 'ЖК Материк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-15',
+                            label: 'ЖК Lampo',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-16',
+                            label: 'ЖК Ветер Перемен',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-17',
+                            label: 'ЖК Первомайский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'complex-18',
+                            label: 'ЖК Про Молодость',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+
+                +form-drop({
+                  name: 'Район',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    button.button.button_with_icon.filter__dist-btn.js-modal-btn(data-id="dist-map")
+                      +svg_icon(require("../images/svg/place.svg").default).icon.icon_place
+                      span Карта районов
+                    .filter__filter
+                      +input({
+                        type: 'text',
+                        placeholder: 'Введите название района',
+                        classList: 'input_type_default input_width_available js-filter-list-input'
+                      })
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-0',
+                            label: 'Адмиралтейский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-1',
+                            label: 'Василеостровский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-2',
+                            label: 'Выборгский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-3',
+                            label: 'Калининский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-4',
+                            label: 'Кировский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-5',
+                            label: 'Колпинский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-6',
+                            label: 'Красногвардейский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-7',
+                            label: 'Красносельский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-8',
+                            label: 'Кронштадтский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-9',
+                            label: 'Курортный',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-10',
+                            label: 'Московский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-11',
+                            label: 'Невский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-12',
+                            label: 'Петроградский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-13',
+                            label: 'Петродворцовый',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-14',
+                            label: 'Приморский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-15',
+                            label: 'Пушкинский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-16',
+                            label: 'Фрунзенский',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'dist-17',
+                            label: 'Центральный',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Кол-во комнат',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-1',
+                            label: 'Студия',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-2',
+                            label: '1 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-3',
+                            label: '2 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-4',
+                            label: '2 ккв (Евро)',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-5',
+                            label: '3 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-6',
+                            label: '3 ккв (Евро)',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-7',
+                            label: '4 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-8',
+                            label: '4 ккв (Евро)',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-9',
+                            label: '5 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-10',
+                            label: '5 ккв (Евро)',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-11',
+                            label: '7 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-12',
+                            label: '8 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-13',
+                            label: '9 ккв',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'rooms-14',
+                            label: 'Кладовка',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+
+                +form-drop({
+                  name: 'Срок сдачи',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__checks
+                      .checkbox-group
+                        .checkbox-group__item.checkbox-group__item_single.js-filter
+                          +checkbox({
+                            id: 'deadline-over',
+                            label: 'Сданные дома',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                    .filter__cols
+                      .filter__col
+                        .filter__filter
+                          +input({
+                            type: 'text',
+                            placeholder: 'Срок сдачи, от',
+                            classList: 'input_type_default input_width_available',
+                            disabled: true
+                          })
+                        .filter__checks(data-simplebar="true")
+                          .checkbox-group
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-1',
+                                name: 'deadline-from',
+                                label: 'II Квартал 2020',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-2',
+                                name: 'deadline-from',
+                                label: 'III Квартал 2020',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-4',
+                                name: 'deadline-from',
+                                label: 'IV Квартал 2020',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-5',
+                                name: 'deadline-from',
+                                label: 'I Квартал 2021',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-6',
+                                name: 'deadline-from',
+                                label: 'II Квартал 2021',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-7',
+                                name: 'deadline-from',
+                                label: 'III Квартал 2021',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-from-8',
+                                name: 'deadline-from',
+                                label: 'IV Квартал 2021',
+                                title: 'Сдача от',
+                                controlClassList: 'js-filter-by'
+                              })
+                      .filter__col
+                        .filter__filter
+                          +input({
+                            type: 'text',
+                            placeholder: 'Срок сдачи, до',
+                            classList: 'input_type_default input_width_available js-filter-list-input'
+                          })
+                        .filter__checks(data-simplebar="true")
+                          .checkbox-group
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-1',
+                                name: 'deadline-to',
+                                label: 'II Квартал 2020',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-2',
+                                name: 'deadline-to',
+                                label: 'III Квартал 2020',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-4',
+                                name: 'deadline-to',
+                                label: 'IV Квартал 2020',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-5',
+                                name: 'deadline-to',
+                                label: 'I Квартал 2021',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-6',
+                                name: 'deadline-to',
+                                label: 'II Квартал 2021',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-7',
+                                name: 'deadline-to',
+                                label: 'III Квартал 2021',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'deadline-to-8',
+                                name: 'deadline-to',
+                                label: 'IV Квартал 2021',
+                                title: 'Сдача до',
+                                controlClassList: 'js-filter-by'
+                              })
+
+                button.button.button_type_reveal-filter
+                  span.visible_mobile Фильтры
+                  span.visible_note Развернуть фильтр
+            .index-search__filter-main
+              .form__row
+                +form-drop({
+                  name: 'Цена',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    //- .filter__range
+                    //-   .rangeable_price
+                    //-   .rangeable-labels
+                    .filter__cols
+                      .filter__col
+                        .filter__filter.js-filter
+                          +input({
+                            id: 'price-from',
+                            type: 'text',
+                            placeholder: 'от',
+                            title: 'Цена от',
+                            classList: 'input_type_default input_width_available',
+                            controlClassList: 'input_price_1 js-filter-by'
+                          })
+                        .filter__checks(data-simplebar="true")
+                          .checkbox-group
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-from-1',
+                                name: 'price-from',
+                                label: '500 000',
+                                title: 'Цена от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-from-2',
+                                name: 'price-from',
+                                label: '1 000 000',
+                                title: 'Цена от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-from-3',
+                                name: 'price-from',
+                                label: '2 000 000',
+                                title: 'Цена от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-from-4',
+                                name: 'price-from',
+                                label: '3 000 000',
+                                title: 'Цена от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-from-5',
+                                name: 'price-from',
+                                label: '4 000 000',
+                                title: 'Цена от',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-from-6',
+                                name: 'price-from',
+                                label: '5 000 000',
+                                title: 'Цена от',
+                                controlClassList: 'js-filter-by'
+                              })
+                      .filter__col
+                        .filter__filter.js-filter
+                          +input({
+                            id: 'price-to',
+                            type: 'text',
+                            classList: 'input_type_default input_width_available',
+                            placeholder: 'до',
+                            title: 'Цена до',
+                            controlClassList: 'input_price_2 js-filter-by'
+                          })
+                        .filter__checks(data-simplebar="true")
+                          .checkbox-group
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-to-1',
+                                name: 'price-to',
+                                label: '1 000 000',
+                                title: 'Цена до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-to-2',
+                                name: 'price-to',
+                                label: '2 000 000',
+                                title: 'Цена до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-to-3',
+                                name: 'price-to',
+                                label: '3 000 000',
+                                title: 'Цена до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-to-4',
+                                name: 'price-to',
+                                label: '4 000 000',
+                                title: 'Цена до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-to-5',
+                                name: 'price-to',
+                                label: '5 000 000',
+                                title: 'Цена до',
+                                controlClassList: 'js-filter-by'
+                              })
+                            .checkbox-group__item.js-filter
+                              +checkbox-radio-btn({
+                                id: 'price-to-6',
+                                name: 'price-to',
+                                label: '6 000 000',
+                                title: 'Цена до',
+                                controlClassList: 'js-filter-by'
+                              })
+                +form-drop({
+                  name: 'Застройщик',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__filter
+                      +input({
+                        type: 'text',
+                        placeholder: 'Введите название застройщика',
+                        classList: 'input_type_default input_width_available js-filter-list-input'
+                      })
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-1',
+                            label: 'AAG',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-2',
+                            label: 'Bonava',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-3',
+                            label: 'E3 Group',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-4',
+                            label: 'Gatchina Gardens',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-5',
+                            label: 'LEGENDA Intelligent Development',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-6',
+                            label: 'NordEst',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-7',
+                            label: 'Plaza Lotus Group',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-8',
+                            label: 'RBI',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-9',
+                            label: 'SetlCity',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-10',
+                            label: 'Аквилон-Инвест',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-11',
+                            label: 'Андромеда',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-12',
+                            label: 'Арсенал-Недвижимость',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-13',
+                            label: 'Балтийская жемчужина',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-14',
+                            label: 'Вита',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-15',
+                            label: 'Возрождение',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-16',
+                            label: 'Газпромбанкинвест',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-17',
+                            label: 'Галс',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-18',
+                            label: 'Евроинвест девелопмент',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-19',
+                            label: 'Еврострой',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-20',
+                            label: 'Запстрой',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-21',
+                            label: 'Инвестторг',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-22',
+                            label: 'ИнтерГрупп',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-23',
+                            label: 'Капстрой',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-24',
+                            label: 'КВС',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-25',
+                            label: 'Конкорд Менеджмент и Консалтинг',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-26',
+                            label: 'Коннолахтинский 55',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-27',
+                            label: 'Красная стрела',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-28',
+                            label: 'Л1',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-29',
+                            label: 'ЛенРусСтрой',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-30',
+                            label: 'ЛенСпецСМУ',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-31',
+                            label: 'ЛенСтройТрест',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-32',
+                            label: 'Леонтьевский мыс',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-33',
+                            label: 'Лидер',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-34',
+                            label: 'Лидер Групп',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-35',
+                            label: 'ЛСР.Недвижимость - Северо-Запад',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-36',
+                            label: 'Мегалит',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-37',
+                            label: 'Мегалит - Охта Групп',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-38',
+                            label: 'МирЛэнд Девелопмент',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-39',
+                            label: 'Новоселье',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-40',
+                            label: 'НСК',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-41',
+                            label: 'Нью Хаус',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-42',
+                            label: 'Ойкумена',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-43',
+                            label: 'Отделстрой',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-44',
+                            label: 'ПАТРИОТ-Нева',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-45',
+                            label: 'Петергофское',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-46',
+                            label: 'Петровский Альянс',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-47',
+                            label: 'Петрополь',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-48',
+                            label: 'Петрострой',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-49',
+                            label: 'Пик',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-50',
+                            label: 'Пионер',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-51',
+                            label: 'Питер',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-52',
+                            label: 'Полис Групп',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-53',
+                            label: 'Прок',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-54',
+                            label: 'Проспект Кима, 19',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-55',
+                            label: 'ПСК',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-56',
+                            label: 'РосСтройИнвест',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-57',
+                            label: 'РС-Строй',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-58',
+                            label: 'Русская Сказка',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-59',
+                            label: 'Садко-Сити',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-60',
+                            label: 'Самолет ЛО',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-61',
+                            label: 'Северный Город',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-62',
+                            label: 'СПб Реновация',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-63',
+                            label: 'Спутник',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-64',
+                            label: 'Строительный трест',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-65',
+                            label: 'ТАЙМС',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-66',
+                            label: 'ТЕМП',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-67',
+                            label: 'Терминал-Ресурс',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-68',
+                            label: 'УК Теорема',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-69',
+                            label: 'Форвард Девелопмент',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-70',
+                            label: 'ФСК Лидер Северо-Запад',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'builder-71',
+                            label: 'ЦДС',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+
+                +form-drop({
+                  name: 'Отделка',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__checks
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'make-1',
+                            label: 'Без отделки',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'make-2',
+                            label: 'Подчистовая',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'make-3',
+                            label: 'Чистовая',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Площадь',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__fields
+                      .filter__field.js-filter
+                        +input({
+                          id: 'square-1',
+                          type: 'text',
+                          placeholder: 'S кухни от',
+                          title: 'S кухни от',
+                          classList: 'input_type_default input_width_available',
+                          controlClassList: 'js-filter-by'
+                        })
+                      .filter__field.js-filter
+                        +input({
+                          id: 'square-2',
+                          type: 'text',
+                          placeholder: 'S кухни до',
+                          title: 'S кухни до',
+                          classList: 'input_type_default input_width_available',
+                          controlClassList: 'js-filter-by'
+                        })
+                    .filter__fields
+                      .filter__field.js-filter
+                        +input({
+                          id: 'square-3',
+                          type: 'text',
+                          placeholder: 'S общая от',
+                          title: 'S общая от',
+                          classList: 'input_type_default input_width_available',
+                          controlClassList: 'js-filter-by'
+                        })
+                      .filter__field.js-filter
+                        +input({
+                          id: 'square-4',
+                          type: 'text',
+                          placeholder: 'S общая до',
+                          title: 'S общая до',
+                          classList: 'input_type_default input_width_available',
+                          controlClassList: 'js-filter-by'
+                        })
+
+                +form-drop({
+                  name: 'Метро',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__filter
+                      +input({
+                        type: 'text',
+                        placeholder: 'Поиск станции',
+                        classList: 'input_type_default input_width_available js-filter-list-input'
+                      })
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-0',
+                            label: 'Автово',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-1',
+                            label: 'Адмиралтейская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-2',
+                            label: 'Академическая',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-3',
+                            label: 'Балтийская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-4',
+                            label: 'Бухарестская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-5',
+                            label: 'Василеостровская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-6',
+                            label: 'Владимирская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-7',
+                            label: 'Волковская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-8',
+                            label: 'Выборгская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-9',
+                            label: 'Горьковская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-10',
+                            label: 'Гостиный двор',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-11',
+                            label: 'Гражданский проспект',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-12',
+                            label: 'Девяткино',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-13',
+                            label: 'Достоевская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-14',
+                            label: 'Елизаровская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-15',
+                            label: 'Звёздная',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-16',
+                            label: 'Звенигородская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-17',
+                            label: 'Кировский завод',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-18',
+                            label: 'Комендантский проспект',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-19',
+                            label: 'Крестовский остров',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-20',
+                            label: 'Купчино',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-21',
+                            label: 'Ладожская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-22',
+                            label: 'Ленинский проспект',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-23',
+                            label: 'Лесная',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-24',
+                            label: 'Лиговский проспект',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-25',
+                            label: 'Ломоносовская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-26',
+                            label: 'Маяковская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-27',
+                            label: 'Международная',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-28',
+                            label: 'Московская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-29',
+                            label: 'Московские ворота',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-30',
+                            label: 'Нарвская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-31',
+                            label: 'Невский проспект',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-32',
+                            label: 'Новочеркасская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-33',
+                            label: 'Обводный канал',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-34',
+                            label: 'Обухово',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-35',
+                            label: 'Озерки',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-36',
+                            label: 'Парк Победы',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-37',
+                            label: 'Парнас',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-38',
+                            label: 'Петроградская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-39',
+                            label: 'Пионерская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-40',
+                            label: 'Площадь Александра Невского 1',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-41',
+                            label: 'Площадь Александра Невского 2',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-42',
+                            label: 'Площадь Восстания',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-43',
+                            label: 'Площадь Ленина',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-44',
+                            label: 'Площадь Мужества',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-45',
+                            label: 'Политехническая',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-46',
+                            label: 'Приморская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-47',
+                            label: 'Пролетарская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-48',
+                            label: 'Проспект Большевиков',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-49',
+                            label: 'Проспект Ветеранов',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-50',
+                            label: 'Проспект Просвещения',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-51',
+                            label: 'Пушкинская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-52',
+                            label: 'Рыбацкое',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-53',
+                            label: 'Садовая',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-54',
+                            label: 'Сенная площадь',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-55',
+                            label: 'Спасская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-56',
+                            label: 'Спортивная',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-57',
+                            label: 'Старая Деревня',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-58',
+                            label: 'Технологический институт 1',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-59',
+                            label: 'Технологический институт 2',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-60',
+                            label: 'Удельная',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-61',
+                            label: 'Улица Дыбенко',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-62',
+                            label: 'Фрунзенская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-63',
+                            label: 'Чёрная речка',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-64',
+                            label: 'Чернышевская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-65',
+                            label: 'Чкаловская',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'metro-66',
+                            label: 'Электросила',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Этажность',
+                  classList: 'js-filter-group'
+                })
+                  .filter
+                    .filter__fields
+                      .filter__field.js-filter
+                        +input({
+                          id: 'floors-1',
+                          type: 'text',
+                          placeholder: 'от',
+                          title: 'Этаж от',
+                          classList: 'input_type_default input_width_available',
+                          controlClassList: 'js-filter-by'
+                        })
+                      .filter__field.js-filter
+                        +input({
+                          id: 'floors-2',
+                          type: 'text',
+                          placeholder: 'до',
+                          title: 'Этаж до',
+                          classList: 'input_type_default input_width_available',
+                          controlClassList: 'js-filter-by'
+                        })
+
+                +form-drop({
+                  name: 'Доступность',
+                  classList: 'js-filter-group',
+                })
+                  .filter
+                    .filter__checks
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'available-1',
+                            label: 'Пешая',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'available-2',
+                            label: 'Транспортная',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Апартаменты',
+                  classList: 'js-filter-group',
+                })
+                  .filter
+                    .filter__checks
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'apartments-1',
+                            label: 'Да',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'apartments-2',
+                            label: 'Нет',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Переуступки',
+                  classList: 'js-filter-group',
+                })
+                  .filter
+                    .filter__checks
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'assignment-1',
+                            label: 'От застройщика',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+
+                +form-drop({
+                  name: 'Способы оплаты',
+                  classList: 'js-filter-group',
+                })
+                  .filter
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'payment-1',
+                            label: 'Военная ипотека',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'payment-2',
+                            label: 'Ипотека',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'payment-3',
+                            label: 'Мат. капитал',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'payment-4',
+                            label: 'Рассрочка',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'payment-5',
+                            label: 'Субсидии',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Прописка',
+                  classList: 'js-filter-group',
+                })
+                  .filter
+                    .filter__checks
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'registration-1',
+                            label: 'Лен. область',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'registration-2',
+                            label: 'Санкт-Петербург',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+
+                +form-drop({
+                  name: 'Банк',
+                  classList: 'js-filter-group',
+                })
+                  .filter
+                    .filter__filter
+                      +input({
+                        type: 'text',
+                        placeholder: 'Введите название банка',
+                        classList: 'input_type_default input_width_available js-filter-list-input'
+                      })
+                    .filter__checks(data-simplebar="true")
+                      .checkbox-group
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-1',
+                            label: 'Абсолют банк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-2',
+                            label: 'АК Барс Банк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-3',
+                            label: 'Альфа-Банк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-4',
+                            label: 'Банк Возрождение',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-5',
+                            label: 'Банк ДОМ.РФ',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-6',
+                            label: 'Банк Зенит',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-7',
+                            label: 'Банк ОТКРЫТИЕ',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-8',
+                            label: 'Банк Россия',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-9',
+                            label: 'Банк Санкт-Петербург',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-10',
+                            label: 'ВТБ',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-11',
+                            label: 'ГАЗПРОМБАНК',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-12',
+                            label: 'Инвестторгбанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-13',
+                            label: 'Московский Индустриальный Банк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-14',
+                            label: 'Примсоцбанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-15',
+                            label: 'ПромСвязьБанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-16',
+                            label: 'Райффайзен банк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-17',
+                            label: 'Росбанк ДОМ',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-18',
+                            label: 'Россельхозбанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-19',
+                            label: 'Сбербанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-20',
+                            label: 'СвязьБанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-21',
+                            label: 'СМП Банк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-22',
+                            label: 'Совкомбанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-23',
+                            label: 'Сургутнефтегаз',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-24',
+                            label: 'ТрансКапиталБанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-25',
+                            label: 'Уралсиб',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+                        .checkbox-group__item.js-filter
+                          +checkbox({
+                            id: 'bank-26',
+                            label: 'Юникредитбанк',
+                            controlClassList: 'js-filter-by'
+                          })
+                          button.button.button_view_link.filter__exclude-btn Исключить
+              .form__row
+                .index-search__show-booked
+                  +switch({
+                    id: 'filter-booked',
+                    label: 'Показать забронированные',
+                    checked: false,
+                    reorder: true
+                  })
+
+
+          .index-search__filter-applied.is-hidden
+            .index-search__filter-inc.js-drag-zone
+              +button({
+                classList: 'button_type_filtered filtered-clear'
+              })
+                span Очистить параметры
+              p.index-search__filter-tip Вы можете перетащить сюда параметры для поиска
+
+            .index-search__filter-exc.js-drag-zone
+              +button({
+                classList: 'button_type_filtered filtered-clear'
+              })
+                span Очистить исключения
+              p.index-search__filter-tip Вы можете перетащить сюда параметры для исключения
+
+          .index-search__filter-controls
+            .index-search__filter-control.index-search__filter-voice
+              +button({
+                classList: 'button_view_round'
+              })
+                +svg_icon(require("../images/svg/mic.svg").default).icon.icon_mic
+              span Голосовой помощник
+            +button({
+              classList: 'button_type_clear visible_mobile'
+            })
+              +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+              span Очистить фильтр
+
+            .index-search__filter-control.index-search__filter-submit
+              button.button.button_view_default(type="submit") Показать 33 ЖК
+            .index-search__filter-control.index-search__filter-options
+              +button({
+                classList: 'button_type_clear visible_note'
+              })
+                +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+                span Очистить фильтр
+
+              .index-search__filter-save
+                button.button.button_view_outline Сохранить фильтр
+                +button({
+                  classList: 'button_type_settings'
+                })
+                  +svg_icon(require("../images/svg/settings.svg").default).icon.icon_settings
+          .index-search__filter-controls-m
+            .index-search__filter-controls-col
+              .index-search__filter-control.index-search__filter-voice
+                +button({
+                  classList: 'button_view_round'
+                })
+                  +svg_icon(require("../images/svg/mic.svg").default).icon.icon_mic
+
+              +button({
+                classList: 'button_type_clear visible_mobile'
+              })
+                +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+                span Очистить фильтр
+
+            .index-search__filter-controls-col
+              .index-search__filter-control.index-search__filter-submit
+                button.button.button_view_default(type="submit") Показать 33 ЖК
+
+            .index-search__filter-controls-col
+              .index-search__filter-control.index-search__filter-options
+                +button({
+                  classList: 'button_type_clear visible_note'
+                })
+                  +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+                  span Очистить фильтр
+
+                .index-search__filter-save
+                  button.button.button_view_outline Сохранить фильтр
+                  +button({
+                    classList: 'button_type_settings'
+                  })
+                    +svg_icon(require("../images/svg/settings.svg").default).icon.icon_settings
+
++modal({
+    id: 'dist-map',
+    classList: ''
+  })
+    h3.modal__title Карта районов города
+    .dist-map#dist-map-container

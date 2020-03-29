@@ -1,0 +1,88 @@
+section.section.section_view_white
+  .wrapper
+    .personal__header
+      .personal__search
+        h4.h4 Личный кабинет
+        .personal__search-wrap
+          +input({
+            type: 'search',
+            id: 'lk-search',
+            classList: 'input_type_search input_width_available',
+            placeholder: 'Поиск по личному кабинету'
+          })
+            +svg_icon(require("../images/svg/search.svg").default).icon.icon_search_lk
+            
+      .personal__nav
+        ul.personal__nav-list
+          li.personal__nav-item
+            a.personal__nav-link(href="#").active
+              +svg_icon(require("../images/svg/lk-orders.svg").default).icon.icon_personal_nav
+              span Сделки
+          li.personal__nav-item
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-profile.svg").default).icon.icon_personal_nav
+              span Профиль
+          li.personal__nav-item
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-files.svg").default).icon.icon_personal_nav
+              span Файлы
+          li.personal__nav-item
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-con.svg").default).icon.icon_personal_nav
+              span Переговорные
+          li.personal__nav-item.is-hidden-sm
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-clients.svg").default).icon.icon_personal_nav
+              span Клиенты
+          li.personal__nav-item.is-hidden-sm
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-agents.svg").default).icon.icon_personal_nav
+              span Агенты    
+          li.personal__nav-item.is-hidden-sm
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-presentations.svg").default).icon.icon_personal_nav
+              span Презентации
+          li.personal__nav-item.is-hidden-md
+            a.personal__nav-link(href="#")
+              +svg_icon(require("../images/svg/lk-events.svg").default).icon.icon_personal_nav
+              span Мероприятия
+          li.personal__nav-item.personal__nav-more
+            +form-drop({
+              name: 'Еще',
+              classList: 'personal__nav-button'
+            })
+              .filter
+                ul.personal__hide-list    
+                  li.personal__hide-item  
+                    a.personal__hide-link(href="#")
+                      +svg_icon(require("../images/svg/lk-favorites.svg").default).icon.icon_personal_hide
+                      span Избранное   
+                      span.personal__hide-badge 13
+                  li.personal__hide-item
+                    a.personal__hide-link(href="#")
+                      +svg_icon(require("../images/svg/lk-compare.svg").default).icon.icon_personal_hide
+                      span Сравнение 
+                      span.personal__hide-badge 8
+                  li.personal__hide-item
+                    a.personal__hide-link(href="#")
+                      +svg_icon(require("../images/svg/lk-filters.svg").default).icon.icon_personal_hide
+                      span Сохраненные фильтры 
+                  li.personal__hide-item
+                    a.personal__hide-link(href="#")
+                      +svg_icon(require("../images/svg/lk-notifications.svg").default).icon.icon_personal_hide
+                      span Уведомления   
+                      span.personal__hide-badge 1
+                  li.personal__hide-item
+                    a.personal__hide-link(href="#")
+                      +svg_icon(require("../images/svg/lk-settings.svg").default).icon.icon_personal_hide
+                      span Настроить фильтр    
+                  li.personal__hide-item.personal__hide-devide
+                  li.personal__hide-item
+                    a.personal__hide-link(href="#")
+                      +svg_icon(require("../images/svg/lk-menu.svg").default).icon.icon_personal_hide
+                      span Настроить меню
+            //- button.button.personal__nav-button 
+            //-   span Еще
+            //-   +svg_icon(require("../images/svg/triangle-down.svg").default).icon.icon_triangle-down  
+            //- .personal__nav-hide
+            

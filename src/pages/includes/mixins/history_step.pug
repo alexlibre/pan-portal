@@ -1,0 +1,15 @@
+mixin history_step({ step: { inProcess, comments, date, name }, advanced, advanceStart, steps_length, i })
+  .order-history__step(class={ active: inProcess, 'short': i === steps_length - 1 && !advanced })
+    if i < active_step_i
+      .order-history__step-date= date
+    .order-history__step-point(class={ active: inProcess || i <= active_step_i })
+      if inProcess
+        +svg_icon(require("../images/svg/flag.svg").default).icon.icon_flag
+    .order-history__step-name= name
+
+    if inProcess || i <= active_step_i
+      .order-history__step-comments(data-key= i)
+        +svg_icon(require("../images/svg/comment.svg").default).icon.icon_comment
+        = comments.length
+        +svg_icon(require("../images/svg/arrow_bottom.svg").default).icon.icon_arrow-bottom
+        

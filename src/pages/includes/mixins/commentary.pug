@@ -1,0 +1,9 @@
+mixin commentary({ image, author, date, text })
+  .commentary
+    .commentary__photo
+      img(src= image width="60px" height="60px")
+    .commentary__content
+      .commentary__header
+        .commentary__author= author
+        .commentary__date= date
+      .text.commentary__text= text

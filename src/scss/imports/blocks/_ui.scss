@@ -1,0 +1,48 @@
+.ui {
+  padding: 40px 0;
+  background-color: $color-white;
+
+  &__label {
+    color: $color-brand-3;
+  }
+
+  &_invert {
+    background-color: $color-brand-1;
+
+    & .ui__label {
+      color: $color-white;
+    }
+
+    @for $i from 1 through 12 {
+      .ui__col-#{$i} {
+        border-bottom: 1px dotted $color-brand-opaque-30;
+      }
+    }
+
+    & .ui__label-title {
+      color: $color-brand-3;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    &__col-#{$i} {
+      @include grid-size($i);
+      display: flex;
+      align-items: center;
+      border-bottom: 1px dotted $color-border;
+      padding: 32px 0;
+    }
+  }
+
+  & .section__grid * {
+
+    &:last-child, &:nth-last-child(2) {
+      border-bottom: 0;
+    }
+  }
+
+  &__label-title {
+    border-bottom: 0!important;
+    color: $color-brand-3;
+  }
+}

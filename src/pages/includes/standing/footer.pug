@@ -1,0 +1,106 @@
+//- footer.pug
+include ../mixins/checkbox
+include ../mixins/input
+include ../mixins/modal
+footer.footer
+  .wrapper
+    .footer__inner
+      .footer__company
+        a.footer__logo(href="/")
+          +svg_icon(require("../images/svg/logo.svg").default).icon.icon_logo
+        p.footer__copy &copy;&nbsp;2010&mdash;2020 Площадка <br>Актуальной Недвижимости
+
+      .footer__subscribe
+        .footer__subscribe-col
+          .footer__subscribe-title Будьте в курсе
+          .footer__subscribe-subtitle Подпишитесь на последние обновления
+        .footer__subscribe-col
+          form
+            +input({
+              type: 'email',
+              placeholder: 'Ваш e-mail',
+              classList: 'input_type_subscribe footer__subscribe-email'
+            })
+              button.button.button_with-icon.footer__subscribe-submit(type="submit")
+                +svg_icon(require("../images/svg/arrow-right.svg").default).icon.icon_arrow-right
+            .footer__subscribe-check
+              +checkbox({
+                id: 'personal',
+                label: 'Cогласие на обработку персональных данных',
+                classList: 'checkbox_view_invert',
+                required: true,
+                checked: true
+              })
+      .footer__social
+        ul.footer__social-list
+          li.footer__social-item
+            a.footer__social-link(href="#")
+              button.button.button_with-icon.button_view_social
+                +svg_icon(require("../images/svg/social-ig.svg").default).icon.icon_social-ig
+          li.footer__social-item
+            a.footer__social-link(href="#")
+              button.button.button_with-icon.button_view_social
+                +svg_icon(require("../images/svg/social-tg.svg").default).icon.icon_social-tg
+          li.footer__social-item
+            a.footer__social-link(href="#")
+              button.button.button_with-icon.button_view_social
+                +svg_icon(require("../images/svg/social-fb.svg").default).icon.icon_social-fb
+          li.footer__social-item
+            a.footer__social-link(href="#")
+              button.button.button_with-icon.button_view_social
+                +svg_icon(require("../images/svg/social-vk.svg").default).icon.icon_social-vk
+      hr.footer__divider
+      .footer__company
+        a.footer__policy(href="#") Политика конфиденциальности
+      .footer__menu
+        .footer__menu-col
+          .footer__menu-title Недвижимость
+          ul.footer__menu-list
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Новостройки Мск
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Новостройки СПб
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Переуступки Мск
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Переуступки СПб
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Коммерция
+        .footer__menu-col
+          .footer__menu-title Инструменты
+          ul.footer__menu-list
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Trade-in
+            li.footer__menu-item
+              a.footer__menu-link(href="#") АвтоПан
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Ипотека
+        .footer__menu-col
+          .footer__menu-title Информация
+          ul.footer__menu-list
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Мероприятия
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Новости
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Презентации
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Переговорные
+        .footer__menu-col
+          .footer__menu-title Сервисы
+          ul.footer__menu-list
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Консьерж
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Грузовичкоф
+        .footer__menu-col.visible_desktop
+          ul.footer__menu-list
+            li.footer__menu-item
+              a.footer__menu-link(href="#") Контакты
+
+      .footer__contacts.visible_note
+        a.footer__phone(href="tel:8(812)2439999") 8 (812) 243 99 99
+        .footer__address Владимирский проспект, 23, лит. А, офис 70
+      hr.footer__divider.visible_mobile
+
+

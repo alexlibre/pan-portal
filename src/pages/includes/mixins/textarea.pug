@@ -1,0 +1,7 @@
+mixin textarea(data)
+  label.textarea(for= data.id class= data.classList)
+    if data.label
+      span.textarea__label= data.label
+    textarea.textarea__control(type= data.type id= data.id data-title= data.title  class= data.controlClassList placeholder= data.placeholder autocomplete= data.autocomplete disabled= data.disabled rows= data.rows)
+    if block
+      block

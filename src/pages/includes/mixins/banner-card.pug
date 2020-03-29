@@ -1,0 +1,9 @@
+mixin banner-card({ name, description, icon, bg_color })
+  .banner-card(style={ 'background-color': bg_color })
+    .banner-card__content
+      .banner-card__name= name
+      .banner-card__description= description
+    .banner-card__icon
+      +svg_icon(require(`../images/svg/${icon}`).default).icon
+    .banner-card__external-arrow
+      +svg_icon(require('../images/svg/external_link.svg').default).icon

@@ -1,0 +1,14 @@
+mixin flats_header(data)
+  .complex__rooms
+    .complex__rooms-col.complex__rooms-rooms= data.rooms
+    .complex__rooms-concat
+      .complex__rooms-col.complex__rooms-count= data.count
+      .complex__rooms-col.complex__rooms-square= data.square
+      .complex__rooms-col.complex__rooms-price
+        | Цена от 
+        span.nowrap= data.priceMin + ' р. '
+        span.nowrap= data.priceMax + ' р.'
+    .complex__rooms-col.complex__rooms-info= data.info
+    .complex__rooms-col.complex__rooms-action
+      button.button.button_view_round.button_with_icon
+        +svg_icon(require("../images/svg/arrow_bottom.svg").default).icon.icon_collapse

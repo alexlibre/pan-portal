@@ -1,0 +1,18 @@
+mixin bank-item(data)
+  .banks__slider-item
+    .banks__slider-inner
+      .banks__slider-image
+        img(src= data.image)
+      .banks__slider-content
+        .banks__slider-conditions
+          .banks__slider-condition Процентная ставка
+          .banks__slider-value= data.percent
+        .banks__slider-conditions  
+          .banks__slider-condition Первоначальный взноc
+          .banks__slider-value= data.prepay
+        .banks__slider-conditions  
+          .banks__slider-condition Срок ипотеки
+          .banks__slider-value= data.period
+        .banks__slider-more 
+          a.banks__slider-link(href="#") Подробнее
+            +svg_icon(require("../images/svg/chevron.svg").default).icon.icon_more

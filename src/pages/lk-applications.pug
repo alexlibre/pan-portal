@@ -1,0 +1,107 @@
+extends includes/layout-lk
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/form-drop
+include includes/mixins/input
+include includes/mixins/application_status
+include includes/mixins/application_row
+include includes/mixins/checkbox
+
+block title
+  | Заявки
+block content
+  -
+    var applications = [
+      {
+        id: 101,
+        client: {
+          id: 305,
+          name: 'Агенство недвижимости Прайм'
+        },
+        object: 'ЖК «Легенда восьми звезд», 3 к.кв., 45 м²',
+        price: '21 600 000 р.',
+        date: '12.05.2019',
+        agent: {
+          id: 205,
+          name: 'Пономарев В.'
+        },
+        payment_type: 'Ипотека, Мат. капитал, Рассрочка',
+        status: '1'
+      },
+      {
+        id: 102,
+        client: {
+          id: 306,
+          name: 'Александр Петров'
+        },
+        object: 'ЖК «Легенда восьми звезд», 3 к.кв., 45 м²',
+        price: '21 600 000 р.',
+        date: '12.05.2019',
+        agent: {
+          id: 206,
+          name: 'Александр В.'
+        },
+        payment_type: 'Ипотека, Мат. капитал, Рассрочка',
+        status: '2'
+      },
+      {
+        id: 103,
+        client: {
+          id: 306,
+          name: 'Александр Петров'
+        },
+        object: 'ЖК «Легенда восьми звезд», 3 к.кв., 45 м²',
+        price: '21 600 000 р.',
+        date: '12.05.2019',
+        agent: {
+          id: 205,
+          name: 'Пономарев В.'
+        },
+        payment_type: 'Ипотека, Мат. капитал, Рассрочка',
+        status: '0'
+      },
+      {
+        id: 104,
+        client: {
+          id: 305,
+          name: 'Агенство недвижимости Прайм'
+        },
+        object: 'ЖК «Легенда восьми звезд», 3 к.кв., 45 м²',
+        price: '21 600 000 р.',
+        date: '12.05.2019',
+        agent: {
+          id: 205,
+          name: 'Пономарев В.'
+        },
+        payment_type: 'Ипотека, Мат. капитал, Рассрочка',
+        status: '3'
+      },
+    ];
+
+  //- Готовим уникальные данные для фильтров (агенты и клиенты)
+  -
+    var agents = {}
+    var clients = {}
+
+  each app in applications
+    if !agents[app.agent.id]
+      - agents[app.agent.id] = app.agent.name
+    if !clients[app.client.id]
+      - clients[app.client.id] = app.client.name
+
+
+  section.section.section_view_white.orders
+    .wrapper
+      .orders__header
+        .orders__title
+          .h1 Заявки
+        .orders__switcher
+          .orders__switcher-btn.active
+            | Заявки
+          a.orders__switcher-btn(href="/lk-orders.html")
+            | Сделки
+      if applications.length
+        include includes/applications/filter
+        include includes/applications/table
+      else
+        include includes/applications/empty

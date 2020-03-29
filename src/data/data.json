@@ -1,0 +1,395 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.022832668856,
+          30.602906759453
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Северный вальс"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.031328,
+          30.75005
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Дом с фонтаном"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.07138512377,
+          30.342652223373
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Старт"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.141279854545,
+          30.229960287306
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Чистый ручей"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.700112163317,
+          30.780324585851
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Прибрежный"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.064749128468,
+          30.438834039486
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Мурино Парк"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.774843433026,
+          30.047369226728
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Шоколад"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.21611440404,
+          30.300359935504
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Парковый"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.898055104702,
+          29.765690904721
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Ломоносов"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.066773161271,
+          30.425637960434
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Мой Мир"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.932796162499,
+          30.614680051804
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Браво"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.06562838456,
+          30.397595281086
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Ювента"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.754505294034,
+          30.375670464557
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Экспоград 3"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.066011423492,
+          30.425574183203
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Материк"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.06233473992,
+          30.437386035919
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Lampo"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.792893207699,
+          30.166436104579
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Ветер Перемен"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.695084439353,
+          30.800781049275
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Первомайский"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.894276699455,
+          30.492198715683
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Про Молодость"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.750461075393,
+          30.369869469464
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Экспоград 2"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.951418075953,
+          30.580044902499
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Jaanila Драйв"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.810363120245,
+          30.356297492981
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Аэросити"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.959304464028,
+          30.599773169343
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Ясно-Янино"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.744112061686,
+          30.479154184192
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Славянка"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 23,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.9046068036,
+          30.495536327362
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Авеню-апарт на Дыбенко"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 24,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.611186051601,
+          30.168488528003
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Белый Сад"
+      },
+      "options": {}
+    },
+    {
+      "type": "Feature",
+      "id": 25,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          59.774161844667,
+          30.598299641122
+        ]
+      },
+      "properties": {
+        "hintContent": "ЖК Новое Колпино"
+      },
+      "options": {}
+    }
+  ]
+}

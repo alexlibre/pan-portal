@@ -1,0 +1,328 @@
+.index-search {
+  padding-bottom: 50px;
+
+  @include break-max($breakpoint-md) {
+    padding-bottom: 40px;
+  }
+
+  &__header {
+    @include grid-size(10);
+    @include grid-shift(1);
+    text-align: center;
+    margin: 80px auto 40px;
+
+    @include break-max($break-lg) {
+      @include grid-size(12);
+      @include grid-shift(0);
+    }
+
+    @include break-max($breakpoint-md) {
+      margin: 70px auto 40px;
+    }
+  }
+
+  &__filter {
+    @include grid-size(10);
+    @include grid-shift(1);
+
+    @include break-max($break-lg) {
+      @include grid-size(12);
+      @include grid-shift(0);
+    }
+
+    &.is-focused {
+      & .button_type_reveal-filter {
+        display: block;
+      }
+
+      & .form__item {
+        &:not(.form__item_main) {
+          display: none;
+        }
+      }
+
+      & .form__item_main {
+        flex: 1;
+      }
+    }
+
+    & .button_type_reveal-filter {
+      display: none;
+    }
+
+    @include break-max($breakpoint-sm) {
+      & .button_type_reveal-filter {
+        display: block !important;
+      }
+    }
+  }
+
+  &__filter-body {
+    background-color: $color-brand-opaque-8;
+    border-radius: 5px;
+  }
+
+  &__filter-top {
+    padding: 31px;
+    background-color: $color-brand-3;
+    border-radius: 4px;
+
+    @include break-max($breakpoint-sm) {
+      padding: 22px;
+
+      & .form__item:not(.form__item_main) {
+        order: 10;
+        margin-top: 12px;
+      }
+
+      & .form__row .button_type_reveal-filter {
+        display: inlinde-block;
+      }
+    }
+  }
+
+  &__filter-main {
+    padding: 30px 30px 24px;
+
+    @include break-max($breakpoint-sm) {
+      padding: 22px;
+    }
+  }
+
+  &__filter-applied {
+    padding-top: 6px;
+    display: flex;
+    align-items: stretch;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+
+
+  &__filter-inc,
+  &__filter-exc {
+    padding: 0 12px 12px;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    transition: background-color $transition-default;
+    border: 1px dashed $color-brand-opaque-20;
+
+    & > .filtered {
+      flex-shrink: 0;
+      margin-right: 12px;
+      margin-top: 12px;
+    }
+
+    & > .filtered-clear {
+      margin-top: 12px;
+    }
+
+    & > *:first-child {
+
+      &.filtered-clear {
+        display: none;
+      }
+    }
+
+    &.is-dragover {
+      background-color: $color-brand-opaque-8;
+    }
+  }
+
+  &__filter-tip {
+    display: none;
+    color: $color-brand-3;
+    margin: 1.3em auto auto;
+  }
+
+  &__filter-inc {
+    margin-right: 44px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 13px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMTMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEzLjg3IDIuMjY1VjBsNC44MyAyLjc2Ni00LjgzIDIuNzY1VjMuMjY1SDIuNDE1di0xaDExLjQ1M3pNNC44MzEgOS42MzRWNy4zNjlMMCAxMC4xMzRsNC44MzEgMi43NjV2LTIuMjY1aDExLjQ1NHYtMUg0LjgzMXoiIGZpbGw9IiM4Rjk1QUMiLz48L3N2Zz4=);
+      background-position: center;
+      background-repeat: no-repeat;
+      top: 50%;
+      left: 100%;
+      margin-left: 12px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__filter-exc {
+    & .filtered {
+      background-color: $color-red-opaque-20;
+      box-shadow: inset 0 0 0 1px transparent;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px transparent;
+        background-color: $color-red;
+
+        & .filtered__type {
+          color: $color-white;
+        }
+
+        & .filtered__value {
+          color: $color-white;
+        }
+
+        & .filtered__del .icon {
+          stroke: $color-white;
+        }
+      }
+    }
+  }
+
+  &__filter-controls {
+    padding: 18px 0 0;
+    display: flex;
+    align-items: center;
+    margin-left: -15px;
+    margin-right: -15px;
+    @include break-max($breakpoint-sm) {
+      display: none;
+    }
+  }
+
+  &__filter-controls-m {
+    padding: 18px 0 0;
+    align-items: center;
+    margin-left: -15px;
+    margin-right: -15px;
+    display: none;
+    @include break-max($breakpoint-sm) {
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  &__filter-controls-col {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+
+    & + & {
+      margin-left: 30px;
+    }
+  }
+
+  &__filter-control {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+
+    @include break-max($breakpoint-sm) {
+      margin: 0;
+    }
+  }
+
+  &__filter-voice {
+    flex: 1 0 calc(100% / 10 * 4 - 30px);
+
+    @include break-max($breakpoint-sm) {
+      flex: 0 0 auto;
+      flex-shrink: 1;
+    }
+
+    & .button {
+      margin-right: 12px;
+    }
+
+    & span {
+      @include break-max($breakpoint-sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__filter-submit {
+    flex: 0 0 calc(100% / 10 * 2 - 30px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__filter-options {
+    flex: 0 0 calc(100% / 10 * 4 - 30px);
+    justify-content: space-between;
+
+    @include break-max($break-md) {
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+  }
+
+  &__filter-save {
+    display: flex;
+    align-items: center;
+
+    & .button_type_settings {
+      margin-left: 12px;
+    }
+
+    @include break-max($break-md) {
+      justify-content: space-between;
+    }
+  }
+
+  &__show-booked {
+    margin-top: 10px;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-right: 14px;
+
+    & .info {
+      margin-left: auto;
+    }
+  }
+
+  &__tooltip {
+    width: 124px;
+    height: 43px;
+    align-self: flex-start;
+    display: none;
+    background-color: $color-white;
+    padding: 7px 9px;
+    margin-top: -14px;
+    border-radius: 4px;
+    box-shadow: $shadow;
+
+    &.is-visible {
+      display: block;
+    }
+  }
+
+  &__search-input {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-left: 40px;
+
+    & .icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 17px;
+      stroke: $color-brand-3;
+    }
+  }
+}

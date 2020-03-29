@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="14px" viewBox="0 0 17 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu_LK" transform="translate(-1068.000000, -7.000000)">
+            <g id="Group-20">
+                <g transform="translate(1068.000000, 6.000000)">
+                    <g id="Group-9" transform="translate(0.000000, 1.000000)">
+                        <path d="M2.42169724,0 L1.17059496,0 C0.523760274,0 0,0.492651062 0,1.09961894 L0,8.90128833 C0,9.50825621 0.523760274,10 1.17059496,10 L15.829405,10 C16.4762397,10 17,9.50825621 17,8.90128833 L17,1.09961894 C17,0.492651062 16.4762397,0 15.829405,0 L2.42169724,0 Z" id="Fill-4" fill-opacity="0.4" fill="#8F95AC"></path>
+                        <path d="M10,12.5 C10,13.3283679 9.32836788,14 8.5,14 C7.67098446,14 7,13.3283679 7,12.5 C7,11.6716321 7.67098446,11 8.5,11 C9.32836788,11 10,11.6716321 10,12.5" id="Fill-6" fill="#8F95AC"></path>
+                        <line x1="3" y1="6.6152" x2="6.662" y2="6.6152" id="Stroke-12" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <line x1="3" y1="3.5" x2="9.001" y2="3.5" id="Stroke-10" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

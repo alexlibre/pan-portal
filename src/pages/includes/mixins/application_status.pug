@@ -1,0 +1,14 @@
+mixin application_status(id)
+  case id
+    when '0'
+      .label-item.label_green
+        | Подтверждена
+    when '1'
+      .label-item.label_red
+        | Отменена
+    when '2'
+      .label-item.label_orange
+        | Ожидает подтверждения
+    when '3'
+      .label-item.label_purple
+        | Заявка от клиента

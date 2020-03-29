@@ -1,0 +1,17 @@
+include svg_icon
+include checkbox
+mixin helper-modal(data)
+  .helper-modal(data-id= data.id)
+    .helper-modal__close
+      +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+    .helper-modal__inner
+      p.helper-modal__title
+        stroong= data.title
+      .helper-modal__content
+      if block
+        block
+      +checkbox({
+        id: 'helper-filter-drag',
+        label: 'Больше не показывать',
+        controlClassList: 'js-helper-hide'
+      })

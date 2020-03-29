@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="22px" viewBox="0 0 26 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="1600" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Property_card_flat" transform="translate(-1044.000000, -230.000000)" stroke="#8F95AC">
+            <g id="Group-2" transform="translate(1035.000000, 219.000000)">
+                <g id="Group-7" transform="translate(10.000000, 12.000000)">
+                    <path d="M15.5,15 L20.049,15 C22.2315,15 24,13.1987166 24,10.9762681 C24,8.75381952 22.2315,6.95202689 20.049,6.95202689 C20.039,6.95202689 20.03,6.9535547 20.02,6.9535547 C20.0505,6.70197596 20.0715,6.44734162 20.0715,6.18761459 C20.0715,2.77042167 17.352,0 13.9965,0 C11.382,0 9.1605,1.6851701 8.3035,4.04410267 C7.76,3.48950906 7.008,3.1457527 6.178,3.1457527 C4.5185,3.1457527 3.1735,4.51568548 3.1735,6.20543899 C3.1735,6.24872683 3.1785,6.29048686 3.18,6.33326543 C1.3475,6.84915461 0,8.55469546 0,10.5851497 C0,13.0235282 1.9405,15 4.335,15 L8.5,15" id="Stroke-1" stroke-linejoin="round"></path>
+                    <polyline id="Stroke-3" points="15 17 12.5 20 10 17"></polyline>
+                    <line x1="12.5" y1="10" x2="12.5" y2="20" id="Stroke-5"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

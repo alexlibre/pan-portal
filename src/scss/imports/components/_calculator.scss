@@ -1,0 +1,140 @@
+.calculators {
+  margin-bottom: 90px;
+
+  &__navs {
+    @include unlist();
+    display: flex;
+    margin: 0;
+    &-item {
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      padding: 20px 40px;
+      font-size: 18px;
+      line-height: 22px;
+      color: $color-brand-3;
+      text-decoration: none;
+      cursor: pointer;
+
+      &.active {
+        background: $color-brand-opaque-8;
+        color: $color-brand-1;
+      }
+    }
+  }
+
+  &__tab {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__container {
+    background: $color-brand-opaque-8;
+    padding: 30px 40px;
+    border-radius: 0 5px 5px 5px;
+  }
+}
+
+.calculator {
+
+  &__grid {
+    @include grid();
+    justify-content: space-between;
+  }
+
+  &__form {
+    @include grid();
+    @include grid-col();
+    @include grid-size(8);
+    @include break-max($breakpoint-sm) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+  }
+
+  &__result {
+    padding-top: 15px;
+    @include grid-col();
+    @include grid-size(4);
+
+    @include break-max($breakpoint-sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-info {
+      font-size: 14px;
+      line-height: 21px;
+      color: $color-brand-3;
+    }
+
+    &-value {
+      font-size: 48px;
+      line-height: 55px;
+      font-weight: bold;
+      white-space: nowrap;
+
+      @include break-max($breakpoint-sm) {
+        font-size: 40px;
+        line-height: 1.25;
+        margin: 0 30px;
+      }
+    }
+    &-btn {
+      margin-top: 35px;
+
+      @include break-max($breakpoint-sm) {
+        margin-top: 0;
+      }
+    }
+
+    @include break-max($breakpoint-sm) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+  }
+
+  &__item {
+    flex: 0 0 calc(50% - 30px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+    flex-grow: 1;
+
+    &:nth-of-type(2n + 1) {
+      margin-right: 30px;
+    }
+
+    & label {
+      font-size: 14px;
+      line-height: 21px;
+      color: $color-brand-3;
+      margin-bottom: 5px;
+    }
+    
+    &-wrapper {
+      background: $color-white;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 50px;
+      & input {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  & input {
+    font-size: 14px;
+    line-height: 17px;
+    padding: 0 10px;
+  }
+
+  .slider__input {
+    padding: 0;
+  }
+}

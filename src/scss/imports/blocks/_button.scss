@@ -1,0 +1,714 @@
+.button {
+  $c: &;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  font-family: "Formular", sans-serif;
+  padding: 0;
+  white-space: nowrap;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &_with-icon {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    fill: #fff;
+    font-size: 14px;
+  }
+
+  &_view {
+
+    &_round-control {
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-brand-opaque-10;
+      transition: background-color $transition-default;
+
+      &:hover {
+        background-color: $color-brand-opaque-20;
+      }
+    }
+
+    &_grey {
+      display: flex;
+      align-items: center;
+      background-color: $color-brand-3;
+      transition: background-color $transition-default;
+      color: $color-white;
+      border-radius: 50em;
+      padding: 0 20px;
+      height: 48px;
+
+      &:hover {
+        background-color: $color-brand-3-hover;
+      }
+
+      & .icon {
+        font-size: 22px;
+        margin-right: 9px;
+      }
+    }
+
+    &_default {
+      background-color: $color-red;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 700;
+      padding: 22px 48px;
+      color: #fff;
+      border-radius: 50em;
+      transition: background-color $transition-default;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $color-red-hover;
+      }
+
+      &:active {
+        background-color: $color-red-active;
+      }
+
+      @include break-max($break-md) {
+        padding: 22px 36px;
+      }
+    }
+
+    &_default-small {
+      background-color: $color-red;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 700;
+      padding: 13px 20px;
+      color: #fff;
+      border-radius: 50em;
+      transition: background-color $transition-default;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $color-red-hover;
+      }
+
+      &:active {
+        background-color: $color-red-active;
+      }
+
+      &.is-inactive {
+        color: $color-brand-2;
+        background-color: $color-white;
+      }
+    }
+
+    &_outline-small {
+      background-color: $color-white;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 400;
+      padding: 6px 14px;
+      color: $color-brand-2;
+      border-radius: 50em;
+      box-shadow: 0 0 0 1px $color-brand-opaque-30;
+      transition: background-color $transition-default, color $transition-default,
+        box-shadow $transition-default;
+
+      &:hover {
+        background-color: $color-red;
+        color: $color-white;
+        box-shadow: 0 0 0 1px transparent;
+      }
+
+      &:active {
+        background-color: $color-red-hover;
+        box-shadow: 0 0 0 1px transparent;
+      }
+    }
+
+    &_outline {
+      background-color: transparent;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 400;
+      padding: 22px 24px;
+      color: $color-brand-2;
+      border-radius: 50em;
+      transition: background-color $transition-default,
+        box-shadow $transition-default;
+      box-shadow: inset 0 0 0 1px $color-border;
+
+      &:hover {
+        box-shadow: none;
+        background-color: $color-brand-opaque-20;
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: $color-brand-opaque-30;
+      }
+    }
+
+    &_round-with-label {
+      font-size: 14px;
+
+      & #{$c}__icon {
+        stroke: $color-brand-3;
+      }
+
+      & #{$c}__label {
+        color: $color-brand-2;
+      }
+    }
+
+    &_outline-with-icon {
+      background-color: transparent;
+      font-size: 14px;
+      line-height: 18px;
+      white-space: nowrap;
+      font-weight: 400;
+      padding: 19px 24px;
+      color: $color-brand-2;
+      border-radius: 50em;
+      transition: background-color $transition-default,
+        box-shadow $transition-default;
+      box-shadow: inset 0 0 0 1px $color-border;
+
+      &:hover {
+        box-shadow: none;
+        background-color: $color-brand-opaque-20;
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: $color-brand-opaque-30;
+      }
+
+      & .icon {
+        fill: $color-brand-3;
+        margin-right: 10px;
+        font-size: 22px;
+      }
+    }
+
+    &_outline-with-icon-invert {
+      background-color: transparent;
+      font-size: 14px;
+      white-space: nowrap;
+      font-weight: 400;
+      padding: 0 24px;
+      height: 60px;
+      color: $color-red;
+      border-radius: 50em;
+      transition: background-color $transition-default,
+      box-shadow $transition-default, color $transition-default;
+      box-shadow: inset 0 0 0 1px $color-red;
+      display: flex;
+      align-items: center;
+      vertical-align: middle;
+      line-height: 60px;
+
+      &:hover {
+        box-shadow: none;
+        background-color: $color-red;
+        color: $color-white;
+
+        & .icon {
+          fill: $color-white;
+        }
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: $color-red-active;
+        color: $color-white;
+
+        & .icon {
+          fill: $color-white;
+        }
+      }
+
+      & .icon {
+        fill: $color-red;
+        margin-right: 10px;
+        font-size: 22px;
+        line-height: 60px;
+
+        transition: fill $transition-default;
+
+        &_list {
+          font-size: 15px;
+          margin-top: -2px;
+        }
+      }
+    }
+
+    &_outline-strong {
+      background-color: $color-white;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 700;
+      padding: 22px 48px;
+      color: $color-brand-2;
+      border-radius: 50em;
+      transition: background-color $transition-default,
+        box-shadow $transition-default, color $transition-default;
+      box-shadow: inset 0 0 0 1px $color-border;
+
+      &:hover {
+        box-shadow: none;
+        background-color: $color-brand-2;
+        color: $color-white;
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: $color-brand-1;
+        color: $color-white;
+      }
+    }
+
+    &_outline-invert {
+      background-color: transparent;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 400;
+      padding: 22px 48px;
+      color: $color-red;
+      border-radius: 50em;
+      transition: background-color $transition-default,
+        box-shadow $transition-default, color $transition-default;
+      box-shadow: inset 0 0 0 1px $color-red;
+
+      &:hover {
+        box-shadow: none;
+        background-color: $color-red;
+        color: $color-white;
+      }
+
+      &:active {
+        box-shadow: none;
+        background-color: $color-red-active;
+        color: $color-white;
+      }
+    }
+
+    &_ghost {
+      background-color: $color-white;
+      font-size: 14px;
+      line-height: 16px;
+      white-space: nowrap;
+      font-weight: 400;
+      padding: 19px 24px;
+      color: $color-brand-2;
+      border-radius: 50em;
+      transition: box-shadow $transition-default, color $transition-default,
+        background-color $transition-default;
+      box-shadow: inset 0 0 0 1px transparent, $shadow;
+      display: inline-flex;
+      align-items: center;
+
+      & .icon,
+      & svg {
+        display: inline-block;
+        font-size: 22px;
+        fill: $color-brand-3;
+        margin-right: 10px;
+        transition: fill $transition-default;
+      }
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px $color-brand-opaque-50, $shadow;
+      }
+
+      &:active {
+        box-shadow: inset 0 0 0 1px $color-brand-3, $shadow;
+      }
+
+      & span {
+        line-height: 16px;
+      }
+
+      &.is-active {
+        background-color: $color-red;
+        color: $color-white;
+
+        & .icon,
+        & svg {
+          fill: $color-white;
+        }
+      }
+    }
+
+    &_round {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background-color: $color-red;
+      border-radius: 50em;
+      transition: background-color $transition-default;
+
+      &:hover {
+        background-color: $color-red-hover;
+      }
+
+      &:active {
+        background-color: $color-red-active;
+      }
+    }
+
+    &_fav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background-color: $color-red;
+      border-radius: 50em;
+
+      @include break-max($break-md) {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    &_social {
+      font-size: 20px;
+    }
+
+    &_link {
+      color: $color-red;
+      font-size: 14px;
+      line-height: 17px;
+      transition: color $transition-default;
+
+      &:hover {
+        color: $color-red-hover;
+      }
+    }
+
+    &_link-invert {
+      color: $color-brand-3;
+      font-size: 14px;
+      line-height: 17px;
+      transition: color $transition-default;
+
+      &:hover {
+        color: $color-red;
+      }
+    }
+  }
+
+  &_type {
+
+    &_task-assigned {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      font-size: 14px;
+      color: $color-brand-3;
+      width: 234px;
+      white-space: normal;
+      text-align: left;
+
+      & .icon-block {
+        margin-right: 7px;
+        margin-left: 4px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-shrink: 0;
+        background-color: $color-brand-opaque-10;
+        transition: background-color $transition-default;
+
+        & .icon {
+          font-size: 14px;
+          stroke: $color-brand-3;
+        }
+      }
+
+      &.is-active {
+
+        & .icon-block {
+          background-color: $color-red;
+
+          & .icon {
+            stroke: $color-white;
+          }
+        }
+
+        &:hover {
+
+          & .icon-block {
+            background-color: $color-red-hover;
+          }
+        }
+      }
+
+      &:hover {
+
+        & .icon-block {
+          background-color: $color-brand-opaque-20;
+        }
+      }
+
+      @include break-max($break-lg) {
+        width: 140px;
+      }
+    }
+
+    &_task {
+      height: 35px;
+      border-radius: 50em;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      font-size: 14px;
+      color: $color-brand-3;
+      padding: 0 14px;
+      white-space: nowrap;
+      text-align: left;
+
+      & > .icon {
+        font-size: 10px;
+        stroke: $color-brand-3;
+        margin-right: 15px;
+      }
+
+      &:hover {
+        background-color: $color-brand-opaque-10;
+      }
+
+      &:active {
+        background-color: $color-brand-opaque-20;
+      }
+    }
+
+    &_add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: $color-brand-opaque-10;
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      transition: background-color $transition-default;
+
+      &:hover {
+        background-color: $color-brand-opaque-20;
+
+        // &:after {
+        //   transform: rotate(-90deg);
+        // }
+      }
+
+      &:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02IC41VjBINXY1SDB2MWg1djVoMVY2aDVWNUg2Vi41eiIgZmlsbD0iIzhGOTVBQyIvPjwvc3ZnPg==);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        // transform: rotate(90deg);
+      }
+    }
+
+    &_burger {
+      display: none;
+
+      @include break-max($break-md) {
+        display: block;
+      }
+
+      & .icon {
+        stroke: $color-white;
+        font-size: 19px;
+      }
+    }
+
+    &_pill {
+      background-color: $color-brand-3;
+      color: $color-white;
+      white-space: nowrap;
+      margin-right: 24px;
+      line-height: 30px;
+      padding: 0 12px;
+      border-radius: 4px;
+      font-size: 14px;
+
+      transition: background-color $transition-default;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-brand-3-hover;
+      }
+    }
+
+    &_filtered {
+      font-size: 14px;
+      line-height: 17px;
+      padding: 6px 12px;
+      box-shadow: inset 0 0 0 1px $color-brand-opaque-30;
+      transition: box-shadow $transition-default,
+        background-color $transition-default;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px transparent;
+        background-color: $color-brand-opaque-20;
+        cursor: pointer;
+      }
+    }
+
+    &_reveal-filter {
+      color: $color-white;
+      box-shadow: inset 0 0 0 1px $color-white;
+      padding: 18px 24px;
+      font-size: 14px;
+      line-height: 1;
+      white-space: nowrap;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: color $transition-default, background-color $transition-default;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-brand-3;
+      }
+
+      @include break-max($break-md) {
+        order: 2;
+        flex: 0 1 calc(100% / 4 - 12px);
+        background-color: $color-brand-2;
+        box-shadow: none;
+
+        &:hover {
+          color: $color-white;
+          background-color: $color-brand-1;
+        }
+      }
+    }
+
+    &_settings {
+      width: 44px;
+      height: 44px;
+      border-radius: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: $color-bg-light;
+      transition: background-color $transition-default;
+
+      & .icon {
+        fill: $color-brand-3;
+        font-size: 20px;
+      }
+
+      &:hover {
+        background-color: $color-brand-2;
+      }
+
+      &:active {
+        background-color: $color-brand-1;
+      }
+    }
+
+    &_clear {
+      color: $color-brand-2;
+      font-size: 14px;
+      line-height: 17px;
+      transition: color $transition-default;
+
+      & .icon {
+        stroke: $color-brand-2;
+        font-size: 9px;
+        margin-right: 10px;
+        transition: stroke $transition-default;
+      }
+
+      &:hover {
+        color: $color-red;
+
+        & .icon {
+          stroke: $color-red;
+        }
+      }
+
+      &:active {
+        color: $color-red-hover;
+
+        & .icon {
+          stroke: $color-red-hover;
+        }
+      }
+    }
+
+    &_round {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: $color-brand-opaque-10;
+      transition: all $transition-default;
+
+      .icon {
+        width: 15px;
+        height: 15px;
+      }
+
+      &:hover {
+        background-color: $color-brand-opaque-30;
+
+        .icon {
+          opacity: 1;
+        }
+      }
+    }
+
+    &_edit-small {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 35px;
+      height: 35px;
+      box-shadow: inset 0 0 0 1px $color-brand-opaque-20;
+      color: $color-brand-3;
+      padding: 0 14px;
+      font-size: 14px;
+      background-color: $color-white;
+      transition: background-color $transition-default;
+
+      & .icon {
+        flex-shrink: 0;
+        font-size: 16px;
+        margin-right: 7px;
+      }
+
+      &:hover {
+        background-color: $color-brand-opaque-8;
+      }
+    }
+  }
+}

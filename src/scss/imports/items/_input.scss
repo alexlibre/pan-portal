@@ -1,0 +1,208 @@
+.input {
+  $c: &;
+
+  display: inline-block;
+  position: relative;
+
+  &_type {
+
+    &_default {
+
+      & #{$c}__control {
+        background-color: $color-white;
+        padding: 8px 6px;
+        border-radius: 4px;
+        position: relative;
+        color: $color-brand-2;
+        box-shadow: 0 0 0 1px $color-brand-opaque-30;
+
+        &::placeholder {
+          color: $color-brand-3;
+        }
+      }
+    }
+
+    &_upload-btn {
+
+      height: 50px;
+      border-radius: 4px;
+      background-color: $color-brand-3;
+      text-align: center;
+      padding: 0 36px;
+      color: $color-white;
+      font-size: 14px;
+      line-height: 50px;
+      white-space: nowrap;
+      font-weight: 700;
+      transition: background-color $transition-default;
+      cursor: pointer;
+
+      & #{$c}__control {
+        width: 0;
+        height: 0;
+        position: absolute;
+        z-index: -1;
+      }
+
+      &:hover {
+        background-color: $color-brand-2;
+      }
+    }
+
+    &_search {
+      position: relative;
+
+      & #{$c}__control {
+        background-color: $color-brand-2;
+        padding: 8px 24px 8px 40px;
+        border-radius: 50em;
+        position: relative;
+        color: $color-brand-3;
+        transition: background-color $transition-default;
+
+        &::placeholder {
+          color: $color-brand-3;
+        }
+
+        &:focus, &:active {
+          background-color: #fff;
+        }
+      }
+    }
+
+    &_search .icon {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(13px, -50%);
+      fill: $color-brand-3;
+    }
+
+    &_subscribe {
+      position: relative;
+      min-width: 500px;
+
+      & #{$c}__control {
+        background-color: $color-brand-1;
+        padding: 17px 66px 17px 20px;
+        color: $color-brand-3;
+
+        &::placeholder {
+          color: $color-brand-3;
+        }
+      }
+
+      @include break-max($break-lg) {
+        min-width: 460px;
+      }
+    }
+
+
+
+    &_form {
+
+      & #{$c}__label {
+        color: $color-brand-3;
+        line-height: 25px;
+        margin-bottom: 4px;
+        white-space: nowrap;
+      }
+
+      & #{$c}__control {
+        height: 50px;
+        background-color: $color-white;
+        padding: 0 16px 0 16px;
+        box-shadow: inset 0 0 0 1px $color-brand-opaque-20;
+        border-radius: 4px;
+        color: $color-brand-2;
+      }
+
+      & #{$c}__alert {
+        position: absolute;
+        height: 22px;
+        width: 22px;
+        box-shadow: inset 0 0 0 1px $color-red;
+        background-color: $color-white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        bottom: calc((50px - 22px) / 2);
+        right: calc((50px - 22px) / 2);
+
+        &:hover {
+          background-color: $color-white;
+        }
+
+        & .icon {
+          font-size: 10px;
+          fill: $color-red;
+        }
+      }
+    }
+  }
+
+  &_width {
+
+    &_available {
+      width: 100%;
+    }
+
+    &_small {
+      width: 65px;
+    }
+
+    &_medium {
+      width: 95px;
+    }
+
+    &_large {
+      width: 120px;
+    }
+  }
+
+  &__control {
+    background: none;
+    border: 0;
+    font-family: 'Formular', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__remove {
+    height: 50px;
+    width: 50px;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    background-color: #F3F4F6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+
+    & .icon {
+      font-size: 11px;
+      stroke: $color-brand-3;
+    }
+  }
+}
+
+input[type="search"] {
+  &::-webkit-search-cancel-button {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='8' viewBox='0 0 7 8' fill='none' stroke='%23000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.66667 1.3L0.333333 6.7' stroke-linecap='round'/%3E%3Cpath d='M0.333333 1.3L5.66667 6.7' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    width: 10px;
+    height: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

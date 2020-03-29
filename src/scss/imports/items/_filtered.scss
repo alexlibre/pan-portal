@@ -1,0 +1,82 @@
+.filtered {
+  $c: &;
+
+  background-color: $color-white;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px $color-brand-opaque-30;
+  user-select: none;
+  transition: box-shadow $transition-default, background-color $transition-default;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px transparent;
+    background-color: $color-brand-opaque-20;
+    cursor: pointer;
+  }
+
+  &[draggable="true"] {
+    cursor: grab;
+  }
+
+  &_clear {
+    background-color: #fff!important;
+    box-shadow: inset 0 0 0 1px $color-brand-opaque-30!important;
+  }
+
+
+  &__inner {
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__type {
+    color: $color-brand-3;
+    display: inline-block;
+    transition: color $transition-default;
+    margin-right: 8px;
+  }
+
+  &__value {
+    color: $color-brand-2;
+    display: inline-block;
+    transition: color $transition-default;
+  }
+
+  &__del {
+    margin-left: 12px;
+    vertical-align: middle;
+
+    & .icon {
+      stroke: $color-brand-3;
+      font-size: 12px;
+      transition: stroke $transition-default;
+    }
+  }
+
+  &_view {
+
+    &_exclude {
+      background-color: $color-red-opaque-20;
+      box-shadow: inset 0 0 0 1px transparent;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1px transparent;
+        background-color: $color-red;
+
+        & #{$c}__type {
+          color: $color-white;
+        }
+
+        & #{$c}__value {
+          color: $color-white;
+        }
+
+        & #{$c}__del .icon {
+          stroke: $color-white;
+        }
+
+      }
+    }
+  }
+}

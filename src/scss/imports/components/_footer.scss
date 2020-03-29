@@ -1,0 +1,282 @@
+.footer {
+  background-color: #2C2E3E;
+  color: $color-white;
+  padding: 54px 0 40px;
+
+  &__inner {
+    @include grid();
+  }
+
+  &__company {
+    @include grid-col();
+    @include grid-size(3);
+
+    @include break-max($break-lg) {
+      @include grid-size(3, $grid-gutter-md);
+    }
+    @include break-max($break-md) {
+      order: 10;
+      @include grid-size(5, $grid-gutter-sm);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__subscribe {
+    @include grid-col();
+    @include grid-size(7);
+    display: flex;
+
+    @include break-max($break-lg) {
+      @include grid-size(7, $grid-gutter-md);
+    }
+    @include break-max($break-md) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+
+  }
+
+  &__menu {
+    @include grid-col();
+    @include grid-size(7);
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 24px;
+
+    @include break-max($break-lg) {
+      @include grid-size(7, $grid-gutter-md);
+    }
+
+    @include break-max($break-md) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+  }
+
+  &__subscribe-col:first-of-type {
+    margin-right: 30px;
+    max-width: 170px;
+
+    @include break-max($break-md) {
+      max-width: none;
+      width: calc(100% / 12 * 4);
+    }
+  }
+
+  &__subscribe-title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__subscribe-email {
+    margin-bottom: 11px;
+  }
+
+  &__subscribe-submit {
+    background-color: $color-red;
+    border-radius: 4px;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 4px;
+    right: 4px;
+    transition: background-color $transition-default;
+
+    & .icon {
+      flex: 0 0 12px;
+      font-size: 12px;
+      stroke: $color-white;
+    }
+
+    &:hover {
+      background-color: $color-red-hover;
+    }
+
+    &:active {
+      background-color: $color-red-active;
+    }
+  }
+
+  &__subscribe-check {
+    padding-left: 20px;
+    margin-bottom: 42px;
+
+    @include break-max($break-md) {
+      padding-left: 0;
+      margin-bottom: 21px;
+    }
+  }
+
+  &__social {
+    @include grid-col();
+    @include grid-size(2);
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    @include break-max($break-lg) {
+      @include grid-size(2, $grid-gutter-md);
+    }
+
+    @include break-max($break-md) {
+      margin-left: calc(100% / 12 * 4 + 30px);
+      height: auto;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__social-list {
+    @include unlist();
+    display: flex;
+    align-items: center;
+  }
+
+  &__social-item {
+    margin-right: 32px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__social-link {
+
+    & .icon {
+      fill: $color-brand-3;
+      transition: fill $transition-default;
+    }
+
+    &:hover {
+      & .icon {
+        fill: $color-red;
+      }
+    }
+  }
+
+  &__contacts {
+    @include grid-col();
+    @include grid-size(2);
+
+    @include break-max($break-lg) {
+      @include grid-size(2, $grid-gutter-md);
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 72px;
+    height: 39px;
+    margin-bottom: 11px;
+
+    & svg {
+      fill: $color-white;
+    }
+
+    @include break-max($break-md) {
+      margin-bottom: 0;
+      margin-right: 14px;
+    }
+  }
+
+  &__policy {
+    display: inline-block;
+    color: $color-white;
+    text-decoration: none;
+    line-height: 27px;
+    margin-top: 24px;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-brand-3;
+    }
+
+    @include break-max($break-md) {
+      margin-top: 0;
+      max-width: 150px;
+      line-height: 16px;
+    }
+  }
+
+  &__divider {
+    @include grid-col();
+    @include grid-size(9);
+    @include grid-shift-left(3);
+    background: $color-brand-opaque-20;
+    height: 1px;
+    border: 0;
+
+    @include break-max($break-lg) {
+      @include grid-size(9, $grid-gutter-md);
+      @include grid-shift-left(3, $grid-gutter-md);
+    }
+
+    @include break-max($break-md) {
+      @include grid-size(12, $grid-gutter-sm);
+      margin-left: 8px;
+
+      &.visible_mobile {
+        order: 9;
+        margin-top: 21px;
+        margin-bottom: 21px;
+      }
+    }
+  }
+
+  &__phone {
+    text-decoration: none;
+    color: $color-white;
+    font-weight: 700;
+    margin-bottom: 17px;
+    display: inline-block;
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 24px;
+  }
+
+  &__menu-col {
+    margin-right: 50px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @include break-max($break-md) {
+      margin-right: auto;
+    }
+  }
+
+  &__menu-title {
+    font-weight: 700;
+    margin-bottom: 17px;
+    line-height: 27px;
+  }
+
+  &__menu-list {
+    @include unlist();
+  }
+
+  &__menu-item {
+    line-height: 27px;
+  }
+
+  &__menu-link {
+    color: $color-white;
+    text-decoration: none;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-brand-3;
+    }
+  }
+
+  &__contacts {
+    margin-top: 24px;
+    line-height: 27px;
+  }
+}

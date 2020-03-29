@@ -1,0 +1,603 @@
+extends includes/layout-lk
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/form-drop
+include includes/mixins/modal
+include includes/mixins/checkbox
+include includes/mixins/select
+include includes/mixins/textarea
+
+block title
+  | Clients
+block content
+  section.section.section_view_white.client
+    .wrapper
+      .personal_content
+        .personal__clients
+          .client__header
+            .client__title
+              .h1 Каренина Анна А.
+            .client__ops
+
+
+            .client__controls
+              +button({
+                classList: 'button_view_round-with-label',
+              })
+                +svg_icon(require("../images/svg/edit02.svg").default).icon.icon_edit.button__icon
+                span.button__label Редактировать
+          .client__grid
+            .client__aside
+              .client__data
+                ul.client__id
+                  li.client__id-item
+                    .client__key Менеджер:
+                    .client__value Васильев Артем
+                  li.client__id-item
+                    .client__key Адрес:
+                    .client__value г. Санкт-Петербург, Невский пр. д. 43, кв. 4
+                  li.client__id-item
+                    .client__key Телефон:
+                    .client__value
+                      span +7 (812) 657-38-45
+                      span +7 (345) 234-56-33
+                  li.client__id-item
+                    .client__key E-mail:
+                    .client__value karenina@mail.ru
+                .client__feed
+                  +svg_icon(require("../images/svg/feed.svg").default).icon
+                  .client__feed-content
+                    .client__feed-text Одна из самых первых попыток установить правила употребления
+                    .client__feed-more Показать полностью
+              .client__nav
+                ul.client__nav-list
+                  li.client__nav-item
+                    a.client__nav-link(href="#deals")
+                      +svg_icon(require("../images/svg/deals-02.svg").default).icon
+                      span Сделки клиента
+                      span.client__link-qty 6
+                  li.client__nav-item
+                    a.client__nav-link(href="#applications")
+                      +svg_icon(require("../images/svg/applications-02.svg").default).icon
+                      span Заявки клиента
+                  li.client__nav-item
+                    a.client__nav-link(href="#tasks")
+                      +svg_icon(require("../images/svg/tasks-02.svg").default).icon
+                      span Задачи и напоминания
+                      span.client__link-qty 6
+                  li.client__nav-item
+                    a.client__nav-link(href="#presentations")
+                      +svg_icon(require("../images/svg/presentation-02.svg").default).icon
+                      span Презентации
+                  li.client__nav-item
+                    a.client__nav-link(href="#filters")
+                      +svg_icon(require("../images/svg/filters-02.svg").default).icon
+                      span Сохраненные фильтры
+                  li.client__nav-item
+                    a.client__nav-link(href="#comparisons")
+                      +svg_icon(require("../images/svg/comparisons-02.svg").default).icon
+                      span Сравнения
+                      span.client__link-qty 6
+                  li.client__nav-item
+                    a.client__nav-link(href="#favorite")
+                      +svg_icon(require("../images/svg/favorite-02.svg").default).icon
+                      span Избранное
+                  li.client__nav-item
+                    a.client__nav-link(href="#files")
+                      +svg_icon(require("../images/svg/files-02.svg").default).icon
+                      span Файлы
+            .client__content
+              .client__section.has-offset#deals
+                .client__section-header
+                  h3.client__section__title Сделки
+                .client__table
+                  table.table#client-deals
+                    thead
+                      tr
+                        th
+                        th Объект
+                        th
+                          .sorting-th
+                            | Цена ДДУ
+                            .sorting-arrows
+                        th
+                          .sorting-th
+                            | Комиссия
+                            .sorting-arrows
+                        th Агент
+                        th Менеджер
+                        th
+                          .sorting-th
+                            | Статус
+                            .sorting-arrows
+                        th
+                    tbody
+                      tr
+                        td
+                        td 1 к.кв., ЖК Форвард
+                        td 4 567 000 руб.
+                        td 2% / 150 000 руб.
+                        td Ржеусская А.
+                        td Васильев А.
+                        td Оформление
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать профиль клиента
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+                      tr
+                        td
+                        td 2 к.кв., ЖК Форвард
+                        td 5 874 000 руб.
+                        td 3% / 175 000 руб.
+                        td Ржевский П.
+                        td Орлова К.
+                        td Оформление
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать профиль клиента
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+              .client__section.has-offset#applications
+                .client__section-header
+                  h3.client__section__title Заявки
+                .client__table
+                  table.table#client-applications.display
+                    thead
+                      tr
+                        th
+                        th Клиент
+                        th
+                          .sorting-th
+                            | Объект
+                            .sorting-arrows
+                        th Стоимость
+                        th Дата брони
+                        th Агент
+                        th Форма оплаты
+                        th
+                    tbody
+                      tr
+                        td
+                        td Агенство недвижимости Прайм
+                        td ЖК «Легенда восьми звезд», 3 к.кв., 45 м²
+                          .client__more Карточка объекта
+                        td 43 567 000 руб.
+                        td 12.05.2019
+                        td Васильев А.
+                        td Ипотека, Мат. капитал, Рассрочка
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать заявку
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+                      tr
+                        td
+                        td Александр Петров
+                        td ЖК «Легенда», 3 к.кв., 45 м²
+                          .client__more Карточка объекта
+                        td 43 567 000 руб.
+                        td 12.05.2019
+                        td Васильев А.
+                        td Ипотека, Мат. капитал, Рассрочка
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать заявку
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+                      tr
+                        td
+                        td Агенство недвижимости Прайм
+                        td ЖК «Легенда», 2 к.кв., 41 м²
+                          .client__more Карточка объекта
+                        td 43 536 000 руб.
+                        td 12.05.2019
+                        td Васильев А.
+                        td Ипотека, Мат. капитал, Рассрочка
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать заявку
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+
+              .client__section.has-offset#tasks
+                .client__section-header
+                  h3.client__section__title Задачи
+                .client__table
+                  table.table#client-tasks.display
+                    thead
+                      tr
+                        th
+                        th Задача
+                        th Дата
+                        th Время
+                        th Напоминание
+                        th Комментарий
+                        th
+                    tbody
+                      tr
+                        td
+                        td Важный звонок
+                        td 21 февраля 2020
+                        td 11:30
+                        td
+                          button.button.button_type_task-assigned.is-active.js-modal-btn(data-id="task-edit")
+                            span.icon-block
+                              +svg_icon(require('../images/svg/alert-bell.svg').default).icon.icon_alert-bell
+                            span За 2 часа
+                        td Тема звонка выяснить ход сделки, обсудить заключение договора.
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать задачу
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+                      tr
+                        td
+                        td Встреча
+                        td 22 февраля 2020
+                        td 12:30
+                        td
+                          button.button.button_type_task-assigned.is-active.js-modal-btn(data-id="task-edit")
+                            span.icon-block
+                              +svg_icon(require('../images/svg/alert-bell.svg').default).icon.icon_alert-bell
+                            span За 3 часа
+                        td Заключение договора.
+                        td
+                          +form-drop({
+                            btnClassList: 'button_type_round',
+                            datatableIcon: true
+                          })
+                            .dt__more
+                              hr
+                              .dt__more-control.js-client-edit(data-client-id="client-4")
+                                +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                                span Редактировать задачу
+                              .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-4" data-id="delete-client")
+                                +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+                                span Удалить
+
+              .client__section.has-offset#presentations
+                .client__section-header
+                  h3.client__section__title Презентации
+                  .client__header-controls
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить по почте
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить ссылкой
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Скачать
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Удалить
+                .client__table
+                  table.table#client-presentations.display
+                    thead
+                      tr
+                        th
+                        th
+                        th Клиент
+                        th Инфрмация об объекте
+                        th Стоимость
+                        th
+                        th Застройщик
+                    tbody
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'pres-1',
+                          })
+                        td Каренина Анна А.
+                          .clients__more karenina@yandex.ru
+                        td ЖК Вечная легенда, 1к. кв., 3 корпус, 2 этаж
+                        td 3 560 000 руб.
+                        td 4
+                        td
+                          .label-item.label_red Не просмотренное
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'pres-2',
+                          })
+                        td Васильев Антон В.
+                          .clients__more karenina@yandex.ru
+                        td ЖК Вечная легенда, 1к. кв., 3 корпус, 2 этаж, прекрасный вид из окон, терасса
+                        td 3 560 000 руб.
+                        td 4
+                        td
+                          .label-item.label_yellow Просмотренное
+                          div Клиент открывал 1 раз 12 октября ‘20
+
+              .client__section.has-offset#filters
+                .client__section-header
+                  h3.client__section__title Фильтры
+                  .client__header-controls
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить по почте
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить ссылкой
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Удалить
+                .client__table
+                  table.table#client-filters.display
+                    thead
+                      tr
+                        th
+                        th
+                        th Активность
+                        th Агент
+                        th Дата создания
+                        th Посл. просмотр
+                        th
+                        th Описание
+                    tbody
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'filters-1'
+                          })
+                        td
+                          +switch({
+                            id: 'filters-switch-1',
+                            checked: true
+                          })
+                        td Подгурский М.
+                        td 12.01.2020
+                        td 12.01.2020
+                        td 2
+                        td Московский, Фрунзенский, Купчино
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'filters-2'
+                          })
+                        td
+                          +switch({
+                            id: 'filters-switch-2'
+                          })
+                        td Подгурский М.
+                        td 12.01.2020
+                        td 12.01.2020
+                        td 2
+                        td Московский, Фрунзенский, Купчино
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'filters-3'
+                          })
+                        td
+                          +switch({
+                            id: 'filters-switch-3'
+                          })
+                        td Подгурский М.
+                        td 12.01.2020
+                        td 12.01.2020
+                        td 2
+                        td Московский, Фрунзенский, Купчино
+
+              .client__section.has-offset#comparisons
+                .client__section-header
+                  h3.client__section__title Сравнения
+                  .client__header-controls
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить по почте
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить ссылкой
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Удалить
+                .client__table
+                  table.table#client-comparisons.display
+                    thead
+                      tr
+                        th
+                        th
+                        th Информация об объекте
+                        th Информация о квартирах
+                        th Комиссия
+                        th Застройщик
+                    tbody
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'comparisons-1'
+                          })
+                        td ЖК Северный вальс
+                        td 2 490 000 руб.
+                        td 2% <br>150 000 руб.
+                        td Петрострой
+
+
+              .client__section.has-offset#favorite
+                .client__section-header
+                  h3.client__section__title Избранное
+                  .client__header-controls
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить по почте
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Отправить ссылкой
+                    +button({
+                      classList: 'button_view_default-small is-inactive',
+                    })
+                      span Удалить
+                .client__table
+                  table.table#client-favorite.display
+                    thead
+                      tr
+                        th
+                        th
+                        th Информация об объекте
+                        th Информация о квартирах
+                        th Комиссия
+                        th Застройщик
+                    tbody
+                      tr
+                        td
+                        td
+                          +checkbox({
+                            id: 'favorite-1'
+                          })
+                        td ЖК Северный вальс
+                        td 2 490 000 руб.
+                        td 2% <br>150 000 руб.
+                        td Петрострой
+              .client__section.has-offset#files
+                .client__section-header
+                  h3.client__section__title Файлы
+                .client__files-ready
+                  .client__files-item
+                    .file
+                      .file__title
+                        .file__icon
+                          +svg_icon(require("../images/svg/deals-02.svg").default).icon
+                        .file__name Постановление 3456
+                      .file__controls
+                        a.file__link Скачать
+                        +button({
+                          classList: 'file__delete button_view_round'
+                        })
+                          +svg_icon(require("../images/svg/delete-outline.svg").default).icon
+                  .client__files-item
+                    .file
+                      .file__title
+                        .file__icon
+                          +svg_icon(require("../images/svg/deals-02.svg").default).icon
+                        .file__name Платежное поручение от 12.01.20
+                      .file__controls
+                        a.file__link Скачать
+                        +button({
+                          classList: 'file__delete button_view_round'
+                        })
+                          +svg_icon(require("../images/svg/delete-outline.svg").default).icon
+                  .client__files-item
+                    .file
+                      .file__title
+                        .file__icon
+                          +svg_icon(require("../images/svg/deals-02.svg").default).icon
+                        .file__name Перечень правил при оформлении недвижимости
+                      .file__controls
+                        a.file__link Скачать
+                        +button({
+                          classList: 'file__delete button_view_round'
+                        })
+                          +svg_icon(require("../images/svg/delete-outline.svg").default).icon
+                  .client__files-item
+                    .file
+                      .file__title
+                        .file__icon
+                          +svg_icon(require("../images/svg/deals-02.svg").default).icon
+                        .file__name Постановление 3456
+                      .file__controls
+                        a.file__link Скачать
+                        +button({
+                          classList: 'file__delete button_view_round'
+                        })
+                          +svg_icon(require("../images/svg/delete-outline.svg").default).icon
+                  .client__files-item
+                    .file
+                      .file__title
+                        .file__icon
+                          +svg_icon(require("../images/svg/deals-02.svg").default).icon
+                        .file__name Перечень правил при оформлении сделок
+                      .file__controls
+                        a.file__link Скачать
+                        +button({
+                          classList: 'file__delete button_view_round'
+                        })
+                          +svg_icon(require("../images/svg/delete-outline.svg").default).icon
+                .client__files-upload
+                  +input({
+                    type: 'text',
+                    name: "name",
+                    id: 'file-label',
+                    classList: 'form-upload__name',
+                    controlClassList: 'form-upload__label',
+                    placeholder: 'Название документа'
+                  })
+                  +input({
+                    type: 'file',
+                    name: "file",
+                    id: 'file-input',
+                    classList: 'form-upload__input'
+                  })
+                    .form-upload__input-file
+                      +svg_icon(require("../images/svg/clip.svg").default).icon.icon_clip
+                      | Прикрепить файл
+                  button.button.button_view_default.client__files-submit
+                    | Загрузить
+

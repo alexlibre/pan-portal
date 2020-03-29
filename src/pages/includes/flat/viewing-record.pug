@@ -1,0 +1,22 @@
+include ../mixins/input
+
+.viewing-record
+  .viewing-record__header
+    +input({
+      id: 'modal-viewing-date',
+      label: 'Желаемая дата',
+      placeholder: '21 сентября 2020',
+      classList: 'input_width_available input_type_form',
+      controlClassList: 'js-datepicker'
+    })
+    +input({
+      id: 'modal-viewing-time',
+      label: 'Желаемое время',
+      placeholder: '21:00',
+      classList: 'input_width_available input_type_form',
+      controlClassList: 'js-timepicker'
+    })
+
+  .viewing-record__content
+    include flat-form
+    

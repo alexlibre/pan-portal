@@ -1,0 +1,24 @@
+section.section.section_view_white
+  .wrapper
+    .wrapper__center
+      .complex__subscribe
+        .complex__subscribe-row
+          .complex__subscribe-col.subscribe__text
+            .complex__subscribe-text Подпишитесь на нашу рассылку и узнавайте новости и акции первым
+          .complex__subscribe-col.subscribe__form
+            form
+              +input({
+                type: 'email',
+                placeholder: 'Ваш e-mail',
+                classList: 'input_type_subscribe footer__subscribe-email'
+              })
+                button.button.button_with-icon.footer__subscribe-submit(type="submit")
+                  +svg_icon(require("../images/svg/arrow-right.svg").default).icon.icon_arrow-right
+              .complex__subscribe-check
+                +checkbox({
+                  id: 'personal',
+                  label: 'Cогласие на обработку персональных данных',
+                  classList: 'checkbox_view_invert',
+                  required: true,
+                  checked: true
+                })

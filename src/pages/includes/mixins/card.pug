@@ -1,0 +1,63 @@
+mixin card(data)
+  a.card(href= data.href)
+    .card__header
+      ul.card__pills
+        each pill in data.pills
+          li.card__pill.js-fake-link(href="#")= pill
+      button.button.button_view_fav.button_with_icon.card__fav.js-favorites-add(data-fav-id= data.id)
+        +svg_icon(require("../images/svg/fav.svg").default).icon.icon_fav
+    .card__body
+      .card__image
+        if data.id == 1 || data.id == 5
+          img(src= require("../images/jpg/card01.jpg"))
+        else if data.id == 2 || data.id == 6
+          img(src= require("../images/jpg/card02.jpg"))
+        else if data.id == 3 || data.id == 4
+          img(src= require("../images/jpg/card03.jpg"))
+      .card__content
+        .card__row.card__row_distribute_between
+          .card__place
+            .card__title= data.title
+            .card__address= data.address
+          .card__dates
+            .card__dates-from= data.buildFrom
+            .card__dates-to= data.buildTo ?' — ' + data.buildTo: ''
+        .card__company
+          .card__grid
+            .card__left= data.builder
+            .card__right= data.buildings
+        .card__variants
+          .card__grid
+            .card__left
+              .card__left-inner
+                .card__left-part <strong>студия</strong><span> / 890</span>
+                .card__left-part от 19.86 м2
+            .card__right от 1.4 млн. р.
+          .card__grid
+            .card__left
+              .card__left-inner
+                .card__left-part <strong>1 к. кв.</strong><span> / 134</span>
+                .card__left-part от 30.23 м2
+            .card__right от 1.4 млн. р.
+          .card__grid
+            .card__left
+              .card__left-inner
+                .card__left-part <strong>1 к. кв.</strong><span> / 134</span>
+                .card__left-part от 19.86 м2
+            .card__right от 1.4 млн. р.
+        ul.card__routes
+          li.card__routes-item
+            span.card__metro-color.card__metro-color_1
+            span.card__metro-station м. пр. Науки
+            span.card__route-type
+              +svg_icon(require("../images/svg/auto.svg").default).icon.icon_auto
+            span.card__route-time 5 мин.
+          li.card__routes-item
+            span.card__metro-color.card__metro-color_2
+            span.card__metro-station м. Московская
+            span.card__route-type
+              +svg_icon(require("../images/svg/pedestrian.svg").default).icon.icon_pedestrian
+            span.card__route-time 5 мин.
+        ul.card__options
+          each option in data.options
+            li.card__option.js-fake-link(data-href="#")= option

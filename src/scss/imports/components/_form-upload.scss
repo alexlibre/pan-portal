@@ -1,0 +1,59 @@
+.form-upload {
+  max-width: 100%;
+  width: 550px;
+  padding: 27px 33px;
+  border: 1px solid $color-brand-opaque-20;
+  border-radius: 5px;
+
+  &__inputs {
+    display: flex;
+    margin-bottom: 15px;
+
+    @include break-max($breakpoint-sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__name {
+    width: 100%;
+    margin-right: 17px;
+
+    @include break-max($breakpoint-sm) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__label,
+  &__input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid $color-brand-opaque-20;
+    border-radius: 4px;
+    transition: border-color $transition-default;
+
+    &:hover {
+      border-color: $color-brand-opaque-60;
+    }
+  }
+
+  &__input {
+    position: relative;
+    cursor: pointer;
+    border-style: dotted;
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    input.input__control {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+  &__submit {
+    padding: 17px 33px;
+  }
+}

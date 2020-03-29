@@ -1,0 +1,38 @@
+.commentary {
+  display: flex;
+  
+  & + & {
+    margin-top: 50px;
+  }
+
+  &__photo {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    padding-top: 15px;
+    margin-left: 15px;
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__author {
+    font-weight: bold;
+  }
+
+  &__date {
+    color: $color-brand-3;
+    margin-left: 20px;
+  }
+
+  &__text {
+    line-height: 21.5px;
+  }
+}

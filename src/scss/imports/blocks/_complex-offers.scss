@@ -1,0 +1,189 @@
+.section__promo {
+  margin-top: 115px;
+
+  @include break-max($breakpoint-md) {
+    margin-top: 66px;
+  }
+
+  @include break-max($breakpoint-sm) {
+    margin-top: 55px;
+  }
+}
+
+.complex__promo {
+  margin-top: 56px;
+
+  @include break-max($breakpoint-sm) {
+    margin-top: 40px;
+  }
+
+  &-wrapper {
+    @include grid();
+
+    @include break-max($breakpoint-xs) {
+      flex-direction: column;
+    }
+
+  }
+  &-left {
+    @include grid-col();
+    @include grid-size(6);
+
+    @include break-max($breakpoint-md) {
+      @include grid-size(6, $grid-gutter-md);
+    }
+
+    @include break-max($breakpoint-sm) {
+      @include grid-size(7, $grid-gutter-sm);
+    }
+
+    @include break-max($breakpoint-xs) {
+      @include grid-size(12, $grid-gutter-xs);
+    }
+  }
+  &-right {
+    @include grid-col();
+    @include grid-size(6);
+    display: flex;
+
+    @include break-max($breakpoint-md) {
+      @include grid-size(6, $grid-gutter-md);
+    }
+
+    @include break-max($breakpoint-sm) {
+      @include grid-size(5, $grid-gutter-sm);
+    }
+
+    @include break-max($breakpoint-xs) {
+      @include grid-size(12, $grid-gutter-xs);
+    }
+
+    .complex__promo-item {
+      flex: 1;
+      color: #FFF;
+      &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 400px;
+        bottom: 0;
+        width: 100%;
+        background-image: linear-gradient(to bottom, transparent 0, rgba($color-brand-2, .8) 100%);  
+      }
+
+      &:hover {
+        .complex__promo-image {
+          transform: scale(1.05);
+        }
+      }
+    }
+    .complex__promo-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform .4s ease-in-out;
+    }
+      .complex__promo-title {
+          & a {
+            color: $color-white;
+            text-decoration: none;
+          }
+      }
+      .complex__promo-content {
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          align-self: flex-end;
+          padding: 24px 70px;
+
+          @include break-max($breakpoint-md) {
+            padding: 24px 45px;
+          }
+
+          @include break-max($breakpoint-md) {
+            padding: 24px 30px 16px 35px;
+          }
+
+      }
+      .complex__promo-desc {
+          color: #FFF;
+          margin-bottom: 25px;
+      }
+      .complex__promo-badge {
+          color: #FFF;
+      }
+  }
+  &-image {
+      width: 220px;
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex;
+      flex-shrink: 0;
+      & img {
+        min-width: 100%;
+        height: auto;
+        min-height: 100%;
+      }
+
+      @include break-max($breakpoint-md) {
+        width: 180px;
+      }
+
+      @include break-max($breakpoint-sm) {
+        width: 170px;
+      }
+  }
+  &-item {
+      display: flex;
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      background: $color-brand-opaque-8;
+      margin-bottom: 25px;
+      cursor: pointer;
+      transition: background $transition-default;
+
+      &:hover {
+        background-color: $color-brand-opaque-15;
+      }
+  }
+  &-content {
+      padding: 35px 35px 30px 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      @include break-max($breakpoint-md) {
+        padding: 24px;
+      }
+
+      @include break-max($breakpoint-sm) {
+        padding-bottom: 16px;
+      }
+  }
+  &-title {
+      margin-bottom: 16px;
+      
+      & a {
+        color: $color-brand-1;
+        text-decoration: none;
+      }
+  }
+  &-desc {
+      color: $color-brand-2;
+      margin-bottom: 15px;
+  }
+  &-badges {
+      @include unlist();
+      display: flex;
+      flex-wrap: wrap; 
+      margin: 0;
+  }
+  &-badge {
+      border: 1px solid $color-brand-opaque-30;
+      border-radius: 3px;
+      padding: 6px 12px;
+      margin-top: 12px;
+      color: $color-brand-3;
+  }
+}

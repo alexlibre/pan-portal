@@ -1,0 +1,44 @@
+section.section.section_view_white.section__banks
+  .wrapper
+    .wrapper__center
+      .block__title
+        h2.h2 Акредитованные банки 
+    .banks__slider
+      .banks__slider-nav
+        ul.banks__slider-nav_wrap(id="banksSlider-nav")
+          li.banks__slider-nav_item.prev
+            +svg_icon(require("../images/svg/icon-left_arrow.svg").default).icon.icon-dark_stroke   
+          li.banks__slider-nav_item.next
+            +svg_icon(require("../images/svg/icon-right_arrow.svg").default).icon.icon-dark_stroke
+
+      .banks__slider-wrap(id="banksSlider")
+        +bank-item({
+          image: require("../images/jpg/sber.jpg"),
+          percent: "от 9.8%",
+          prepay: "от 20%",
+          period: "до 25 лет"   
+        })
+        +bank-item({
+          image: require("../images/jpg/sber.jpg"),
+          percent: "от 9.8%",
+          prepay: "от 20%",
+          period: "до 25 лет"   
+        })
+        +bank-item({
+          image: require("../images/jpg/sber.jpg"),
+          percent: "от 9.8%",
+          prepay: "от 20%",
+          period: "до 25 лет"   
+        })
+        +bank-item({
+          image: require("../images/jpg/sber.jpg"),
+          percent: "от 9.8%",
+          prepay: "от 20%",
+          period: "до 25 лет"   
+        })
+        +bank-item({
+          image: require("../images/jpg/sber.jpg"),
+          percent: "от 9.8%",
+          prepay: "от 20%",
+          period: "до 25 лет"   
+        })

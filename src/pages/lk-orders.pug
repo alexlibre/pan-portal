@@ -1,0 +1,178 @@
+extends includes/layout-lk
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/form-drop
+
+block title
+  | Orders
+block content
+  section.section.section_view_white.orders
+    .wrapper                 
+      .personal_content
+        .personal__orders
+          .orders__header
+            .orders__title
+              .h1 Сделки
+            .orders__switcher
+              .orders__switcher-btn.active
+                | Сделки
+              a.orders__switcher-btn(href="/lk-applications.html")
+                | Заявки
+          form.orders__filter
+            .orders__filter-grid
+              .orders__filter-col
+                +form-drop({
+                  name: 'Клиент'
+                })
+              .orders__filter-col
+                +form-drop({
+                  name: 'ЖК'
+                })
+              .orders__filter-col
+                +form-drop({
+                  name: 'Дата'
+                })
+              .orders__filter-col
+                +form-drop({
+                  name: 'Статус'
+                })
+              .orders__filter-col
+                +form-drop({
+                  name: 'Менеджер'
+                })   
+              .orders__filter-col
+                +form-drop({
+                  name: 'Ответственный'
+                })
+              .orders__filter-col.is-hidden-sm
+                +button({
+                  classList: 'button_type_clear orders__filter-button'
+                })
+                  +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+                  span Очистить фильтр
+
+          
+          .orders__filter-mobile
+            +button({
+              classList: 'button_type_clear'
+            })
+              +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+              span Очистить фильтр
+
+          .orders__content
+            table.table.orders__table(id="orders-table" style="width: 100%")
+              thead
+                tr
+                  th
+                  th Клиент
+                  th 
+                    .sorting-th
+                      span Объект
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Стоимость
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Дата бр.
+                      .sorting-arrows
+                  th  
+                    .sorting-th
+                      | Агент
+                      .sorting-arrows
+                  th 
+                    .sorting-th
+                      | Менеджер
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Статус
+                      .sorting-arrows
+                  th.nowrap 
+                    .sorting-th
+                      | Форма оплаты
+                      .sorting-arrows
+                  th
+              tbody
+                tr(data-href="/lk-order.html") 
+                  td
+                  td 
+                    a(href='/').orders__table-link.orders__table-client
+                      | Агенство недвижимости Прайм&nbsp;
+                      +svg_icon(require('../images/svg/external_link.svg').default).icon.icon_external-link
+                  td        
+                    .orders__table-object| ЖК «Легенда восьми звезд», 3 к.кв., 45 м²
+                    a(href="#").orders__table-label Карточка объекта
+                  td.nowrap 21 600 000 р.
+                  td.nowrap 12.05.2019
+                  td.nowrap Пономарев В.
+                  td.nowrap Пономарев В.
+                  td.nowrap 
+                    .label-item.label_orange Бронь
+                  td Ипотека
+                  td
+                    +form-drop({
+                      btnClassList: 'button_type_round',
+                      datatableIcon: true
+                    })
+                      .dt__more
+                        hr
+                        .dt__more-control
+                          +svg_icon(require('../images/svg/trash_basket.svg').default).icon.icon_trash-basket
+                          | Удалить
+                tr(data-href="/lk-order.html") 
+                  td
+                  td 
+                    a(href='/').orders__table-link.orders__table-client
+                      | Александр Петров&nbsp;
+                      +svg_icon(require('../images/svg/external_link.svg').default).icon.icon_external-link
+                  td        
+                    .orders__table-object| ЖК «Легенда восьми звезд», 3 к.кв., 43 м²
+                    a(href="#").orders__table-label Карточка объекта
+                  td.nowrap 21 600 000 р.
+                  td.nowrap 12.05.2019
+                  td.nowrap Орлова К.
+                  td.nowrap Орлова К.
+                  td.nowrap
+                    .label-item.label_purple Оформление
+                  td Ипотека
+                  td
+                    +form-drop({
+                      btnClassList: 'button_type_round',
+                      datatableIcon: true
+                    })
+                      .dt__more
+                        hr
+                        .dt__more-control
+                          +svg_icon(require('../images/svg/trash_basket.svg').default).icon.icon_trash-basket
+                          | Удалить
+                tr(data-href="/lk-order.html") 
+                  td
+                  td 
+                    a(href='/').orders__table-link.orders__table-client
+                      | Александр Петров&nbsp;
+                      +svg_icon(require('../images/svg/external_link.svg').default).icon.icon_external-link
+                  td        
+                    .orders__table-object| ЖК «Легенда восьми звезд», 3 к.кв., 43 м²
+                    a(href="#").orders__table-label Карточка объекта
+                  td.nowrap 21 600 000 р.
+                  td.nowrap 12.05.2019
+                  td.nowrap Орлова К.
+                  td.nowrap Орлова К.
+                  td.nowrap
+                    .label-item.label_green Подписан договор
+                  td Ипотека
+                  td
+                    +form-drop({
+                      btnClassList: 'button_type_round',
+                      datatableIcon: true
+                    })
+                      .dt__more
+                        hr
+                        .dt__more-control
+                          +svg_icon(require('../images/svg/trash_basket.svg').default).icon.icon_trash-basket
+                          | Удалить
+
+
+  .kt-datatable(id="local_data")           

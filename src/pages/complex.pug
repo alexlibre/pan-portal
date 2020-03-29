@@ -1,0 +1,59 @@
+//- index.pug
+extends includes/layout
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/input
+include includes/mixins/checkbox
+include includes/mixins/card
+include includes/mixins/flats_header
+include includes/mixins/flats_card
+include includes/mixins/switch
+include includes/mixins/form-drop
+include includes/mixins/info
+include includes/mixins/bank-item
+
+block title
+  | Complex
+block content
+  .complex
+    section.section.section_view_dark.section__block
+      include includes/complex/info
+      include includes/complex/navigation
+
+    section.section.complex__section-filter
+      .wrapper
+        .filter__header
+          .block__title.with-button
+            h2.h2 Планировки и цены
+            +button({
+              classList: 'button_view_outline-with-icon'
+            })
+              +svg_icon(require("../images/svg/checkerboard.svg").default).icon.icon_checkerboard
+              span Шахматка
+
+          .filter__manager.is-hidden-desktop
+            .filter__manager-photo(style={'background-image': `url(${require('../images/jpg/manager.jpg')})`})
+            .filter__manager-content
+              .filter__manager-name
+                | Андрей Басов
+              .filter__manager-label
+                | Ваш личный менеджер
+              .filter__manager-call
+                +svg_icon(require('../images/svg/phone.svg').default).icon.icon_phone
+                | Обратный звонок
+
+            .filter__manager-hint
+              +info({})
+                p Какой-то текст&nbsp;Какой-то текст&nbsp;Какой-то текст&nbsp;Какой-то текст в&nbsp;Какой-то текст
+        include includes/complex/filter
+
+    include includes/complex/flats
+    include includes/complex/about
+    include includes/complex/infrastructure
+    include includes/complex/banks
+    include includes/complex/calc
+    include includes/complex/offers
+    include includes/complex/subscribe
+    include includes/complex/news
+    include includes/complex/another-blocks
+

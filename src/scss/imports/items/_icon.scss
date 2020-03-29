@@ -1,0 +1,70 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+
+  &_logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  &_percent {
+    width: 12.5px;
+    height: 12.5px;
+    fill: #fff;
+    margin-right: 8px;
+  }
+
+  &_search {
+    width: 16.31px;
+    height: 15.71px;
+  }
+
+  &_mic {
+    width: 15.5px;
+    height: 22.75px;
+    fill: #fff;
+  }
+
+  &_exit {
+    width: 16.2px;
+    height: 13px;
+  }
+
+  &_flag {
+    width: 17px;
+    height: 32px;
+  }
+
+  &_client {
+    width: 20px;
+    height: 17px;
+  }
+
+  &_clip {
+    width: 18px;
+    height: 18px;
+  }
+
+  &_document {
+    width: 12px;
+    height: 16px;
+  }
+
+  &_comment {
+    position: relative;
+    top: 1px;
+    width: 14px;
+    height: 13px;
+  }
+
+  &_compare {
+    fill: $color-bg-light;
+    stroke: $color-brand-3;
+  }
+
+  &_list {
+    // нф
+  }
+}

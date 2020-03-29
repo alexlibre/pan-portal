@@ -1,0 +1,80 @@
+$grid-columns: 12;
+
+$grid-gutter: 30px;
+$grid-gutter-md: 22px;
+$grid-gutter-sm: 16px;
+$grid-gutter-xs: 10px;
+
+$fields: 64px;
+$fields-md: 40px;
+$fields-sm: 20px;
+$fields-xs: 15px;
+
+$wrapper: 1600px;
+$wrapper-md: 1240px;
+$wrapper-sm: 767px;
+
+$break-lg: #{$wrapper};
+$break-md: #{$wrapper-md};
+$break-sm: #{$wrapper-sm};
+$break-xs: 640px;
+
+$breakpoint-md: $wrapper - 1px;
+$breakpoint-sm: $wrapper-md - 1px;
+$breakpoint-xs: $wrapper-sm - 1px;
+
+// Colots
+$color-red: rgb(255, 45, 35);
+$color-red-opaque-20: rgba($color-red, 0.2);
+$color-red-hover: rgb(red($color-red - 48), 45, 35);
+$color-red-active: rgb(red($color-red - 76), 45, 35);
+
+$color-brand-1: #1e2030;
+$color-brand-2: #2c2e3e;
+$color-brand-3: #8f95ac;
+$color-brand-3-hover: #666b81;
+
+$color-dark-theme: #bfc4d8;
+$color-white: #fff;
+$color-white-15: rgba($color-white, 0.15);
+$color-icon: #91a3e9;
+
+$color-brand-2-o-20: rgba($color-brand-2, 0.2);
+
+$color-brand-opaque-8: rgba($color-brand-3, 0.08);
+$color-brand-opaque-10: rgba($color-brand-3, 0.1);
+$color-brand-opaque-15: rgba($color-brand-3, 0.15);
+$color-brand-opaque-20: rgba($color-brand-3, 0.2);
+$color-brand-opaque-30: rgba($color-brand-3, 0.3);
+$color-brand-opaque-50: rgba($color-brand-3, 0.5);
+$color-brand-opaque-60: rgba($color-brand-3, 0.6);
+$color-brand-opaque-70: rgba($color-brand-3, 0.7);
+
+$label-orange: #ffa100;
+$label-purple: #7684bc;
+$label-violet: $color-brand-3;
+$label-green: #2cba2e;
+$label-red: #FF2D23;
+$label-yellow: #FBA200;
+
+$label-orange-30: rgba(255, 204, 0, 0.3);
+$label-purple-20: rgba(118, 132, 188, 0.2);
+$label-violet-20: rgba(118, 132, 188, 0.2);
+$label-green-20: rgba(44, 186, 46, 0.2);
+$label-red-10: rgba(255, 45, 35, 0.1);
+$label-yellow-20: rgba(255, 204, 0, 0.2);
+
+$color-brand-o-30: #dddfe6;
+
+$color-border: #e9eaeb;
+$color-bg-light: #f6f7f9;
+$color-metro-1: #d4203c;
+$color-metro-2: #137fc9;
+$color-metro-3: #15985b;
+$color-metro-4: #dc7021;
+$color-metro-5: #6d1477;
+
+$shadow: 0 2px 10px $color-brand-opaque-20;
+$shadow-dark: 0 2px 10px $color-brand-2-o-20;
+
+$transition-default: .15s ease-in-out;

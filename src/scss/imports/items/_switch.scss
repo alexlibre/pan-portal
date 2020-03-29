@@ -1,0 +1,108 @@
+:root {
+  --switch-width: 46px;
+  --switch-height: 25px;
+  --switch-padding: 4px;
+  --switch-animation-duration: 0.2s;
+  --color-input: #{$color-brand-opaque-30};
+  --color-toggle: #{$color-white};
+  --color-active: #{$color-red};
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch__box {
+  position: relative;
+  outline: none;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  border-radius: 50em;
+  padding: var(--switch-padding) 0;
+  box-sizing: border-box;
+}
+
+.switch__control, .switch__input {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.switch__control {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+
+  &:checked + .switch__input {
+    background-color: var(--color-active);
+  }
+
+  &:checked + .switch__input + .switch__marker {
+    left: calc(100% - var(--switch-height) + var(--switch-padding));
+    background-color: #fff;
+  }
+
+}
+
+.switch__input {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: $color-brand-opaque-30;
+  border-radius: inherit;
+  // z-index: 1;
+  cursor: pointer;
+  transition: background var(--switch-animation-duration);
+}
+
+.switch__marker {
+  position: relative;
+  background-color: var(--color-toggle);
+  width: calc(var(--switch-height) - var(--switch-padding) * 2);
+  height: calc(var(--switch-height) - var(--switch-padding) * 2);
+  border-radius: 50%;
+  // z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.25);
+  left: var(--switch-padding);
+  transition: left var(--switch-animation-duration), color var(--switch-animation-duration);
+  will-change: left;
+}
+
+.switch__label {
+  color: $color-brand-1;
+  font-size: 14px;
+  line-height: 17px;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.switch__label + .switch__box {
+  margin-left: 14px;
+}
+
+.switch__box + .switch__label {
+  margin-left: 14px;
+}
+
+.switch_view_invert {
+
+  .switch__input {
+    background-color: $color-brand-2;
+  }
+
+  .switch__label {
+    color: $color-brand-3;
+  }
+  --color-toggle: #{$color-brand-3};
+}

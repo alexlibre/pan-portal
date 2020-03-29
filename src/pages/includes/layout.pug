@@ -1,0 +1,20 @@
+//- layout.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width,initial-scale=1.0")
+    title
+      block title
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=d30707d3-c9d0-4abc-b156-78fb22166386" type="text/javascript")
+  body
+    //- include mixins/debug
+    .content
+      include standing/header
+
+
+      main
+        include standing/panel
+        block content
+
+    include standing/footer

@@ -1,0 +1,559 @@
+.sm-hide {
+    display: block !important;
+    @include break-max($breakpoint-sm) {
+        display: none !important;
+    }
+}
+
+.sm-show {
+    display: none !important;
+    @include break-max($breakpoint-sm) {
+        display: block !important;
+    }
+}
+
+
+.flat {
+    margin-top: 50px;
+    margin-bottom: 65px;
+
+    @include break-max($breakpoint-md) {
+        margin-top: 10px;
+    }
+
+    &__title {
+        margin-right: 65px;
+    }
+
+    &__header {
+        border-bottom: 1px solid $color-brand-opaque-30;
+        padding: 36px 0;
+
+        @include break-max($breakpoint-md) {
+            padding: 30px 0;
+        }
+
+        @include break-max($breakpoint-sm) {
+            padding: 26px 0;
+        }
+
+        @include break-max($breakpoint-xs) {
+            padding: 16px 0;
+        }
+    }
+
+    &__complex {
+        @include break-max($breakpoint-sm) {
+            display: flex;
+            margin-top: 5px;
+
+            &-title {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    &__download {
+        display: flex;
+        & button {
+            margin-right: 40px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            @include break-max($breakpoint-md) {
+                margin-right: 24px;
+            }
+
+            @include break-max($breakpoint-sm) {
+                margin-right: 18px;
+            }
+        }
+    }
+
+    &__col {
+        @include grid-col();
+
+        &-title {
+            display: flex;
+            align-items: flex-end;
+
+            @include grid-size(6);
+
+            @include break-max($breakpoint-md) {
+                @include grid-size(7, $grid-gutter-md);
+            }
+
+            @include break-max($breakpoint-sm) {
+                @include grid-size(7, $grid-gutter-sm);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            @include break-max($breakpoint-xs) {
+                @include grid-size(12, $grid-gutter-xs);
+
+            }
+        }
+
+        &-download {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include grid-size(5);
+
+            @include break-max($breakpoint-md) {
+                @include grid-size(4, $grid-gutter-md);
+            }
+
+            @include break-max($breakpoint-sm) {
+                @include grid-size(5, $grid-gutter-sm);
+            }
+
+            @include break-max($breakpoint-xs) {
+                @include grid-size(12, $grid-gutter-xs);
+            }
+
+            & .button_presentation {
+                @include break-max($breakpoint-sm) {
+                    padding: 13px 18px;
+                    max-width: 148px;
+                    white-space: normal;
+                }
+            }
+        }
+
+        &-images {
+            @include grid-size(6);
+
+            @include break-max($breakpoint-md) {
+                @include grid-size(6, $grid-gutter-md);
+            }
+
+            @include break-max($breakpoint-sm) {
+                @include grid-size(12, $grid-gutter-sm);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &-info {
+            @include grid-size(5);
+
+            @include break-max($breakpoint-md) {
+                @include grid-size(6, $grid-gutter-md);
+            }
+
+            @include break-max($breakpoint-sm) {
+                @include grid-size(12, $grid-gutter-sm);
+            }
+        }
+
+
+    }
+
+    &__nav {
+        &-list {
+            @include unlist();
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        &-item {
+            margin-right: 20px;
+            display: flex;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        &-link {
+            padding: 14px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: $color-brand-2;
+            transition: all $transition-default;
+            &:hover {
+                background: $color-brand-opaque-8;
+            }
+            &.active {
+                background: $color-brand-opaque-10;
+            }
+
+            @include break-max($breakpoint-sm) {
+                padding: 14px 12px;
+            }
+        }
+    }
+
+    &__images {
+        display: flex;
+        padding: 35px 0;
+        margin-bottom: 10px;
+        border-bottom: 0.5px solid $color-brand-opaque-30;
+
+        @include break-max($breakpoint-sm) {
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 40px 50px;
+        height: 600px;
+        display: none;
+        &.active {
+            display: flex;
+        }
+        & img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+
+        &-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-expand {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            & .icon {
+                fill: $color-brand-3;
+                cursor: pointer;
+                &:hover {
+                    fill: $color-red;
+                }
+            }
+        }
+
+        @include break-max($breakpoint-md) {
+            height: 500px;
+        }
+    }
+
+
+
+
+    &__grid {
+        @include grid();
+        justify-content: space-between;
+        &-col {
+            @include grid-col();
+            display: flex;
+        }
+    }
+
+
+    &__content {
+        padding-top: 45px;
+        padding-bottom: 60px;
+        border-bottom: 1px solid $color-brand-opaque-30;
+    }
+
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+
+        &-actions {
+            display: flex;
+            align-items: start;
+        }
+
+        &-action {
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+            color: $color-brand-3;
+            cursor: pointer;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            @include break-max($breakpoint-md) {
+                margin-right: 30px;
+            }
+
+            &.is-fav {
+                & button {
+                    box-shadow: none;
+                    background-color: $color-red;
+
+                    .icon {
+                        stroke: $color-white;
+                        fill: $color-red;
+                    }
+                }
+            }
+
+            &:hover {
+                & button {
+                    box-shadow: none;
+                    background-color: $color-red;
+
+                    .icon {
+                        stroke: $color-white;
+                        fill: $color-red;
+                    }
+                }
+            }
+
+            &:active {
+                & button {
+                    box-shadow: none;
+                    background-color: $color-red-active;
+
+                    .icon {
+                        stroke: $color-white;
+                        fill: $color-red-active;
+                    }
+                }
+            }
+
+            .icon {
+                stroke: $color-brand-3;
+                fill: $color-bg-light;
+                transition: all $transition-default;
+            }
+
+            button {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__period {
+        &-grid {
+            @include grid();
+        }
+        &-col {
+            @include grid-col();
+            @include grid-size(7);
+            &:nth-child(odd) {
+                @include grid-size(5);
+            }
+
+            @include break-max($break-lg) {
+                @include grid-size(6, $grid-gutter-md);
+                &:nth-child(odd) {
+                    @include grid-size(6, $grid-gutter-md);
+                }
+            }
+
+            @include break-max($break-md) {
+                @include grid-size(7, $grid-gutter-sm);
+                &:nth-child(odd) {
+                    @include grid-size(5, $grid-gutter-md);
+                }
+            }
+        }
+    }
+
+    &__info {
+        &-grid {
+            @include grid();
+        }
+
+        &-col {
+            @include grid-col();
+            @include grid-size(7);
+            &:nth-child(odd) {
+                @include grid-size(5);
+            }
+            @include break-max($breakpoint-md) {
+                @include grid-size(6, $grid-gutter-md);
+                &:nth-child(odd) {
+                    @include grid-size(6, $grid-gutter-md);
+                }
+            }
+
+            @include break-max($breakpoint-sm) {
+                @include grid-size(3, $grid-gutter-sm);
+                &:nth-child(odd) {
+                    @include grid-size(3, $grid-gutter-sm);
+                }
+            }
+            @include break-max($breakpoint-xs) {
+                @include grid-size(6, $grid-gutter-xs);
+                &:nth-child(odd) {
+                    @include grid-size(6, $grid-gutter-xs);
+                }
+            }
+        }
+        &-item {
+            margin-bottom: 30px;
+            &_value {
+                font-size: 25px;
+                line-height: 31px;
+                font-weight: bold;
+                @include break-max($breakpoint-md) {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+
+                sup {
+                    font-size: 12px;
+                    vertical-align: text-top;
+                }
+            }
+            &_desc {
+                font-size: 14px;
+                line-height: 21px;
+                color: $color-brand-3;
+            }
+            &_price {
+                font-size: 25px;
+                line-height: 31px;
+                font-weight: bold;
+            }
+        }
+        &-btns {
+            padding: 35px 0;
+            border-top: 0.5px solid $color-brand-opaque-30;
+            border-bottom: 0.5px solid $color-brand-opaque-30;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            button {
+                margin-right: 15px;
+            }
+
+            @include break-max($breakpoint-sm) {
+                justify-content: center;
+            }
+        }
+
+    }
+
+    &__manager {
+        padding-top: 25px;
+    }
+
+}
+
+.manager {
+    display: flex;
+    @include grid-shift-left(2);
+
+    @include break-max($breakpoint-md) {
+        @include grid-shift-left(1);
+    }
+
+    @include break-max($breakpoint-sm) {
+        @include grid-shift(2);
+    }
+
+    &-avatar {
+        display: flex;
+        flex: 0 0 120px;
+        margin-right: 36px;
+        &_wrapper {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+        }
+    }
+    &-title {
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 28px;
+        margin-top: 22px;
+    }
+    &-post {
+        font-size: 14px;
+        line-height: 21px;
+        color: $color-brand-3;
+        margin-top: 4px;
+    }
+    &-contacts {
+        margin-top: 16px;
+        &_list {
+            @include unlist();
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &_item {
+            margin-right: 30px;
+            margin-bottom: 10px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+    &-action {
+        margin-top: 20px;
+
+        & button {
+            font-weight: bold;
+        }
+    }
+}
+
+
+.wrapper__center {
+    @include grid-shift(1);
+    @include break-max($breakpoint-sm) {
+        margin: 0;
+    }
+}
+
+.viewing-record {
+
+    &__header {
+        display: flex;
+        padding: 25px 30px 40px;
+        border-radius: 4px;
+        background-color: $color-brand-opaque-8;
+
+        & .input {
+            flex-grow: 1;
+
+            &:first-child {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    &__content {
+        padding: 25px 30px 15px;
+    }
+}
+
+.flat-form {
+    &__row {
+        display: flex;
+        
+        & + & {
+            margin-top: 20px;
+        }
+    }
+
+    &__col {
+        flex-basis: 100%;
+        flex-grow: 1;
+
+        & + & {
+            margin-left: 30px;
+        }
+    }
+}
+
+.flat {
+    &__viewing {
+    }
+
+    &__fixing {
+    }
+}

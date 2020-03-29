@@ -1,0 +1,190 @@
+extends includes/layout-lk
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/select
+include includes/mixins/checkbox
+include includes/mixins/input
+include includes/mixins/textarea
+
+block title
+  | Clients new
+block content
+  section.section.section_view_white.clients
+    .wrapper
+      .personal_content
+        .personal__clients
+          .clients__header
+            .clients__title
+              .h1 Создать нового клиента
+          .clients__grid
+            .clients__grid-col.clients__back
+              +button({
+                classList: 'button_view_outline-with-icon js-go-back'
+              })
+                +svg_icon(require("../images/svg/back.svg").default).icon.icon_back
+                span Вернуться
+            .clients__grid-col.clients__new
+              form.clients__form.js-form-address
+                .clients__form-row
+                  .clients__form-row-title
+                  .clients__form-row-content
+                    .clients__form-fr
+                      .select.select_type_form
+                        +select({
+                          id: 'cl-status',
+                          label: 'Статус:',
+                          options: [
+                            {inner: 'В архиве',
+                            classes: 'label-item label_violet'},
+                            {inner: 'В работе',
+                            classes: 'label-item label_red'},
+                            {inner: 'Отложенный',
+                            classes: 'label-item label_yellow'},
+                            {inner: 'Ждет оформления',
+                            classes: 'label-item label_green'}
+                          ]
+                        })
+
+                    .clients__form-fr
+                      .select.select_type_form
+                        +select({
+                          id: 'cl-manager',
+                          label: 'Фамилия и имя менеджера:',
+                          options: [
+                            {inner: 'Пономарев В.'},
+                            {inner: 'Орлова К.'},
+                          ]
+                        })
+                    .clients__form-fr
+                      +checkbox({
+                        id: 'cl-is-fav',
+                        label: 'Добавлен в избранное'
+                      })
+                .clients__form-row
+                  .clients__form-row-title О клиенте
+                  .clients__form-row-content
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-sec-name',
+                        label: 'Фамилия клиента:'
+                      })
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-name',
+                        label: 'Имя и отчество клиента:'
+                      })
+                .clients__form-row.js-fias
+                  .clients__form-row-title Адрес клиента
+                  .clients__form-row-content
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-city',
+                        label: 'Город:',
+                        controlClassList: 'js-form-city',
+                        name: 'city'
+                      })
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-street',
+                        label: 'Улица:',
+                        controlClassList: 'js-form-street',
+                        name: 'street'
+                      })
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-house',
+                        label: 'Номер дома:',
+                        name: 'building'
+                      })
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_small',
+                        id: 'cl-apt',
+                        label: 'Офис, квартира:'
+                      })
+                .clients__form-row
+                  .clients__form-row-title Контактные данные
+                  .clients__form-row-content
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-phone',
+                        label: 'Телефон:',
+                        fieldId: 'phone-1'
+                      })
+                        span.input__alert.info
+                          +svg_icon(require("../images/svg/alert.svg").default).icon.icon_alert
+                          .info__popup
+                            p
+                              strong Приоритетный номер
+                            p При заполненни формы обратной связи, этот номер будет автоматически подставляться в форму.
+                      .clients__add-param
+                        button.button.button_type_add.js-add-field(data-add="phone-1")
+                        span добавить ещё телефон
+                    .clients__form-fr
+                      +input({
+                        autocomplete: 'off',
+                        classList: 'input_type_form input_width_available',
+                        id: 'cl-email',
+                        label: 'E-mail:',
+                        type: 'email',
+                        fieldId: 'email-1'
+                      })
+                        span.input__alert.info
+                          +svg_icon(require("../images/svg/alert.svg").default).icon.icon_alert
+                          .info__popup
+                            p
+                              strong Приоритетный e-mail
+                            p При заполненни формы обратной связи, этот e-mail будет автоматически подставляться в форму.
+                      .clients__add-param
+                        button.button.button_type_add.js-add-field(data-add="email-1")
+                        span добавить ещё e-mail
+                .clients__form-row
+                  .clients__form-row-title Комментарий к&nbsp;клиенту
+                  .clients__form-row-content
+                    .clients__form-fr.clients__form-fr_full
+                      +textarea({
+                        id: 'cl-comment',
+                        label: 'Текст комментария:',
+                        classList: 'textarea_type_form textarea_width_available',
+                        rows: 5
+                      })
+                .clients__form-row
+                  .clients__form-row-title Загрузить документы
+                  .clients__form-row-content
+                    .clients__form-fr.clients__form-fr_full
+                      +input({
+                        type: 'file',
+                        name: "file",
+                        id: 'file-input',
+                        classList: 'input_type_upload-btn',
+                        multiple: true
+                      })
+                        | Прикрепите файлы
+                    .clients__form-fr.clients__form-fr_full
+                      .clients__files.js-upload-container(data-id="file-input")
+                .clients__form-submit
+
+                  .clients__form-btns
+                    +button({
+                      classList: 'button_view_outline-with-icon clients__back js-go-back'
+                    })
+                      +svg_icon(require("../images/svg/back.svg").default).icon.icon_back
+                      span Вернуться
+                    a.button.button_view_default Создать клиента
+
+
+
+

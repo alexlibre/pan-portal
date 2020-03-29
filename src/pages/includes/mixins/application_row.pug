@@ -1,0 +1,38 @@
+mixin application_row({ status, client, price, date, agent, payment_type, object })
+  tr(class={ 'disabled': status == '0' }) 
+    td.control
+    td(data-client-id= client.id)
+      a(href='/').orders__table-link.orders__table-client
+        | #{client.name}&nbsp;
+        +svg_icon(require('../images/svg/external_link.svg').default).icon.icon_external-link
+    td        
+      .orders__table-object
+        | #{object}
+      a(href="#").orders__table-label Карточка объекта
+    td.nowrap 
+      | #{price}
+    td.nowrap 
+      | #{date}
+    td.nowrap(data-agent-id= agent.id)
+      | #{agent.name}
+    td
+      .orders__table-payment
+        | #{payment_type}
+    td
+      +application_status(status)
+    td
+      +form-drop({
+        btnClassList: 'button_type_round',
+        datatableIcon: true
+      })
+        .dt__more
+          hr
+
+          if status != '0'
+            .dt__more-control
+              +svg_icon(require('../images/svg/mail.svg').default).icon.icon_mail
+              | Отправить заявку
+
+          .dt__more-control.dt__more-delete
+            +svg_icon(require('../images/svg/trash_basket.svg').default).icon.icon_trash-basket
+            | Удалить

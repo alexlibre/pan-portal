@@ -1,0 +1,201 @@
+body {
+  font-family: "Formular", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  color: $color-brand-1;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  @include wrapper();
+
+  &_fluid {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+input[type="submit"] {
+  appearance: none;
+}
+
+.visible {
+  &_note {
+    @include break-max($break-md) {
+      display: none;
+    }
+  }
+
+  &_desktop {
+    @include break-max($break-lg) {
+      display: none;
+    }
+  }
+
+  &_mobile {
+    display: none;
+    @include break-max($breakpoint-sm) {
+      display: block;
+    }
+  }
+}
+
+::selection {
+  color: $color-white;
+  background-color: $color-brand-3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+h1,
+.h1 {
+  @include h1();
+
+  &.false {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+h2,
+.h2 {
+  @include h2();
+
+  &.false {
+    font-size: 28px;
+    line-height: 33px;
+  }
+}
+
+h3,
+.h3 {
+  @include h3();
+
+  &.false {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+h4 {
+  @include h4();
+}
+
+h5 {
+  @include h5();
+}
+
+a.link {
+  @include link();
+}
+
+.hide-mobile {
+  @include break-max($break-md) {
+    display: none;
+  }
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin debug($background, $outline) {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  > div {
+    height: inherit;
+    @include wrapper();
+
+    > div {
+      height: inherit;
+      @include wrapper();
+
+      > div{
+          height: inherit;
+          @include grid();
+
+          > div{
+              @include grid-col();
+              @include grid-size(1);
+              height: inherit;
+              outline: $outline;
+              background: $background;
+
+              @include break-max($break-lg) {
+                @include grid-size(1, $grid-gutter-md)
+              }
+
+              @include break-max($break-md) {
+                @include grid-size(1, $grid-gutter-sm)
+              }
+
+              @include break-max($break-sm) {
+                @include grid-size(1, $grid-gutter-sm);
+              }
+          }
+      }
+    }
+  }
+}
+
+.debug {
+  @include debug(transparent, 1px dotted rgba(215, 0, 28, 0.3));
+  z-index: 1000000;
+  pointer-events: none;
+  will-change: transform;
+
+  & > div {
+    // outline: 1px dashed rgba(0, 128, 0, .2);
+  }
+
+  & > * {
+    pointer-events: none;
+  }
+
+  & > div > div > div {
+    background-color: rgba(215, 0, 28, 0.02);
+  }
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 1px;
+  background-color: $color-brand-opaque-20;
+  overflow: visible;
+}
+.simplebar-scrollbar {
+  overflow: visible;
+}
+.simplebar-scrollbar:before {
+  opacity: 1;
+  background-color: $color-red;
+  left: -1px;
+  right: -1px;
+}
+
+.is-red-text {
+  color: $color-red;
+}
+
+#dist-map-container {
+  height: 720px;
+  max-height: 60vh;
+}
+
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+  background: $color-red;
+  border-color: $color-red;
+}

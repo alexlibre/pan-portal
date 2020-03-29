@@ -1,0 +1,78 @@
+form.orders__filter
+  .orders__filter-grid
+    .orders__filter-col.orders__filter-search
+      +input({
+        type: 'search',
+        id: 'applications-search',
+        classList: 'input_type_search input_width_available',
+        placeholder: 'Поиск по клиенту, агенту ...',
+      })
+        +svg_icon(require("../images/svg/search.svg").default).icon.icon_search
+    .orders__filter-col
+      +form-drop({
+        name: 'Дата добавления'
+      })
+        +input({
+          id: 'modal-task-date',
+          classList: 'input_width_available input_type_form',
+          controlClassList: 'js-datepicker'
+        })
+    .orders__filter-col
+      +form-drop({
+        name: 'Агент',
+        classList: 'js-filter-group'
+      })
+        .filter
+          .filter__filter
+            +input({
+              type: 'text',
+              placeholder: 'Введите имя агента',
+              classList: 'input_type_default input_width_available js-filter-list-input'
+            })
+          .filter__checks(data-simplebar="true")
+            .checkbox-group
+              each name, id in agents
+                .checkbox-group__item.js-filter
+                  +checkbox({
+                    id: 'applications-agent-' + id,
+                    label: name,
+                    name: 'agent-id ' + id,
+                    controlClassList: 'orders__control js-filter-by'
+                  })
+
+    .orders__filter-col
+      +form-drop({
+        name: 'Клиент',
+        classList: 'js-filter-group'
+      })
+        .filter
+          .filter__filter
+            +input({
+              type: 'text',
+              placeholder: 'Введите имя клиента',
+              classList: 'input_type_default input_width_available js-filter-list-input'
+            })
+          .filter__checks(data-simplebar="true")
+            .checkbox-group
+              each name, id in clients
+                .checkbox-group__item.js-filter
+                  +checkbox({
+                    id: 'applications-client-' + id,
+                    label: name,
+                    name: 'client-id ' + id,
+                    controlClassList: 'orders__control js-filter-by'
+                  })
+    .orders__filter-col.is-hidden-sm
+      +button({
+        classList: 'button_type_clear orders__filter-button'
+      })
+        +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+        span Очистить фильтр
+.index-search__filter-applied.is-hidden 
+  .index-search__filter-inc
+.orders__filter-mobile
+  +button({
+    classList: 'button_type_clear'
+  })
+    +svg_icon(require("../images/svg/x.svg").default).icon.icon_x
+    span Очистить фильтр

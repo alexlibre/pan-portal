@@ -1,0 +1,38 @@
+.checkbox-group {
+  padding-right: 20px;
+
+  &__item {
+    margin-bottom: 4px;
+    border-radius: 4px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: $color-brand-opaque-10;
+
+      & .filter__exclude-btn {
+        display: block;
+      }
+    }
+
+    &_single {
+      margin-bottom: 14px!important;
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.simplebar-content {
+  .checkbox-group__item:last-of-type {
+    margin-bottom: 22px;
+  }
+}

@@ -1,0 +1,6 @@
+mixin select(data)
+  if data.label
+    label.custom-select-label(for= data.id)= data.label
+  select(id= data.id)
+    each option in data.options
+      option(value= option.inner data-classes= option.classes)= option.inner

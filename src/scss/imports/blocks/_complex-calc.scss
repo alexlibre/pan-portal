@@ -1,0 +1,55 @@
+.section__calc {
+  padding: 55px 0 100px;
+  margin-top: 120px;
+
+  @include break-max($breakpoint-md) {
+    margin-top: 90px;
+    padding: 55px 0 80px;
+  }
+
+  @include break-max($breakpoint-sm) {
+    margin-top: 44px;
+    padding: 44px 0;
+  }
+}
+
+.calc {
+  &__grid {
+    @include grid();
+
+    @include break-max($breakpoint-sm) {
+      flex-direction: column;
+    }
+
+  }
+
+  &__col {
+    @include grid-col();
+  }
+
+  &__form {
+    @include grid-size(9);
+
+    @include break-max($breakpoint-md) {
+      @include grid-size(8, $grid-gutter-md);
+    }
+
+    @include break-max($breakpoint-sm) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+
+  }
+
+  &__manager {
+    @include grid-size(3);
+
+    @include break-max($breakpoint-md) {
+      @include grid-size(4, $grid-gutter-md);
+    }
+
+    @include break-max($breakpoint-sm) {
+      @include grid-size(12, $grid-gutter-sm);
+    }
+
+  }
+}

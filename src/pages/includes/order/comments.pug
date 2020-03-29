@@ -1,0 +1,37 @@
+include ../mixins/svg_icon
+include ../mixins/commentary
+
+section.section.order-comments#order-comments
+  .wrapper
+    .order-comments__body
+      .order-comments__header
+        .order-comments__header-content
+          h4.h4.order-comments__step-name
+            | Комментарии к этапу 
+            span#order-comments__step-name
+              | "Сделка поставлена в бронь"
+          a.button.button_view_default.order-comments__leave-comment(href="#form-commentary-anchor")
+            | Оставить комментарий
+        .order-comments__hide#order-comments-hide
+          span.order-comments__hide-label
+            | Свернуть комментарии
+          .order-comments__hide-icon
+            +svg_icon(require("../images/svg/arrow_up.svg").default).icon.icon_arrow_up
+
+      .section__grid
+        .section__grid-col.order-comments__section
+          .order-comments__list
+            each comment in comments
+              +commentary({
+                image: comment.image, 
+                author: comment.author, 
+                date: comment.date, 
+                text: comment.text
+              })
+
+          form.order-comments__form
+            #form-commentary-anchor
+            h3.h3.order-comments__form-title Оставьте комментарий
+            textarea.order-comments__form-input(placeholder="Ваш комментарий")
+            button.button.button_view_default.order-comments__form-submit(type="submit")
+              | Отправить

@@ -1,0 +1,22 @@
+include ./svg_icon
+include ./dropdown
+mixin pagination(data)
+  .pagination
+    button.button.pagination__control.pagination__prev
+      +svg_icon(require("../images/svg/pag-prev.svg").default).icon.icon_prev
+    if data.list
+      ul.pagination__list
+        each item, idx in data.list
+          li
+            a.pagination__item(href= '#'+item class= idx=='0'? 'is-active': '')= item
+    button.button.pagination__control.pagination__next
+      +svg_icon(require("../images/svg/pag-next.svg").default).icon.icon_next
+    .pagination__view-results
+      .pagination__view-results-inner
+        +select({
+          id: 'view-results',
+          options: [{inner:'10'}, {inner:'20'}, {inner:'50'}, {inner:'100'}],
+          classList: 'custom-select_width_small'
+        })
+        label.pagination__view-results-label(for="view-results") Показывать&nbsp;<span class="">10</span> из 234
+

@@ -1,0 +1,184 @@
+include ../mixins/svg_icon
+include ../mixins/button
+
+.wrapper
+  .complex__block
+    .complex__block-row
+      .complex__block-col.info__col.info__col-top
+        ul.complex__badges
+          li.complex__badges-item
+            .badge.complex__badge-badge Комиссия 2%
+          li.complex__badges-item
+            .badge.complex__badge-badge Анонсирование 2,5%
+            +info({})
+              p Какой-то текст&nbsp;Какой-то текст&nbsp;Какой-то текст&nbsp;Какой-то текст в&nbsp;Какой-то текст
+        .complex__info-update= 'Обновлено 27.01.2020 в 15:05'
+    .complex__info-main.sm-show
+      .complex__address
+        .complex__address-value= 'Приморский район, ул Савушкина, д. 4'
+        .complex__address-map
+          a.link.show__map(href="#")
+            +svg_icon(require("../images/svg/map_pin.svg").default).icon.icon_map-pin
+            | Показать на карте
+      .complex__main
+        h1.h2.complex__title= 'ЖК «Легенда»'
+        .complex__info-routes
+          ul.complex__routes
+            li.complex__routes-item
+              span.complex__metro-color.complex__metro-color_1
+              span.complex__metro-station Пл. Восстания
+              span.complex__route-type
+                +svg_icon(require("../images/svg/auto.svg").default).icon.icon_auto
+              span.complex__route-time 5 мин.
+            li.complex__routes-item
+              span.complex__metro-color.complex__metro-color_2
+              span.complex__metro-station Комендантский пр.
+              span.complex__route-type
+                +svg_icon(require("../images/svg/pedestrian.svg").default).icon.icon_pedestrian
+              span.complex__route-time 5 мин.
+
+    .complex__block-row
+      .complex__block-col.info__col
+        .complex__images
+          -
+            var slides = [
+              {
+                name: "photos",
+                label: 'Фотографии',
+                images: [
+                  {
+                    src: require('../images/jpg/complex-image.jpg'),
+                    w: 818,
+                    h: 593
+                  },
+                  {
+                    src: require('../images/jpg/flat_plan.jpg'),
+                    w: 231,
+                    h: 477
+                  },
+                  {
+                    src: require('../images/jpg/complex.jpg'),
+                    w: 797,
+                    h: 593
+                  },
+                ]
+              },
+              {
+                name: "finish",
+                label: 'Отделка',
+                images: [
+                  {
+                    src: require('../images/jpg/complex-image.jpg'),
+                    w: 818,
+                    h: 593
+                  },
+                ]
+              },
+              {
+                name: "panorama",
+                label: 'Аэропанорама',
+                images: [
+                  {
+                    src: require('../images/jpg/complex-image.jpg'),
+                    w: 818,
+                    h: 593
+                  },
+                  {
+                    src: require('../images/jpg/flat_plan.jpg'),
+                    w: 237,
+                    h: 477
+                  },
+                ]
+              }
+            ];
+
+          ul.complex__images-navs
+            each slide, i in slides
+              li.complex__images-nav(data-tab= slide.name class= { ' active': i === 0  })= slide.label
+
+
+          .complex__slider.gallery
+            each slide, i in slides
+              .complex__slider-tab(class= { ' active': i === 0 })
+                .complex__slider-wrapper.gallery__wrapper(id= `complex-slider-${slide.name}`)
+                  each image, index in slide.images
+                    .complex__slider-item.gallery__item(data-width= image.w data-height= image.h data-src= image.src data-index= index)
+                      img(src= image.src)
+                .complex__slider-preview
+                  ul.complex__slider-thumbnails(id= `complex-slider-thumbnails-${slide.name}`)
+                    each image in slide.images
+                      li.complex__slider-thumbnails_item
+                        img(src= image.src)
+
+                ul.complex__slider-controls(id= `complex-slider-controls-${slide.name}`)
+                  li.prev
+                    +svg_icon(require("../images/svg/icon-left_arrow.svg").default).icon.icon-white_stroke
+                  li.next
+                    +svg_icon(require("../images/svg/icon-right_arrow.svg").default).icon.icon-white_stroke
+
+            .complex__slider-magnifier
+              +svg_icon(require('../images/svg/search.svg').default).icon.icon_search
+      .complex__block-col.text__col
+        .complex__info-main.sm-hide
+          .complex__address
+            .complex__address-value= 'Приморский район, ул Савушкина, д. 4'
+            .complex__address-map
+              a.link.show__map(href="#")
+                +svg_icon(require("../images/svg/map_pin.svg").default).icon.icon_map-pin
+                | Показать на карте
+          .complex__main
+            h1.h2.complex__title= 'ЖК «Легенда»'
+            .complex__info-routes
+              ul.complex__routes
+                li.complex__routes-item
+                  span.complex__metro-color.complex__metro-color_1
+                  span.complex__metro-station Пл. Восстания
+                  span.complex__route-type
+                    +svg_icon(require("../images/svg/auto.svg").default).icon.icon_auto
+                  span.complex__route-time 5 мин.
+                li.complex__routes-item
+                  span.complex__metro-color.complex__metro-color_2
+                  span.complex__metro-station Комендантский пр.
+                  span.complex__route-type
+                    +svg_icon(require("../images/svg/pedestrian.svg").default).icon.icon_pedestrian
+                  span.complex__route-time 5 мин.
+        .complex__bottom
+          .complex__price
+            .complex__price-row
+              .complex__price-col.complex__price-left
+                .complex__price-value от 13 250 000 р.
+                .complex__info-item-desc Цена при 100% оплате
+              .complex__price-col.complex__price-right
+                .complex__price-value 450
+                .complex__info-item-desc Квартир в комплексе
+          .complex__additional
+            .complex__additional-row
+              .complex__additional-col.complex__additional-left
+                .complex__info-item-value= 'ЦДС'
+                .complex__info-item-desc= 'Застройщик'
+              .complex__additional-col.complex__additional-right
+                .complex__info-item-value= '3 кв. 2019 — 4 кв. 2020'
+                .complex__info-item-desc= 'Срок сдачи'
+              .complex__additional-col.complex__additional-left
+                .complex__info-item-value= 'Подчистовая'
+                .complex__info-item-desc= 'Отделка'
+              .complex__additional-col.complex__additional-right
+                .complex__info-item-value= 'Монолитный'
+                .complex__info-item-desc= 'Тип дома'
+              .complex__additional-col.complex__additional-full
+                .complex__info-item-value= 'Ипотека, рассрочка, материнский капитал, 100% оплата'
+                .complex__info-item-desc= 'Оплата'
+
+        .complex__actions
+          .complex__actions-item
+            .button.button_view_outline-invert.button__files= 'Файлы'
+          .complex__actions-item
+            a(href="#")= 'Рекламные материалы'
+          .complex__actions-item.complex__favorites.js-favorites-add(data-fav-id=6005)
+            +button({
+              classList: 'button_complex_favorites'
+            })
+              +svg_icon(require("../images/svg/fav.svg").default).icon.icon_settings
+            | В избранное
+
+include ../blocks/gallery

@@ -1,0 +1,33 @@
+include ../mixins/banner-card
+
+-
+  var banners = [
+    {
+      name: 'Мотивация',
+      description: 'Комиссионное вознаграждение',
+      icon: 'banner-icon_1.svg',
+      bg_color: '#4C539E'
+    },
+    {
+      name: 'Ипотека',
+      description: 'Расчет платежей под ипотеку',
+      icon: 'banner-icon_2.svg',
+      bg_color: '#7684BC'
+    },
+    {
+      name: 'АвтоПАН',
+      description: 'Просмотры объектов за КАДом',
+      icon: 'banner-icon_3.svg',
+      bg_color: '#8269AD'
+    },
+
+  ]
+
+section.section.banners
+  .wrapper
+    .section__grid
+      .banners__grid
+        each banner in banners
+          .banners__grid-col
+            +banner-card(banner)
+

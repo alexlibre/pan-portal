@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="5px" viewBox="0 0 12 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="1600" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Property_card" transform="translate(-1489.000000, -2663.000000)">
+            <g id="Group-3" transform="translate(66.000000, 2620.000000)">
+                <g id="Group-4" transform="translate(1429.000000, 45.000000) scale(1, -1) translate(-1429.000000, -45.000000) translate(1407.000000, 23.000000)">
+                    <polyline id="Path" transform="translate(22.000000, 21.500000) scale(1, -1) translate(-22.000000, -21.500000) " points="17 19 22 24 27 19"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

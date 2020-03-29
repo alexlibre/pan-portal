@@ -1,0 +1,18 @@
+.order-history_pc
+  .order-history__steps
+    - var gradient_percents = active_step_i * 100 / (steps.length - 1);
+    .order-history__steps-line(style={ background: `linear-gradient(to right, #FF2D23 ${gradient_percents}%, #8F95AC ${gradient_percents}%)`})
+
+    if active_step_i >= 3
+      .order-history__advanced-hint
+        .order-history__advanced-hint__title
+          | Отправлена на авансирование
+        .order-history__advanced-hint__bracket
+    each step, i in steps
+      +history_step({
+        step: step,
+        advanced: order.advanced,
+        advanceStart: i === 3 && i <= active_step_i,
+        steps_length: steps.length,
+        i
+      })

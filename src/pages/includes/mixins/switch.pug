@@ -1,0 +1,10 @@
+mixin switch(data)
+  .switch(class= data.classList)
+    if data.label && !data.reorder
+      label.switch__label(for= data.id )= data.label
+    .switch__box
+      input.switch__control(type="checkbox" id= data.id checked= data.checked name= data.name)
+      label.switch__input(for= data.id )
+      .switch__marker
+    if data.label && data.reorder
+      label.switch__label(for= data.id )= data.label

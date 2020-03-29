@@ -1,0 +1,14 @@
+mixin clients_status(id)
+  case id
+    when '0'
+      .label-item.label_red
+        | В работе
+    when '1'
+      .label-item.label_violet
+        | В архиве
+    when '2'
+      .label-item.label_yellow
+        | Отложенный
+    when '3'
+      .label-item.label_green
+        | Ждёт оформмления

@@ -1,0 +1,143 @@
+extends includes/layout-lk
+include includes/mixins/svg_icon
+include includes/mixins/input
+include includes/mixins/button
+include includes/mixins/form-drop
+
+block title
+  | Детали заказа №125
+
+block content
+  .lk-order
+    section.section.section_view_white.lk-order__details
+      .wrapper
+        .lk-order__header
+          h1.h1
+            | Сделка №125
+
+        .section__grid.lk-order__details-row
+          .section__grid-col.lk-order__details-col
+            .lk-order__details-col__icon
+              +svg_icon(require("../images/svg/flag.svg").default).icon.icon_flag
+            .lk-order__details-col__content
+              .h3
+                | Подписание договора
+              p.lk-order__label Статус сделки
+
+          .section__grid-col.lk-order__details-col
+            .h3
+              | 1 к.кв.
+            p.lk-order__label Цена, 100% оплата
+            a.link(href="#") Страница квартиры
+
+          .section__grid-col.lk-order__details-col
+            .h3
+              | 2&nbsp;400&nbsp;000&nbsp;р.
+            p.lk-order__label Цена, 100% оплата
+
+          .section__grid-col.lk-order__details-prices
+            .section__grid
+              .section__grid-col.lk-order__details-prices__item
+                .h3.lk-order__details-prices_light
+                  | 2&nbsp;600&nbsp;000&nbsp;р.
+                p.lk-order__label Цена базовая
+
+              .section__grid-col.lk-order__details-prices__item
+                .h3.lk-order__details-prices_light
+                  | 2&nbsp;600&nbsp;000&nbsp;р.
+                p.lk-order__label Цена в договоре
+
+        .section__grid.lk-order__details-row
+            .section__grid-col.lk-order__details-col.lk-order__details-client
+              .lk-order__details-col__icon
+                +svg_icon(require("../images/svg/client.svg").default).icon.icon_client
+              .lk-order__details-col__content
+                .h3
+                  | Михайлов Валерий
+                p.lk-order__label Клиент
+                .lk-order__details-client_contacts
+                  a( class="lk-order__contacts-link" href="tel:+79052813539")
+                    | +7 (905) 281 35 39
+                  a( class="lk-order__contacts-link" href="https://telegram.im/@Andrey_Basov" target="_blank")
+                    | @Andrey_Basov
+                  a( class="lk-order__contacts-link" href="mailto:basov@1-an.ru")
+                    | basov@1-an.ru
+
+            .section__grid-col.lk-order__details-col
+              .h3
+                | Документы
+
+              .lk-order__details-docs
+                .lk-order__details-docs__item
+                  .lk-order__details-docs__item-icon
+                    +svg_icon(require("../images/svg/document.svg").default).icon.icon_document
+                  .lk-order__details-docs__item-content
+                    .lk-order__details-docs__item-name
+                      | Платежное поручение
+                    .lk-order__label.lk-order__details-docs__item-delete Удалить
+                .lk-order__details-docs__item
+                  .lk-order__details-docs__item-icon
+                    +svg_icon(require("../images/svg/document.svg").default).icon.icon_document
+                  .lk-order__details-docs__item-content
+                    .lk-order__details-docs__item-name
+                      | Платежное поручение
+                    .lk-order__label.lk-order__details-docs__item-delete Удалить
+
+
+            .section__grid-col.lk-order__details-form
+              include includes/order/form-upload
+
+    include includes/order/history
+
+    section.section.lk-order__footer
+      .wrapper
+        .lk-order__footer-body
+          .lk-order__agent
+            h3.h3.lk-order__agent-title Агент
+            .lk-order__agent-card
+              .h3.lk-order__agent-card__name
+                | Михайлов Валерий
+              .lk-order__agent-card__contacts
+                a( class="lk-order__contacts-link" href="tel:+79052813539")
+                  | +7 (905) 281 35 39
+                a( class="lk-order__contacts-link" href="https://telegram.im/@Andrey_Basov" target="_blank")
+                  | @Andrey_Basov
+                a( class="lk-order__contacts-link" href="mailto:basov@1-an.ru")
+                  | basov@1-an.ru
+
+          .lk-order__managers
+            .lk-order__manager
+              h3.h3.lk-order__manager-title
+                | Менеджер сделки
+              .lk-order__manager-card
+                img(src=require("../images/jpg/manager.jpg") width="120px" height="120px").lk-order__manager-card__photo
+                .lk-order__manager-card__content
+                  .h3.lk-order__manager-name
+                    | Андрей Басов
+                  .lk-order__label
+                    | Специалист отдела продаж
+                  .lk-order__manager-contacts
+                    a( class="lk-order__contacts-link" href="tel:+79052813539")
+                      | +7 (905) 281 35 39
+                    a( class="lk-order__contacts-link" href="https://telegram.im/@Andrey_Basov" target="_blank")
+                      | @Andrey_Basov
+                    a( class="lk-order__contacts-link" href="mailto:basov@1-an.ru")
+                      | basov@1-an.ru
+
+            .lk-order__manager
+              h3.h3.lk-order__manager-title
+                | Ипотечный менеджер
+              .lk-order__manager-card
+                img(src=require("../images/jpg/manager.jpg") width="120px" height="120px").lk-order__manager-card__photo
+                .lk-order__manager-card__content
+                  .h3.lk-order__manager-name
+                    | Андрей Басов
+                  .lk-order__label
+                    | Специалист отдела продаж
+                  .lk-order__manager-contacts
+                    a( class="lk-order__contacts-link" href="tel:+79052813539")
+                      | +7 (905) 281 35 39
+                    a( class="lk-order__contacts-link" href="https://telegram.im/@Andrey_Basov" target="_blank")
+                      | @Andrey_Basov
+                    a( class="lk-order__contacts-link" href="mailto:basov@1-an.ru")
+                      | basov@1-an.ru

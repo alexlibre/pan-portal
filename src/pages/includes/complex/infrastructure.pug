@@ -1,0 +1,99 @@
+section.section.section_view_white.section__infrastructure.infrastructure
+  #anchor-infrastructure
+  .wrapper
+    .wrapper__center
+      .block__title 
+        h2.h2 Инфраструктура
+      .infrastructure__map(id="infrastructure-map")
+      .infrastructure__choose(id="infrastructure") 
+        ul.infrastructure__items
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_kindergarden',
+                name: 'kindergarden',
+                label: 'Детский сад',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/kindergarden.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_hospital',
+                name: 'hospital',
+                label: 'Поликлиники',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/hospital.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_school',
+                name: 'school',
+                label: 'Школы',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/school.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_park',
+                name: 'park',
+                label: 'Места для отдыха',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/park.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_sport',
+                name: 'sport',
+                label: 'Спортзалы',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/sport.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_shop',
+                name: 'shop',
+                label: 'Продуктовые магазины',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/shop.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_cafe',
+                name: 'cafe',
+                label: 'Кафе и рестораны',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/cafe.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_bank',
+                name: 'bank',
+                label: 'Банки',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/bank.svg').default).icon
+          li.infrastructure__item
+            +checkbox({
+                id: 'infrastructure_parking',
+                name: 'parking',
+                label: 'Платные парковки',
+                classList: 'infrastructure-checkbox checkbox_view_red',
+                required: false,
+                checked: true
+            })
+            +svg_icon(require('../images/svg/parking.svg').default).icon

@@ -1,0 +1,7 @@
+mixin input(data)
+  label.input(for= data.id class= data.classList data-field= data.fieldId)
+    if data.label
+      span.input__label= data.label
+    input.input__control(type= data.type multiple= data.multiple id= data.id data-title= data.title  class= data.controlClassList placeholder= data.placeholder autocomplete= data.autocomplete disabled= data.disabled name= data.name)
+    if block
+      block

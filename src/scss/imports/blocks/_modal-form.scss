@@ -1,0 +1,47 @@
+.modal-form {
+  $c: &;
+
+  &__row {
+    display: flex;
+
+    & + & {
+      margin-top: 18px;
+    }
+  }
+
+  &__wrap {
+    background-color: $color-brand-opaque-8;
+    padding: 26px 32px;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    & > * {
+      width: 100%;
+    }
+
+    & > * + * {
+      margin-top: 18px;
+    }
+  }
+
+  &__item {
+    flex: 1;
+
+    & + & {
+      margin-left: 30px;
+    }
+  }
+
+  &__submit {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+
+    & > * + * {
+      margin-left: 30px;
+    }
+  }
+}

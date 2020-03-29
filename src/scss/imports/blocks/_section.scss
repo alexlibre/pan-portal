@@ -1,0 +1,53 @@
+.section {
+  transition: background-color $transition-default;
+  &_view {
+
+
+    &_white {
+      background-color: #fff;
+    }
+
+    &_gray {
+      background-color: $color-brand-opaque-8;
+    }
+  }
+
+  &__grid {
+    @include grid();
+  }
+
+  &__grid-col {
+    @include grid-col();
+
+  }
+
+  &__heading {
+    @include grid-col();
+    @include grid-size(7);
+
+    @include break-max($break-lg) {
+      @include grid-size(5, $grid-gutter-md);
+      @include grid-shift-right(1, $grid-gutter-md)
+    }
+    @include break-max($break-md) {
+      @include grid-size(12, $grid-gutter-sm);
+      @include grid-shift-right(0, $grid-gutter-sm)
+    }
+  }
+
+  &__title {
+    font-size: 35px;
+    line-height: 55px;
+  }
+
+  &__cards {
+    display: block;
+  }
+
+  &__map {
+    display: none;
+    padding-bottom: 100px;
+    overflow: hidden;
+    max-height: 900px;
+  }
+}

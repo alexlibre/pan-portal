@@ -1,0 +1,40 @@
+.dropdown {
+  $c: &;
+  position: relative;
+  z-index: 10;
+  height: 100%;
+
+  &.is-showing {
+    z-index: 20;
+
+    #{$c}__block {
+      display: block;
+    }
+  }
+
+  &__block {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+
+    &_align {
+
+      &_right {
+        left: auto!important;
+        right: 0!important;
+        transform: translateX(0)!important;
+
+        & .profile-drop:before {
+          left: auto!important;
+          right: 90px;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    transition: background-color $transition-default;
+  }
+}

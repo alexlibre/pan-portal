@@ -1,0 +1,111 @@
+.header__top-profile
+    .dropdown.js-dropdown
+        button.dropdown__btn.button.header__top-profile-btn
+            span.header__top-profile-avatar В
+            span.header__top-profile-id Валерий В.
+                +svg_icon(require("../images/svg/triangle-down.svg").default).icon.icon_triangle-down
+        .dropdown__block
+            .dropdown__inner
+                .profile-drop
+                    .profile-drop__header
+                        h3.profile-drop__title Мой профиль
+                        button.button.button_with-icon.profile-drop__exit Выход
+                            +svg_icon(require("../images/svg/exit.svg").default).icon.icon_exit
+                    .profile-drop__content
+                        .profile-drop__row
+                            .profile-drop__wrap
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/deals-01.svg").default).icon.icon_deals
+                                        .profile-drop__subtitle Сделки
+                                    .profile-drop__desc Управляйте сделками
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/profile-01.svg").default).icon.icon_profile
+                                        .profile-drop__subtitle Профиль
+                                    .profile-drop__desc Мои данные и контакты
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/files-01.svg").default).icon.icon_files
+                                        .profile-drop__subtitle Файлы
+                                    .profile-drop__desc Библиотека файлов
+                        .profile-drop__row
+                            .profile-drop__wrap
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/meeting_room-01.svg").default).icon.icon_meeting-room
+                                        .profile-drop__subtitle Переговорные
+                                    .profile-drop__desc Бронируйте переговорные
+                                a.profile-drop__item(href="lk-clients.html")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/clients-01.svg").default).icon.icon_clients
+                                        .profile-drop__subtitle Клиенты
+                                    .profile-drop__desc Ваша база клиентов
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/agents-01.svg").default).icon.icon_agents
+                                        .profile-drop__subtitle Агенты
+                                    .profile-drop__desc Ваша база агентов
+                        .profile-drop__row
+                            .profile-drop__wrap
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/presentation.svg").default).icon.icon_presentation
+                                        .profile-drop__subtitle Презентации
+                                    .profile-drop__desc Управлять презентациями
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/events-01.svg").default).icon.icon_events
+                                        .profile-drop__subtitle Мероприятия
+                                    .profile-drop__desc Управлять мероприятиями
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/favourite-01.svg").default).icon.icon_favourite
+                                        .profile-drop__subtitle
+                                          span Избранное
+                                          span.profile-drop__qty.js-fav-val
+                                    .profile-drop__desc Сохраненные объекты
+                        .profile-drop__row
+                            .profile-drop__wrap
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/comparision-01.svg").default).icon.icon_comparision
+                                        .profile-drop__subtitle Сравнения
+                                    .profile-drop__desc Ваши сравнения
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/filter-01.svg").default).icon.icon_filter
+                                        .profile-drop__subtitle Сохраненные фильтры
+                                    .profile-drop__desc Сохраняйте фильтры
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/notification-01.svg").default).icon.icon_notification
+                                        .profile-drop__subtitle
+                                          span Уведомления
+                                          span.profile-drop__qty.is-visible 5
+                                    .profile-drop__desc Напоминания, заметки
+
+                        .profile-drop__row
+                            .profile-drop__wrap
+                                a.profile-drop__item(href="#")
+                                    .profile-drop__item-title
+                                        .profile-drop__icon
+                                            +svg_icon(require("../images/svg/settings-01.svg").default).icon.icon_settings
+                                        .profile-drop__subtitle Настройка фильтра
+                                    .profile-drop__desc Сохраняйте фильтры
+                                .profile-drop__item
+                                  buton.button.button_view_grey
+                                    +svg_icon(require("../images/svg/lock.svg").default).icon.icon_lock
+                                    span Фиксация клиента

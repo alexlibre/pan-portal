@@ -1,0 +1,52 @@
+include ./svg_icon
+mixin map-list(data)
+  h3.map-list-title 3 жилых комплекса
+  .map-list(data-simplebar="true")
+    ul.map-list__list
+      each item in data.list
+        li.map-list__item
+          .map-card
+            .map-card__header
+              ul.map-card__pills
+                each pill in item.pills
+                  li.map-card__pill
+                    button.button.button_type_pill.js-fake-link(href="#")= pill
+              button.button.button_view_fav.button_with_icon.map-card__fav.js-favorites-add(data-fav-id= item.id)
+                +svg_icon(require("../images/svg/fav.svg").default).icon.icon_fav
+            .map-card__body
+              .map-card__image
+                if item.id == 1 || item.id == 5
+                  img(src= require("../images/jpg/card01.jpg"))
+                else if item.id == 2 || item.id == 6
+                  img(src= require("../images/jpg/card02.jpg"))
+                else if item.id == 3 || item.id == 4
+                  img(src= require("../images/jpg/card03.jpg"))
+              .map-card__content
+                .map-card__row.map-card__row_distribute_between
+                  .map-card__place
+                    h3.map-card__title= item.title
+                    .map-card__address= item.address
+                  .map-card__price= item.price
+                .map-card__company
+                  .map-card__grid
+                    .map-card__left= item.builder
+                    .map-card__right= item.buildings
+                .map-card__dates= item. dates
+
+                ul.map-card__routes
+                  li.map-card__routes-item
+                    span.map-card__metro-color.map-card__metro-color_1
+                    span.map-card__metro-station м. пр. Науки
+                    span.map-card__route-type
+                      +svg_icon(require("../images/svg/auto.svg").default).icon.icon_auto
+                    span.map-card__route-time 5 мин.
+                  li.map-card__routes-item
+                    span.map-card__metro-color.map-card__metro-color_2
+                    span.map-card__metro-station м. Московская
+                    span.map-card__route-type
+                      +svg_icon(require("../images/svg/pedestrian.svg").default).icon.icon_pedestrian
+                    span.map-card__route-time 5 мин.
+                ul.map-card__options
+                  each option in item.options
+                    li.map-card__option.js-fake-link(data-href="#")= option
+                button.button.button_view_default Планировки и цены

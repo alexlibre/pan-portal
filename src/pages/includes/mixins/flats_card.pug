@@ -1,0 +1,29 @@
+mixin flats_card(data)
+  a.flats__card(href='#')
+    .flats__card-top
+      .flats__card-favorite.js-favorites-add(data-fav-id=data.id)
+        +svg_icon(require("../images/svg/icon-favorite.svg").default).icon.icon_favorite
+      .flats__card-status
+    .flats__card-image
+      img(src= require("../images/jpg/flats_plan.jpg"))
+    .flats__card-info
+      .flats__card-price 3 400 000 р.
+      .flats__card-features
+        .flats__card-feature
+          .flats__card-feature_title S общая
+          .flats__card-feature_value 21,2 м²
+        .flats__card-feature
+          .flats__card-feature_title S кухни
+          .flats__card-feature_value 7,2 м²
+        .flats__card-feature
+          .flats__card-feature_title Этаж
+          .flats__card-feature_value 3
+        .flats__card-feature
+          .flats__card-feature_title Отделка
+          .flats__card-feature_value базовая
+        .flats__card-feature
+          .flats__card-feature_title Корпус
+          .flats__card-feature_value 2
+        .flats__card-feature
+          .flats__card-feature_title Тип
+          .flats__card-feature_value новостройка

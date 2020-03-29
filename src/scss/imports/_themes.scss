@@ -1,0 +1,31 @@
+.theme {
+
+  &_color {
+
+    &_default {
+      --color-typo-primary: #333;
+      --color-typo-secondary: #555;
+      --color-typo-ghost: #aaa;
+      --color-typo-disable: #ccc;
+      --color-typo-success: #43831b;
+      --color-typo-warning: #ffc107;
+      --color-typo-alert: #dd2d24;
+      --color-typo-link: #24568f;
+      --color-typo-camolink: #555;
+      --color-typo-brand: #000;
+      --color-typo-promo: #000;
+      --color-primary: #333;
+      --color-secondary: #555;
+      --color-ghost: #999;
+      --color-disable: #ccc;
+      --color-success: #43831b;
+      --color-warning: #ffc107;
+      --color-alert: #dd2d24;
+      --color-link: #24568f;
+      --color-camolink: #555;
+      --color-brand: #000;
+      --color-promo: #000;
+      --color-white: #fff;
+    }
+  }
+}

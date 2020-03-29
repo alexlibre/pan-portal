@@ -1,0 +1,96 @@
+mixin clients_row({ status, client, agent, booking, calling, meeting })
+  tr
+    td
+    td
+      .clients__table-client
+        button.button.clients__fav-btn(data-client-fav="client-" + client.id)
+          +svg_icon(require('../images/svg/star.svg').default).icon.icon_star
+        a.clients__table-link.clients__table-client
+          | #{client.name}
+    td
+      a.clients__phone
+        | #{client.phone}
+    td
+      | #{client.email}
+    td.nowrap(data-agent-id= agent.id)
+      | #{agent.name}
+    td
+      | #{booking}
+    td
+      +clients_status(status)
+    td.dt_mod_no-p_h
+      if calling
+        .button.button_type_task-assigned
+          .icon-block
+            +svg_icon(require('../images/svg/alert-bell.svg').default).icon.icon_alert-bell
+          .task
+            span
+              | #{calling}
+            .clients__info
+              .info
+                +svg_icon(require("../images/svg/info.svg").default).icon.icon_info
+                .info__popup
+                  .clients__info-content
+                    .clients__info-block
+                      .clients__info-label Запланирован звонок
+                      .clients__info-val 21 февраля 2020
+                    .clients__info-block
+                      .clients__info-label Время
+                      .clients__info-val 11:30
+                    .clients__info-block
+                      .clients__info-label Напоминание
+                      .clients__info-val за 2 часа
+                    .clients__info-block
+                      .clients__info-label Комментарий
+                      .clients__info-val Тема звонка выяснить ход сделки
+                    .clients__info-block
+                      +button({
+                        classList: 'button_type_edit-small js-modal-btn',
+                        dataId: 'task-edit'
+                      })
+                        +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                        span Редактировать
+      if meeting
+        .button.button_type_task-assigned
+          .icon-block
+            +svg_icon(require('../images/svg/alert-bell.svg').default).icon.icon_alert-bell
+          .task
+            span
+              | #{meeting}
+            .clients__info
+              .info
+                +svg_icon(require("../images/svg/info.svg").default).icon.icon_info
+                .info__popup
+                  .clients__info-content
+                    .clients__info-block
+                      .clients__info-label Запланирована встреча
+                      .clients__info-val 21 февраля 2020
+                    .clients__info-block
+                      .clients__info-label Время
+                      .clients__info-val 11:30
+                    .clients__info-block
+                      .clients__info-label Напоминание
+                      .clients__info-val за 2 часа
+                    .clients__info-block
+                      +button({
+                        classList: 'button_type_edit-small js-modal-btn',
+                        dataId: 'task-edit'
+                        })
+                          +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+                          span Редактировать
+      button.button.button_type_task.js-modal-btn(data-id="task")
+        +svg_icon(require('../images/svg/plus.svg').default).icon.icon_plus
+        span Добавить дело
+    td
+      +form-drop({
+        btnClassList: 'button_type_round',
+        datatableIcon: true
+      })
+        .dt__more
+          hr
+          .dt__more-control.js-client-edit(data-client-id="client-1")
+            +svg_icon(require('../images/svg/edit.svg').default).icon.icon_edit
+            span Редактировать
+          .dt__more-control.js-modal-btn.js-client-del(data-client-id="client-1" data-id="delete-client")
+            +svg_icon(require('../images/svg/delete.svg').default).icon.icon_delete
+            span Удалить

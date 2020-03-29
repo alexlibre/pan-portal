@@ -1,0 +1,270 @@
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  // background-size: 1600px;
+  // background-repeat: no-repeat;
+  // background-position: center -135px;
+  min-height: calc(100vh - 134px);
+  transition: background $transition-default;
+
+  @include break-max($break-md) {
+    min-height: calc(100vh - 80px);
+  }
+
+  @include break-max($break-sm) {
+    padding-bottom: 25px;
+  }
+
+  .theme-switcher {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .switch__control {
+    &:checked + .switch__input {
+      &:hover {
+        background-color: $color-red;
+      }
+    }
+  }
+
+  .switch__input {
+    &:hover {
+      background-color: $color-brand-opaque-15;
+    }
+  }
+
+  .index-search {
+    z-index: 1;
+  }
+
+  .icon_jupiter {
+    position: absolute;
+    top: 105px;
+    right: 140px;
+    width: 103px;
+    height: 103px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include break-max($breakpoint-md) {
+      top: 75px;
+      right: 0;
+    }
+  }
+
+  .icon_saturn {
+    position: absolute;
+    left: 90px;
+    bottom: 50px;
+    width: 130px;
+    height: 130px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include break-max($breakpoint-md) {
+      left: -35px;
+    }
+  }
+
+  &__planets {
+    &_dark,
+    &_light {
+      @include wrapper();
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity $transition-default;
+    }
+  }
+
+  &_light {
+    .home__planets_dark {
+      display: none;
+    }
+
+    .index-search {
+      padding-bottom: 65px;
+    }
+  }
+
+  &_dark {
+    background-color: $color-brand-1;
+
+    .home__planets_light {
+      opacity: 0;
+    }
+
+    .is-hidden {
+      opacity: 0;
+    }
+
+    .index-search {
+      padding-bottom: 65px;
+
+      &__header {
+        color: $color-white;
+      }
+
+      &__filter {
+        background-color: transparent;
+
+        .icon {
+          stroke: $color-dark-theme;
+
+          &_x {
+            stroke: $color-brand-3;
+          }
+
+          &_mic,
+          &_settings {
+            fill: $color-brand-3;
+            stroke: none;
+          }
+
+          &_info {
+            stroke: none;
+          }
+        }
+
+        &-body {
+          background-color: $color-brand-opaque-20;
+        }
+
+        &-top {
+          .form__drop-btn {
+            .icon {
+              stroke: $color-brand-2;
+            }
+          }
+        }
+
+        &-main {
+          .form__item {
+            background-color: $color-brand-opaque-20;
+            transition: background $transition-default;
+
+            &:hover {
+              background-color: $color-brand-opaque-10;
+            }
+          }
+
+          .form__drop {
+            &-btn {
+              background-color: $color-brand-opaque-20;
+            }
+
+            &-name {
+              font-weight: 300;
+              color: $color-dark-theme;
+
+              .icon_chevron {
+                stroke: $color-dark-theme;
+              }
+            }
+          }
+        }
+
+        &-applied {
+          .filtered {
+            background-color: transparent;
+
+            &:hover {
+              background-color: $color-brand-opaque-20;
+            }
+
+            &-clear {
+              color: $color-brand-3;
+            }
+
+            &__value {
+              color: $color-white;
+            }
+          }
+        }
+
+        &-exc {
+          .filtered {
+            background-color: $color-red-opaque-20;
+
+            &:hover {
+              background-color: $color-red-hover;
+            }
+
+            .icon_x {
+              stroke: $color-white;
+            }
+          }
+        }
+
+        &-control,
+        .button_type_clear,
+        .button_view_outline {
+          color: $color-brand-3;
+        }
+
+        .button_type_clear {
+          &:hover {
+            color: $color-dark-theme;
+
+            .icon_x {
+              stroke: $color-dark-theme;
+            }
+          }
+        }
+
+        &-voice {
+          white-space: nowrap;
+          color: $color-brand-3;
+          cursor: pointer;
+          transition: all $transition-default;
+
+          &:hover {
+            color: $color-dark-theme;
+
+            .button_view_round {
+              background-color: $color-brand-opaque-20;
+            }
+          }
+        }
+
+        .button_view_outline {
+          box-shadow: inset 0 0 0 1px $color-brand-opaque-50;
+
+          &:hover {
+            background-color: $color-brand-opaque-20;
+            box-shadow: none;
+          }
+
+          &:active {
+            background-color: $color-brand-opaque-30;
+            box-shadow: none;
+          }
+        }
+
+        .button_type_settings,
+        .button_view_round {
+          background-color: $color-brand-2;
+          transition: background $transition-default;
+
+          &:hover {
+            background-color: $color-brand-opaque-20;
+          }
+        }
+      }
+    }
+    .switch__label {
+      color: $color-dark-theme;
+    }
+  }
+}

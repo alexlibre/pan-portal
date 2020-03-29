@@ -1,0 +1,44 @@
+aside.panel.visible_note
+  .panel__block
+    ul.panel__list
+      li.panel__item
+        a.panel__link(href="#")
+          +svg_icon(require("../images/svg/like.svg").default).icon.icon_like
+          span.panel__val.js-fav-val
+          .panel__tooltip
+            .panel__tooltip-title Избранное&nbsp;<span class="panel__tooltip-value js-fav-tooltip-val">5</span>&nbsp;<span class="panel__tooltip-add">позиций</span>
+
+      li.panel__item
+        a.panel__link(href="#")
+          +svg_icon(require("../images/svg/filter.svg").default).icon.icon_filter
+          .panel__tooltip
+            .panel__tooltip-title Мои фильтры
+      li.panel__item
+        a.panel__link(href="#")
+          +svg_icon(require("../images/svg/diff.svg").default).icon.icon_diff
+          .panel__tooltip
+            .panel__tooltip-title Мои сравнения
+      li.panel__item
+        a.panel__link(href="#")
+          +svg_icon(require("../images/svg/notify.svg").default).icon.icon_notify
+          span.panel__val.is-visible 5
+          .panel__tooltip
+            .panel__tooltip-title Непрочитанных уведомлений:&nbsp;<span class="panel__tooltip-value js-fav-tooltip-val">5</span>
+  .panel__block.js-show-social
+    .panel__item
+      a.panel__link.panel__link_social(href="#" title="Уведомления")
+        +svg_icon(require("../images/svg/tree.svg").default).icon.icon_tree
+    .panel__social
+      ul.panel__list.panel__list_inverted
+        li.panel__item
+          a.panel__link(href="#")
+            +svg_icon(require("../images/svg/social-ig.svg").default).icon.icon_ig
+        li.panel__item
+          a.panel__link(href="#")
+            +svg_icon(require("../images/svg/social-tg.svg").default).icon.icon_tg
+        li.panel__item
+          a.panel__link(href="#")
+            +svg_icon(require("../images/svg/social-fb.svg").default).icon.icon_fb
+        li.panel__item
+          a.panel__link(href="#")
+            +svg_icon(require("../images/svg/social-vk.svg").default).icon.icon_vk

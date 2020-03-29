@@ -1,0 +1,193 @@
+@mixin unlist() {
+  list-style: none;
+  padding-left: 0;
+}
+
+@mixin h1() {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 55px;
+
+  @include break-max($break-md) {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@mixin h2() {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 40px;
+
+  @include break-max($break-md) {
+    font-size: 28px;
+    line-height: 33px;
+  }
+}
+
+@mixin h3() {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 28px;
+
+  @include break-max($break-md) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@mixin h4 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin h4 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin h5 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+@mixin link {
+  color: $color-red;
+  text-decoration: none;
+  transition: color $transition-default;
+
+  &:hover {
+    color: $color-red-hover;
+  }
+}
+
+@mixin break-max($bp) {
+  @media screen and (max-width: #{$bp}) {
+    @content;
+  }
+}
+
+@mixin break-min($bp) {
+  @media screen and (min-width: #{$bp}) {
+    @content;
+  }
+}
+
+@mixin wrapper() {
+  padding-left: #{$fields};
+  padding-right: #{$fields};
+  max-width: $wrapper;
+  margin: 0 auto;
+
+  @include break-max($break-lg) {
+    padding-left: #{$fields-md};
+    padding-right: #{$fields-md};
+    max-width: $wrapper-md;
+  }
+
+  @include break-max(1330px) {
+    padding-left: 40px;
+    padding-right: 56px;
+    max-width: $wrapper-md;
+  }
+
+  @include break-max($break-md) {
+    padding-left: #{$fields-sm};
+    padding-right: #{$fields-sm};
+    max-width: 100%;
+  }
+
+  @include break-max($break-sm) {
+    padding-left: #{$fields-xs};
+    padding-right: #{$fields-xs};
+    max-width: 100%;
+  }
+}
+
+@mixin grid() {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{$grid-gutter / 2};
+  margin-right: -#{$grid-gutter / 2};
+
+  @include break-max($break-lg) {
+    margin-left: -#{$grid-gutter-md / 2};
+    margin-right: -#{$grid-gutter-md / 2};
+  }
+
+  @include break-max($break-md) {
+    margin-left: -#{$grid-gutter-sm / 2};
+    margin-right: -#{$grid-gutter-sm / 2};
+  }
+
+  @include break-max($break-sm) {
+    margin-left: -#{$grid-gutter-xs / 2};
+    margin-right: -#{$grid-gutter-xs / 2};
+  }
+}
+
+@mixin grid-col() {
+  margin-left: #{$grid-gutter / 2};
+  margin-right: #{$grid-gutter / 2};
+
+  @include break-max($break-lg) {
+    margin-left: #{$grid-gutter-md / 2};
+    margin-right: #{$grid-gutter-md / 2};
+  }
+
+  @include break-max($break-md) {
+    margin-left: #{$grid-gutter-sm / 2};
+    margin-right: #{$grid-gutter-sm / 2};
+  }
+
+  @include break-max($break-sm) {
+    margin-left: #{$grid-gutter-xs / 2};
+    margin-right: #{$grid-gutter-xs / 2};
+  }
+}
+
+@mixin grid-col-padding() {
+  padding-left: #{$grid-gutter / 2};
+  padding-right: #{$grid-gutter / 2};
+
+  @include break-max($break-lg) {
+    padding-left: #{$grid-gutter-md / 2};
+    padding-right: #{$grid-gutter-md / 2};
+  }
+
+  @include break-max($break-md) {
+    padding-left: #{$grid-gutter-sm / 2};
+    padding-right: #{$grid-gutter-sm / 2};
+  }
+
+  @include break-max($break-sm) {
+    padding-left: #{$grid-gutter-xs / 2};
+    padding-right: #{$grid-gutter-xs / 2};
+  }
+}
+
+@mixin grid-size($n, $gutter: #{$grid-gutter}) {
+  width: calc(100% / #{$grid-columns} * #{$n} - #{$gutter});
+}
+
+@mixin grid-size-padding($n) {
+  width: calc(100% / #{$grid-columns} * #{$n});
+}
+
+@mixin grid-shift-left($n, $gutter: #{$grid-gutter}) {
+  margin-left: calc(100% / #{$grid-columns} * #{$n} + #{$gutter / 2});
+}
+
+@mixin grid-shift-right($n, $gutter: #{$grid-gutter}) {
+  margin-right: calc(100% / #{$grid-columns} * #{$n} + #{$gutter / 2});
+}
+
+@mixin grid-shift($n, $gutter: #{$grid-gutter}) {
+  margin-left: calc(100% / #{$grid-columns} * #{$n} + #{$gutter / 2});
+  margin-right: calc(100% / #{$grid-columns} * #{$n} + #{$gutter / 2});
+}

@@ -1,0 +1,239 @@
+//- index.pug
+extends includes/layout
+include includes/mixins/svg_icon
+include includes/mixins/button
+include includes/mixins/bank-item
+
+block title
+  | Flat
+block content
+  section.section.section_view_white.flat
+    .wrapper
+      .flat__header
+        .flat__grid
+          .flat__col.flat__col-title
+            .flat__title
+              h1.h1 Студия
+            .flat__complex
+              .flat__complex-title
+                h4.h4 ЖК Легенда
+              a.link.flat__complex-link(href="/complex.html") Страница ЖК  
+          .flat__col.flat__col-download
+            .flat__download
+              +button({
+                classList: 'button_type_settings'
+              })
+                +svg_icon(require("../images/svg/icon_print.svg").default).icon.icon_settings
+              +button({
+                classList: 'button_type_settings'
+              })
+                +svg_icon(require("../images/svg/icon_download.svg").default).icon.icon_settings
+            button.button.button_view_outline.button_presentation Оформить презентацию
+      .flat__content   
+        .flat__grid
+          .flat__col.flat__col-images
+            - 
+              var images = [
+                {
+                  name: "plan",
+                  label: "Планировка",
+                  src: require('../images/jpg/flat_plan.jpg'),
+                  w: 231,
+                  h: 477
+                },
+                {
+                  name: "window-view",
+                  label: "Направление из окон",
+                  src: require('../images/jpg/complex.jpg'),
+                  w: 818,
+                  h: 593
+                },
+                {
+                  name: "floor-plan",
+                  label: "План этажа",
+                  src: require('../images/jpg/flat_plan.jpg'),
+                  w: 231,
+                  h: 477
+                },
+              ];
+
+            .flat__nav
+              ul.flat__nav-list
+                each image, i in images
+                  li.flat__nav-item
+                    a.flat__nav-link(class={ 'active': i == 0 } href="#" data-tab=image.name)= image.label
+
+            .flat__images.gallery
+              each image, i in images
+                .flat__image.gallery__wrapper(class={ 'active': i == 0 } id= image.name)
+                  .flat__image-wrapper.gallery__item(data-width=image.w data-height=image.h data-index=i data-src=image.src)
+                    img(src= image.src)
+                  .flat__image-expand
+                    +svg_icon(require("../images/svg/search.svg").default).icon.icon_search  
+                
+
+            .flat__manager.sm-hide
+              .manager
+                .manager-avatar
+                  .manager-avatar_wrapper
+                    img(src=require("../images/jpg/manager.jpg")) 
+                .manager-content
+                  .manager-title Андрей Басов
+                  .manager-post Специалист отдела продаж
+                  .manager-contacts
+                    ul.manager-contacts_list
+                      li.manager-contacts_item +7 (905) 281 35 39
+                      li.manager-contacts_item basov@1-an.ru
+                      li.manager-contacts_item @Andrey_Basov
+                  .manager-action 
+                    button.button.button_view_outline Обратный звонок            
+          .flat__col.flat__col-info
+            .flat__price
+              .flat__price-col.flat__price-item
+                .flat__info-item
+                  .flat__info-item_price 2 400 000 р.
+                  .flat__info-item_desc Цена, 100% оплата
+              .flat__price-col.flat__price-actions
+                .flat__price-action.flat__price-fav.js-favorites-add(data-fav-id=7005)
+                  +button({
+                    classList: 'button_type_settings'
+                  })
+                    +svg_icon(require("../images/svg/fav-outline.svg").default).icon.icon_settings
+                  | В избранное
+                .flat__price-action
+                  +button({
+                    classList: 'button_type_settings'
+                  })
+                    +svg_icon(require("../images/svg/icon-compare.svg").default).icon.icon_compare
+                  | К сравнению    
+            .flat__period-grid
+              .flat__period-col
+                .flat__info-item
+                  .flat__info-item_value III кв. 2019 — IV кв. 2020
+                  .flat__info-item_desc Срок сдачи
+              .flat__period-col
+                .flat__info-item
+                  .flat__info-item_value IV кв. 2020
+                  .flat__info-item_desc Срок выдачи ключей
+            .flat__info-btns
+              button.button.button_view_default Забронировать
+              .js-modal-btn(data-flat-id="flat-1" data-id="viewing-record")
+                +button({
+                  classList: 'button_view_outline-with-icon'
+                })
+                  +svg_icon(require("../images/svg/icon_watch.svg").default).icon.icon_marker
+                  span На просмотр
+              .js-modal-btn(data-flat-id="flat-1" data-id="client-fix")
+                +button({
+                  classList: 'button_view_outline-with-icon'
+                })
+                  +svg_icon(require("../images/svg/icon_fix.svg").default).icon.icon_fix
+                  span На фиксацию
+            .flat__info-grid
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 2 400 000 р.
+                  .flat__info-item_desc Базовая цена
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 11.04 м<sup>2</sup>
+                  .flat__info-item_desc Общая площадь
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 802416
+                  .flat__info-item_desc ID
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 11.04 м<sup>2</sup>
+                  .flat__info-item_desc Жилая площадь
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 802
+                  .flat__info-item_desc Номер квартиры
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 11.04 м<sup>2</sup>
+                  .flat__info-item_desc Площадь кухни
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 2
+                  .flat__info-item_desc Корпус / Участок / Дом
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value Совмещенный
+                  .flat__info-item_desc Санузел
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value 10
+                  .flat__info-item_desc Секция
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value Без отделки
+                  .flat__info-item_desc Отделка
+              .flat__info-col
+                .flat__info-item
+                  .flat__info-item_value ДДУ
+                  .flat__info-item_desc Форма договора
+      .flat__manager.sm-show
+        .manager
+          .manager-avatar
+            .manager-avatar_wrapper
+              img(src=require("../images/jpg/manager.jpg")) 
+          .manager-content
+            .manager-title Андрей Басов
+            .manager-post Специалист отдела продаж
+            .manager-contacts
+              ul.manager-contacts_list
+                li.manager-contacts_item +7 (905) 281 35 39
+                li.manager-contacts_item basov@1-an.ru
+                li.manager-contacts_item @Andrey_Basov
+            .manager-action 
+              button.button.button_view_outline Обратный звонок
+
+  include includes/blocks/calculators
+
+  section.section.section_view_white
+    .wrapper
+      .wrapper__center
+        .banks__slider.flat__banks
+          .banks__slider-nav
+            ul.banks__slider-nav_wrap(id="banksSlider-nav")
+              li.banks__slider-nav_item.prev
+                +svg_icon(require("../images/svg/icon-left_arrow.svg").default).icon.icon-dark_stroke   
+              li.banks__slider-nav_item.next
+                +svg_icon(require("../images/svg/icon-right_arrow.svg").default).icon.icon-dark_stroke
+
+          .banks__slider-wrap(id="banksSliderFlat")
+            +bank-item({
+              image: require("../images/jpg/sber.jpg"),
+              percent: "от 9.8%",
+              prepay: "от 20%",
+              period: "до 25 лет"   
+            })
+            +bank-item({
+              image: require("../images/jpg/sber.jpg"),
+              percent: "от 9.8%",
+              prepay: "от 20%",
+              period: "до 25 лет"   
+            })
+            +bank-item({
+              image: require("../images/jpg/sber.jpg"),
+              percent: "от 9.8%",
+              prepay: "от 20%",
+              period: "до 25 лет"   
+            })
+            +bank-item({
+              image: require("../images/jpg/sber.jpg"),
+              percent: "от 9.8%",
+              prepay: "от 20%",
+              period: "до 25 лет"   
+            })
+            +bank-item({
+              image: require("../images/jpg/sber.jpg"),
+              percent: "от 9.8%",
+              prepay: "от 20%",
+              period: "до 25 лет"   
+            })
+
+  include includes/flat/modals
+  include includes/blocks/gallery

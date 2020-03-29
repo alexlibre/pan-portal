@@ -1,0 +1,252 @@
+.panel {
+  $c: &;
+  position: fixed;
+  right: 0;
+  bottom: 50%;
+
+  z-index: 100;
+
+  &__block {
+    width: 40px;
+    border-radius: 8px 0 0 8px;
+    background-color: $color-brand-2;
+    margin-top: 8px;
+
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    @include unlist();
+    padding: 8px 0;
+
+    &_inverted {
+      background-color: #fff;
+      border-radius: 0 0 0 8px;
+      box-shadow: $shadow;
+
+      & .icon {
+        fill: #8F95AC;
+      }
+    }
+  }
+
+  &__item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:hover {
+
+      .panel__tooltip {
+        display: flex;
+      }
+    }
+  }
+
+  &__tooltip {
+    display: none;
+    position: absolute;
+    right: calc(100% + 19px);
+    top: -5px;
+    height: 59px;
+    background-color: $color-white;
+    border-radius: 4px;
+    box-shadow: $shadow;
+    align-items: center;
+    padding: 0 22px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: $color-brand-2;
+
+    &:after {
+      content: '';
+      background-size: 100%;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMyAwTDAgMTBWMGgxM3oiIGZpbGw9IiNmZmYiLz48L3N2Zz4=);
+      background-repeat: no-repeat;
+      background-position: top left;
+      width: 13px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-right: -9px;
+    }
+
+    &-value, &-add {
+      color: $color-red;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    text-align: center;
+    position: relative;
+
+    & .icon {
+      stroke: $color-white;
+      line-height: 40px;
+      transition: stroke $transition-default;
+    }
+
+    &:hover {
+
+      & > .icon {
+        stroke: $color-red;
+      }
+    }
+  }
+
+  &__val {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    font-size: 12px;
+    color: $color-white;
+    text-align: center;
+    z-index: 1;
+    top: -8px;
+    left: 50%;
+    display: none;
+
+    &.is-visible {
+      display: block;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
+        background-color: $color-red;
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: scale(5) translate(-50%, -50%);
+        animation: blast .3s forwards cubic-bezier(0,0,0.12,1);
+        opacity: 1;
+        transform-origin: left top;
+        pointer-events: none;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      background-color: $color-red;
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__social {
+    display: none;
+    position: absolute;
+    width: 100%;
+
+    &.is-active {
+      display: block;
+    }
+
+    & #{$c}__link {
+
+      & .icon {
+        fill: $color-brand-3;
+        transition: fill $transition-default;
+      }
+    }
+
+    & #{$c}__link:hover {
+        & .icon {
+          stroke: none;
+          fill: $color-brand-1;
+        }
+      }
+  }
+}
+
+@keyframes blast {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(5) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.mobile-panel {
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-brand-3;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+    & .icon {
+      font-size: 19px;
+      stroke: $color-white;
+      margin-right: 19px;
+    }
+  }
+
+  &__val {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    font-size: 12px;
+    color: $color-white;
+    text-align: center;
+    z-index: 1;
+    top: -6px;
+    left: 12px;
+    display: none;
+
+    &.is-visible {
+      display: block;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+      background-color: $color-red;
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

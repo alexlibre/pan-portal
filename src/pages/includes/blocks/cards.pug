@@ -1,0 +1,89 @@
+include ../mixins/card
+include ../mixins/select
+include ../mixins/button
+
+.wrapper
+  .section__grid
+    .section__grid-col.cards__item
+      +card({
+        href: '#',
+        pills: ['Комиссия 2%'],
+        id: 1,
+        title: 'Северный вальс',
+        address: 'Всеволожск г., Дорога Жизни ш.',
+        builder: 'Застройщик: Петрострой',
+        buildings: '6 корпусов',
+        buildFrom: '3 кв. 2019',
+        buildTo: '4 кв. 2020',
+        options: ['Аппартаменты', 'Переуступки застр.']
+      })
+    .section__grid-col.cards__item
+      +card({
+        href: '#',
+        pills: ['Комиссию уточняйте у менеджера'],
+        id: 2,
+        title: 'Легенда Комендантский',
+        address: 'Всеволожск г., Дорога Жизни ш.',
+        builder: 'Застройщик: Петрострой',
+        buildings: '3 корпуса',
+        buildFrom: '3 кв. 2019',
+        buildTo: '',
+        options: ['Аппартаменты']
+      })
+    .section__grid-col.cards__item
+      +card({
+        href: '#',
+        pills: ['Комиссия 2%'],
+        id: 3,
+        title: 'Jaanila Драйв',
+        address: 'Всеволожский р-н, Янино-1 д., Колтушское ш.',
+        builder: 'Застройщик: Петрострой',
+        buildings: '4 корпуса',
+        buildFrom: '3 кв. 2019',
+        buildTo: '',
+        options: ['Аппартаменты']
+      })
+    .section__grid-col.cards__item
+      +card({
+        href: '#',
+        pills: ['Комиссию уточняйте у менеджера'],
+        id: 4,
+        title: 'Легенда Комендантский',
+        address: 'Всеволожск г., Дорога Жизни ш.',
+        builder: 'Застройщик: Петрострой',
+        buildings: '4 корпуса',
+        buildFrom: '3 кв. 2019',
+        buildTo: '',
+        options: ['Аппартаменты']
+      })
+    .section__grid-col.cards__item
+      +card({
+        href: '#',
+        pills: ['Комиссия 2%'],
+        id: 5,
+        title: 'Jaanila Драйв',
+        address: 'Всеволожский р-н, Янино-1 д., Колтушское ш.',
+        builder: 'Застройщик: Петрострой',
+        buildings: '3 корпуса',
+        buildFrom: '3 кв. 2019',
+        buildTo: '',
+        options: ['Аппартаменты']
+      })
+    .section__grid-col.cards__item
+      +card({
+        href: '#',
+        pills: ['Комиссия 2%'],
+        id: 6,
+        title: 'Северный вальс',
+        address: 'Всеволожск г., Дорога Жизни ш.',
+        builder: 'Застройщик: Петрострой',
+        buildings: '6 корпусов',
+        buildFrom: '3 кв. 2019',
+        buildTo: '4 кв. 2020',
+        options: ['Аппартаменты', 'Переуступки застр.']
+      })
+  .section__grid
+    .section__grid-col.cards__pagination
+      +pagination({
+        list: ['1', '2', '3', '4', '5', '...', '25']
+      })
